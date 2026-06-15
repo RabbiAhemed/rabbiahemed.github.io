@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" id="meta-desc" content="Md. Rabbi Ahemed — Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.">
-<meta property="og:title" id="og-title" content="Md. Rabbi Ahemed — Sales & MIS Professional">
-<meta property="og:description" id="og-desc" content="Results-driven Sales Admin & MIS Professional. Expert in ERP, dashboards, forecasting.">
+<meta name="description" id="meta-desc" content="Md. Rabbi Ahemed — Sales Admin &amp; MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.">
+<meta property="og:title" id="og-title" content="Md. Rabbi Ahemed — Sales &amp; MIS Professional">
+<meta property="og:description" id="og-desc" content="Results-driven Sales Admin &amp; MIS Professional. Expert in ERP, dashboards, forecasting.">
 <meta name="author" content="Md. Rabbi Ahemed">
-<meta name="keywords" content="Sales Admin, MIS Professional, ERP, Bangladesh, FMCG, Dashboard, Business Analytics">
-<title id="page-title">Md. Rabbi Ahemed — Sales & MIS Professional</title>
+<meta name="keywords" content="Sales Admin, MIS, ERP, Bangladesh, FMCG, Dashboards, Business Analytics">
+<title id="page-title">Md. Rabbi Ahemed — Sales &amp; MIS Professional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Fraunces:ital,wght@0,700;1,400&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -351,16 +350,16 @@ body.aopen{margin-left:380px}
 }
 </style>
 </head>
-<body>
+<body class="aopen">
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
 
 <!-- ── LOGIN MODAL ── -->
-<div id="login-modal">
+<div id="login-modal" class="">
   <div class="login-box">
     <div class="login-logo"><div class="login-mark">RA</div><span class="login-title">Admin Access</span></div>
     <p class="login-sub">This area is restricted. Enter your password to access the content management system.</p>
-    <div class="login-err" id="login-err">Incorrect password. Please try again.</div>
+    <div class="login-err" id="login-err" style="display: none;">Incorrect password. Please try again.</div>
     <div class="ff"><label>Password</label><input type="password" id="pw-input" placeholder="Enter admin password" autocomplete="new-password"></div>
     <button class="login-btn" id="do-login">Sign In →</button>
     <button class="login-cancel" id="cancel-login">Cancel</button>
@@ -368,7 +367,7 @@ body.aopen{margin-left:380px}
 </div>
 
 <!-- ── ADMIN PANEL ── -->
-<div id="admin">
+<div id="admin" class="show">
   <div class="ap-bar">
     <div class="ap-brand"><div class="ap-brand-dot"></div>Portfolio CMS</div>
     <div class="ap-btns">
@@ -377,12 +376,12 @@ body.aopen{margin-left:380px}
     </div>
   </div>
   <div class="ap-tabs">
-    <button class="at on" data-t="hero">Hero</button>
+    <button class="at" data-t="hero">Hero</button>
     <button class="at" data-t="nav">Nav</button>
     <button class="at" data-t="about">About</button>
     <button class="at" data-t="metrics">Metrics</button>
     <button class="at" data-t="skills">Skills</button>
-    <button class="at" data-t="exp">Experience</button>
+    <button class="at on" data-t="exp">Experience</button>
     <button class="at" data-t="projects">Projects</button>
     <button class="at" data-t="testi">Testimonials</button>
     <button class="at" data-t="edu">Education</button>
@@ -393,13 +392,13 @@ body.aopen{margin-left:380px}
   </div>
 
   <!-- HERO -->
-  <div class="ap-sec on" id="t-hero">
-    <div class="af"><label>Eyebrow label</label><input id="f-eye" value="Sales Operations & MIS Professional"></div>
+  <div class="ap-sec" id="t-hero">
+    <div class="af"><label>Eyebrow label</label><input id="f-eye" value="Sales Operations &amp; MIS Professional"></div>
     <div class="r2a">
       <div class="af"><label>Name line 1</label><input id="f-n1" value="Md. Rabbi"></div>
       <div class="af"><label>Name line 2 (gradient)</label><input id="f-n2" value="Ahemed"></div>
     </div>
-    <div class="af"><label>Subtitle / tagline</label><textarea id="f-sub" rows="3">Results-driven Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</textarea></div>
+    <div class="af"><label>Subtitle / tagline</label><textarea id="f-sub" rows="3">Results-driven Sales Admin &amp; MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</textarea></div>
     <div class="af"><label>Specialty chips (comma-separated)</label><input id="f-chips" value="Sales Operations,MIS Reporting,ERP Systems,Dashboard Dev,FMCG,Data Analytics"></div>
     <div class="r2a">
       <div class="af"><label>CTA 1 text</label><input id="f-b1t" value="Download CV"></div>
@@ -411,16 +410,16 @@ body.aopen{margin-left:380px}
     </div>
     <hr class="ap-div">
     <div class="ap-sublbl">Profile card fields</div>
-    <div id="hcard-fields-admin"></div>
+    <div id="hcard-fields-admin"><div class="di"><div class="di-head"><span class="di-lbl">Location</span><button class="d-del" onclick="D.hcf.splice(0,1);renderHCF()">✕</button></div><div class="af"><label>Label</label><input value="Location" onchange="D.hcf[0].l=this.value"></div><div class="af"><label>Value</label><input value="Dhaka, Bangladesh" onchange="D.hcf[0].v=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Experience</span><button class="d-del" onclick="D.hcf.splice(1,1);renderHCF()">✕</button></div><div class="af"><label>Label</label><input value="Experience" onchange="D.hcf[1].l=this.value"></div><div class="af"><label>Value</label><input value="3+ Years" onchange="D.hcf[1].v=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Sector</span><button class="d-del" onclick="D.hcf.splice(2,1);renderHCF()">✕</button></div><div class="af"><label>Label</label><input value="Sector" onchange="D.hcf[2].l=this.value"></div><div class="af"><label>Value</label><input value="FMCG &amp; E-commerce" onchange="D.hcf[2].v=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Availability</span><button class="d-del" onclick="D.hcf.splice(3,1);renderHCF()">✕</button></div><div class="af"><label>Label</label><input value="Availability" onchange="D.hcf[3].l=this.value"></div><div class="af"><label>Value</label><input value="Immediate" onchange="D.hcf[3].v=this.value"></div></div></div>
     <button class="d-add" id="add-hcf">+ Add card field</button>
     <hr class="ap-div">
-    <div class="ap-sublbl">Card name & status</div>
+    <div class="ap-sublbl">Card name &amp; status</div>
     <div class="af"><label>Card full name</label><input id="f-cname" value="Md. Rabbi Ahemed"></div>
-    <div class="af"><label>Card role</label><input id="f-crole" value="Sales Admin & MIS Professional"></div>
+    <div class="af"><label>Card role</label><input id="f-crole" value="Sales Admin &amp; MIS Professional"></div>
     <div class="af"><label>Status badge text</label><input id="f-cstatus" value="Available for new opportunities"></div>
     <hr class="ap-div">
     <div class="ap-sublbl">Mini stat boxes</div>
-    <div id="ministats-admin"></div>
+    <div id="ministats-admin"><div class="di"><div class="di-head"><span class="di-lbl">Stat 1</span><button class="d-del" onclick="D.mstats.splice(0,1);renderMstats()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="3+" onchange="D.mstats[0].n=this.value"></div><div class="af"><label>Label</label><input value="Yrs Experience" onchange="D.mstats[0].l=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Stat 2</span><button class="d-del" onclick="D.mstats.splice(1,1);renderMstats()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="500+" onchange="D.mstats[1].n=this.value"></div><div class="af"><label>Label</label><input value="Reports Built" onchange="D.mstats[1].l=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Stat 3</span><button class="d-del" onclick="D.mstats.splice(2,1);renderMstats()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="10+" onchange="D.mstats[2].n=this.value"></div><div class="af"><label>Label</label><input value="Dashboards" onchange="D.mstats[2].l=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Stat 4</span><button class="d-del" onclick="D.mstats.splice(3,1);renderMstats()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="BSc" onchange="D.mstats[3].n=this.value"></div><div class="af"><label>Label</label><input value="CS Engineering" onchange="D.mstats[3].l=this.value"></div></div></div></div>
     <button class="d-add" id="add-mstat">+ Add stat</button>
   </div>
 
@@ -432,7 +431,7 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Nav CTA button link</label><input id="f-nclink" value="#contact"></div>
     <hr class="ap-div">
     <div class="ap-sublbl">Navigation links</div>
-    <div id="navlinks-admin"></div>
+    <div id="navlinks-admin"><div class="di"><div class="di-head"><span class="di-lbl">About</span><button class="d-del" onclick="D.navlinks.splice(0,1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="About" onchange="D.navlinks[0].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="#about" onchange="D.navlinks[0].h=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Experience</span><button class="d-del" onclick="D.navlinks.splice(1,1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="Experience" onchange="D.navlinks[1].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="#experience" onchange="D.navlinks[1].h=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Projects</span><button class="d-del" onclick="D.navlinks.splice(2,1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="Projects" onchange="D.navlinks[2].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="#projects" onchange="D.navlinks[2].h=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Skills</span><button class="d-del" onclick="D.navlinks.splice(3,1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="Skills" onchange="D.navlinks[3].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="#skills" onchange="D.navlinks[3].h=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Contact</span><button class="d-del" onclick="D.navlinks.splice(4,1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="Contact" onchange="D.navlinks[4].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="#contact" onchange="D.navlinks[4].h=this.value"></div></div></div></div>
     <button class="d-add" id="add-navlink">+ Add nav link</button>
   </div>
 
@@ -441,13 +440,13 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Section eyebrow</label><input id="ab-eye" value="About me"></div>
     <div class="af"><label>Section title (last word becomes italic)</label><input id="ab-title" value="Turning data into decisions"></div>
     <div class="af"><label>Section subtitle</label><input id="ab-sub" value="A business operations professional who bridges the gap between raw data and strategic growth."></div>
-    <div class="af"><label>Paragraph 1</label><textarea id="ab-p1" rows="4">I'm a Sales Admin & MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</textarea></div>
+    <div class="af"><label>Paragraph 1</label><textarea id="ab-p1" rows="4">I'm a Sales Admin &amp; MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</textarea></div>
     <div class="af"><label>Paragraph 2</label><textarea id="ab-p2" rows="4">At City Group, I architect zone-wise and distributor-wise target frameworks, run ERP validation processes, and build performance dashboards that inform C-suite decisions daily.</textarea></div>
-    <div class="af"><label>Paragraph 3</label><textarea id="ab-p3" rows="4">My BSc in Computer Science & Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</textarea></div>
+    <div class="af"><label>Paragraph 3</label><textarea id="ab-p3" rows="4">My BSc in Computer Science &amp; Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</textarea></div>
     <div class="af"><label>Tags (comma-separated)</label><input id="ab-tags" value="English (Professional),Bengali (Native),Open to Opportunities,FMCG Expert,ERP Specialist,Dhaka-Based"></div>
     <hr class="ap-div">
     <div class="ap-sublbl">Info card rows</div>
-    <div id="about-info-admin"></div>
+    <div id="about-info-admin"><div class="di"><div class="di-head"><span class="di-lbl">Full Name</span><button class="d-del" onclick="D.abinfo.splice(0,1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="Full Name" onchange="D.abinfo[0].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="Md. Rabbi Ahemed" onchange="D.abinfo[0].v=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Email</span><button class="d-del" onclick="D.abinfo.splice(1,1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="Email" onchange="D.abinfo[1].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="rabbiahemed1@gmail.com" onchange="D.abinfo[1].v=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Phone</span><button class="d-del" onclick="D.abinfo.splice(2,1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="Phone" onchange="D.abinfo[2].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="+8801791177273" onchange="D.abinfo[2].v=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Location</span><button class="d-del" onclick="D.abinfo.splice(3,1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="Location" onchange="D.abinfo[3].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="Dhaka, Bangladesh" onchange="D.abinfo[3].v=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Languages</span><button class="d-del" onclick="D.abinfo.splice(4,1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="Languages" onchange="D.abinfo[4].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="English, Bengali" onchange="D.abinfo[4].v=this.value"></div></div></div></div>
     <button class="d-add" id="add-abinfo">+ Add info row</button>
   </div>
 
@@ -456,25 +455,37 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Section eyebrow</label><input id="mt-eye" value="Business impact"></div>
     <div class="af"><label>Section title</label><input id="mt-title" value="Impact at a glance"></div>
     <hr class="ap-div">
-    <div id="metrics-admin"></div>
+    <div id="metrics-admin"><div class="di"><div class="di-head"><span class="di-lbl">Years Experience</span><button class="d-del" onclick="D.metrics.splice(0,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="3+" onchange="D.metrics[0].n=this.value"></div><div class="af"><label>Label</label><input value="Years Experience" onchange="D.metrics[0].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="FMCG &amp; E-commerce" onchange="D.metrics[0].s=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Reports Generated</span><button class="d-del" onclick="D.metrics.splice(1,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="500+" onchange="D.metrics[1].n=this.value"></div><div class="af"><label>Label</label><input value="Reports Generated" onchange="D.metrics[1].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="IMS &amp; ERP-based" onchange="D.metrics[1].s=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Dashboards Built</span><button class="d-del" onclick="D.metrics.splice(2,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="10+" onchange="D.metrics[2].n=this.value"></div><div class="af"><label>Label</label><input value="Dashboards Built" onchange="D.metrics[2].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="For C-suite decisions" onchange="D.metrics[2].s=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Companies Served</span><button class="d-del" onclick="D.metrics.splice(3,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="3" onchange="D.metrics[3].n=this.value"></div><div class="af"><label>Label</label><input value="Companies Served" onchange="D.metrics[3].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="Across sectors" onchange="D.metrics[3].s=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Data Accuracy</span><button class="d-del" onclick="D.metrics.splice(4,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="100%" onchange="D.metrics[4].n=this.value"></div><div class="af"><label>Label</label><input value="Data Accuracy" onchange="D.metrics[4].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="Post ERP validation" onchange="D.metrics[4].s=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Regions Managed</span><button class="d-del" onclick="D.metrics.splice(5,1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="5+" onchange="D.metrics[5].n=this.value"></div><div class="af"><label>Label</label><input value="Regions Managed" onchange="D.metrics[5].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="Territory coverage" onchange="D.metrics[5].s=this.value"></div></div></div>
     <button class="d-add" id="add-metric">+ Add metric</button>
   </div>
 
   <!-- SKILLS -->
   <div class="ap-sec" id="t-skills">
     <div class="af"><label>Section eyebrow</label><input id="sk-eye" value="Technical proficiency"></div>
-    <div class="af"><label>Section title</label><input id="sk-title" value="Skills & Expertise"></div>
+    <div class="af"><label>Section title</label><input id="sk-title" value="Skills &amp; Expertise"></div>
     <hr class="ap-div">
-    <div id="skills-admin"></div>
+    <div id="skills-admin"><div class="di"><div class="di-head"><span class="di-lbl">Sales Operations</span><button class="d-del" onclick="D.skillCats.splice(0,1);renderSkAdmin()">✕</button></div><div class="af"><label>Category name</label><input value="Sales Operations" onchange="D.skillCats[0].name=this.value;renderSkAdmin()"></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Sales Planning &amp; Target Allocation</span><button class="d-del" onclick="D.skillCats[0].skills.splice(0,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Sales Planning &amp; Target Allocation" onchange="D.skillCats[0].skills[0].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (95)</label><input type="range" min="10" max="100" value="95" oninput="D.skillCats[0].skills[0].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Product, zone &amp; distributor-level target management" onchange="D.skillCats[0].skills[0].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Incentive &amp; Commission Design</span><button class="d-del" onclick="D.skillCats[0].skills.splice(1,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Incentive &amp; Commission Design" onchange="D.skillCats[0].skills[1].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (90)</label><input type="range" min="10" max="100" value="90" oninput="D.skillCats[0].skills[1].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Transparent framework design aligned with business goals" onchange="D.skillCats[0].skills[1].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Order &amp; Distribution Management</span><button class="d-del" onclick="D.skillCats[0].skills.splice(2,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Order &amp; Distribution Management" onchange="D.skillCats[0].skills[2].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (88)</label><input type="range" min="10" max="100" value="88" oninput="D.skillCats[0].skills[2].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="End-to-end order coordination across channels" onchange="D.skillCats[0].skills[2].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Cross-functional Coordination</span><button class="d-del" onclick="D.skillCats[0].skills.splice(3,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Cross-functional Coordination" onchange="D.skillCats[0].skills[3].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (92)</label><input type="range" min="10" max="100" value="92" oninput="D.skillCats[0].skills[3].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Sales, finance &amp; distribution team alignment" onchange="D.skillCats[0].skills[3].d=this.value"></div></div><button class="d-add" style="margin-top:.4rem" onclick="D.skillCats[0].skills.push({n:'New Skill',p:75,d:''}); renderSkAdmin()">+ Add skill</button></div><div class="di"><div class="di-head"><span class="di-lbl">MIS &amp; Reporting</span><button class="d-del" onclick="D.skillCats.splice(1,1);renderSkAdmin()">✕</button></div><div class="af"><label>Category name</label><input value="MIS &amp; Reporting" onchange="D.skillCats[1].name=this.value;renderSkAdmin()"></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Dashboard &amp; MIS Reporting</span><button class="d-del" onclick="D.skillCats[1].skills.splice(0,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Dashboard &amp; MIS Reporting" onchange="D.skillCats[1].skills[0].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (95)</label><input type="range" min="10" max="100" value="95" oninput="D.skillCats[1].skills[0].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Daily, weekly &amp; monthly performance dashboards" onchange="D.skillCats[1].skills[0].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">ERP &amp; IMS Data Management</span><button class="d-del" onclick="D.skillCats[1].skills.splice(1,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="ERP &amp; IMS Data Management" onchange="D.skillCats[1].skills[1].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (90)</label><input type="range" min="10" max="100" value="90" oninput="D.skillCats[1].skills[1].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Target uploads, ERP validation &amp; error reduction" onchange="D.skillCats[1].skills[1].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Sales Forecasting &amp; Analysis</span><button class="d-del" onclick="D.skillCats[1].skills.splice(2,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Sales Forecasting &amp; Analysis" onchange="D.skillCats[1].skills[2].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (88)</label><input type="range" min="10" max="100" value="88" oninput="D.skillCats[1].skills[2].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Historical trend analysis and demand forecasting" onchange="D.skillCats[1].skills[2].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">Territory Analytics</span><button class="d-del" onclick="D.skillCats[1].skills.splice(3,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="Territory Analytics" onchange="D.skillCats[1].skills[3].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (85)</label><input type="range" min="10" max="100" value="85" oninput="D.skillCats[1].skills[3].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Region-wise performance analytics and field audits" onchange="D.skillCats[1].skills[3].d=this.value"></div></div><button class="d-add" style="margin-top:.4rem" onclick="D.skillCats[1].skills.push({n:'New Skill',p:75,d:''}); renderSkAdmin()">+ Add skill</button></div><div class="di"><div class="di-head"><span class="di-lbl">Technical Tools</span><button class="d-del" onclick="D.skillCats.splice(2,1);renderSkAdmin()">✕</button></div><div class="af"><label>Category name</label><input value="Technical Tools" onchange="D.skillCats[2].name=this.value;renderSkAdmin()"></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">MS Excel (Advanced)</span><button class="d-del" onclick="D.skillCats[2].skills.splice(0,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="MS Excel (Advanced)" onchange="D.skillCats[2].skills[0].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (96)</label><input type="range" min="10" max="100" value="96" oninput="D.skillCats[2].skills[0].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Pivot tables, advanced formulas, reporting automation" onchange="D.skillCats[2].skills[0].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">ERP Systems</span><button class="d-del" onclick="D.skillCats[2].skills.splice(1,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="ERP Systems" onchange="D.skillCats[2].skills[1].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (88)</label><input type="range" min="10" max="100" value="88" oninput="D.skillCats[2].skills[1].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="National territory management and uploads" onchange="D.skillCats[2].skills[1].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">IMS &amp; PS Management Software</span><button class="d-del" onclick="D.skillCats[2].skills.splice(2,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="IMS &amp; PS Management Software" onchange="D.skillCats[2].skills[2].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (85)</label><input type="range" min="10" max="100" value="85" oninput="D.skillCats[2].skills[2].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Field performance and inventory management systems" onchange="D.skillCats[2].skills[2].d=this.value"></div></div><div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">MS PowerPoint</span><button class="d-del" onclick="D.skillCats[2].skills.splice(3,1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="MS PowerPoint" onchange="D.skillCats[2].skills[3].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % (80)</label><input type="range" min="10" max="100" value="80" oninput="D.skillCats[2].skills[3].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="Executive presentations and management reports" onchange="D.skillCats[2].skills[3].d=this.value"></div></div><button class="d-add" style="margin-top:.4rem" onclick="D.skillCats[2].skills.push({n:'New Skill',p:75,d:''}); renderSkAdmin()">+ Add skill</button></div></div>
     <button class="d-add" id="add-skcat">+ Add skill category</button>
   </div>
 
   <!-- EXPERIENCE -->
-  <div class="ap-sec" id="t-exp">
+  <div class="ap-sec on" id="t-exp">
     <div class="af"><label>Section eyebrow</label><input id="ex-eye" value="Career journey"></div>
     <div class="af"><label>Section title</label><input id="ex-title" value="Professional Experience"></div>
     <hr class="ap-div">
-    <div id="exp-admin"></div>
+    <div id="exp-admin"><div class="di"><div class="di-head"><span class="di-lbl">Sales Coordinator @ City Group</span><button class="d-del" onclick="D.exps.splice(0,1);renderExpAdmin()">✕</button></div><div class="af"><label>Period</label><input value="Mar 2025 – Present" onchange="D.exps[0].period=this.value"></div><div class="r2a"><div class="af"><label>Role</label><input value="Sales Coordinator" onchange="D.exps[0].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="City Group" onchange="D.exps[0].co=this.value"></div></div><div class="r2a"><div class="af"><label>Industry type</label><input value="FMCG" onchange="D.exps[0].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="ERP,MIS,Sales Planning,Dashboards,Forecasting" onchange="D.exps[0].tags=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps[0].bullets=this.value.split('\n').filter(Boolean)">Architect and manage product-wise, zone-wise, and distributor-wise sales targets aligned with corporate strategy
+Deliver daily, weekly, and monthly executive performance dashboards for senior management review
+Design structured incentive &amp; commission frameworks ensuring transparency and goal alignment across teams
+Implement systematic ERP validation processes that significantly reduced reporting errors organization-wide
+Orchestrate cross-functional alignment between Sales, Finance, and Distribution for operational continuity
+Lead onboarding and field training sessions for new sales personnel on IMS systems and processes
+Conduct historical trend analysis to forecast demand and optimize territory target planning</textarea></div></div><div class="di"><div class="di-head"><span class="di-lbl">MIS Executive @ Dekko Foods Ltd.</span><button class="d-del" onclick="D.exps.splice(1,1);renderExpAdmin()">✕</button></div><div class="af"><label>Period</label><input value="Jan 2024 – Aug 2024" onchange="D.exps[1].period=this.value"></div><div class="r2a"><div class="af"><label>Role</label><input value="MIS Executive" onchange="D.exps[1].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="Dekko Foods Ltd." onchange="D.exps[1].co=this.value"></div></div><div class="r2a"><div class="af"><label>Industry type</label><input value="FMCG" onchange="D.exps[1].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="IMS,ERP,Analytics,Reporting" onchange="D.exps[1].tags=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps[1].bullets=this.value.split('\n').filter(Boolean)">Managed national territory-wise ERP target uploads with high accuracy across all product lines
+Generated daily IMS-based sales performance reports consumed by regional and national management
+Produced monthly sales closing reports and coverage analyses for executive management review
+Compiled area-wise damage reports from field audits providing actionable supply chain intelligence
+Developed region-wise weekly performance analytics dashboards improving visibility across 5+ territories</textarea></div></div><div class="di"><div class="di-head"><span class="di-lbl">Operations Executive @ BoiBazar.com</span><button class="d-del" onclick="D.exps.splice(2,1);renderExpAdmin()">✕</button></div><div class="af"><label>Period</label><input value="Jan 2020 – Dec 2020" onchange="D.exps[2].period=this.value"></div><div class="r2a"><div class="af"><label>Role</label><input value="Operations Executive" onchange="D.exps[2].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="BoiBazar.com" onchange="D.exps[2].co=this.value"></div></div><div class="r2a"><div class="af"><label>Industry type</label><input value="E-commerce" onchange="D.exps[2].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="Operations,Inventory,Logistics" onchange="D.exps[2].tags=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps[2].bullets=this.value.split('\n').filter(Boolean)">Managed end-to-end order processing, invoicing, and shipment coordination workflows
+Maintained inventory accuracy and ensured on-time dispatch performance targets were met
+Administered website product catalogue and managed digital content workflow</textarea></div></div></div>
     <button class="d-add" id="add-exp">+ Add experience</button>
   </div>
 
@@ -483,7 +494,7 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Section eyebrow</label><input id="pj-eye" value="Selected work"></div>
     <div class="af"><label>Section title</label><input id="pj-title" value="Project Showcase"></div>
     <hr class="ap-div">
-    <div id="proj-admin"></div>
+    <div id="proj-admin"><div class="di"><div class="di-head"><span class="di-lbl">Executive Performance Dashboard System</span><button class="d-del" onclick="D.projects.splice(0,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📊" onchange="D.projects[0].icon=this.value"></div><div class="af"><label>Category</label><input value="MIS Reporting" onchange="D.projects[0].cat=this.value"></div></div><div class="af"><label>Title</label><input value="Executive Performance Dashboard System" onchange="D.projects[0].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[0].desc=this.value">Designed and deployed a multi-layer dashboard system covering product, zone, and distributor KPIs for City Group C-suite.</textarea></div><div class="af"><label>Key impact / result</label><input value="Reporting cycle cut by 40%" onchange="D.projects[0].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="Excel,ERP,Pivot Tables,IMS" onchange="D.projects[0].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Territory Target Allocation Engine</span><button class="d-del" onclick="D.projects.splice(1,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="🎯" onchange="D.projects[1].icon=this.value"></div><div class="af"><label>Category</label><input value="Sales Analytics" onchange="D.projects[1].cat=this.value"></div></div><div class="af"><label>Title</label><input value="Territory Target Allocation Engine" onchange="D.projects[1].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[1].desc=this.value">Built a systematic ERP-based target allocation framework enabling precise national territory management at Dekko Foods.</textarea></div><div class="af"><label>Key impact / result</label><input value="100% ERP upload accuracy" onchange="D.projects[1].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="ERP,IMS,Excel,Reporting" onchange="D.projects[1].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Commission &amp; Incentive Framework</span><button class="d-del" onclick="D.projects.splice(2,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="💰" onchange="D.projects[2].icon=this.value"></div><div class="af"><label>Category</label><input value="Incentive Design" onchange="D.projects[2].cat=this.value"></div></div><div class="af"><label>Title</label><input value="Commission &amp; Incentive Framework" onchange="D.projects[2].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[2].desc=this.value">Created a transparent, policy-aligned incentive structure for sales teams at City Group that reduced commission disputes to zero.</textarea></div><div class="af"><label>Key impact / result</label><input value="Zero commission disputes" onchange="D.projects[2].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="Excel,Policy Design,Analytics" onchange="D.projects[2].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Demand Forecasting Model</span><button class="d-del" onclick="D.projects.splice(3,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📈" onchange="D.projects[3].icon=this.value"></div><div class="af"><label>Category</label><input value="Forecasting" onchange="D.projects[3].cat=this.value"></div></div><div class="af"><label>Title</label><input value="Demand Forecasting Model" onchange="D.projects[3].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[3].desc=this.value">Developed a historical trend analysis model integrating IMS data to forecast demand and optimize target planning across product lines.</textarea></div><div class="af"><label>Key impact / result</label><input value="Improved planning accuracy by 25%" onchange="D.projects[3].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="Excel,Data Analysis,ERP" onchange="D.projects[3].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="di"><div class="di-head"><span class="di-lbl">ERP Validation Workflow</span><button class="d-del" onclick="D.projects.splice(4,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="🔄" onchange="D.projects[4].icon=this.value"></div><div class="af"><label>Category</label><input value="Process Automation" onchange="D.projects[4].cat=this.value"></div></div><div class="af"><label>Title</label><input value="ERP Validation Workflow" onchange="D.projects[4].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[4].desc=this.value">Implemented a multi-stage ERP data validation process that systematically eliminated reporting errors and improved data integrity.</textarea></div><div class="af"><label>Key impact / result</label><input value="Near-zero data errors" onchange="D.projects[4].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="ERP,Process Design,Audit" onchange="D.projects[4].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Delivery Management System</span><button class="d-del" onclick="D.projects.splice(5,1);renderProjAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📦" onchange="D.projects[5].icon=this.value"></div><div class="af"><label>Category</label><input value="Operations" onchange="D.projects[5].cat=this.value"></div></div><div class="af"><label>Title</label><input value="Delivery Management System" onchange="D.projects[5].title=this.value;renderProjAdmin()"></div><div class="af"><label>Description</label><textarea rows="3" onchange="D.projects[5].desc=this.value">Maintained and optimized DMS infrastructure at Dekko Foods improving coverage tracking and field audit report quality.</textarea></div><div class="af"><label>Key impact / result</label><input value="Streamlined 5+ region ops" onchange="D.projects[5].kpi=this.value"></div><div class="af"><label>Tech stack (comma-sep)</label><input value="DMS,Coordination,Reporting" onchange="D.projects[5].tech=this.value.split(',').map(function(t){return t.trim()})"></div></div></div>
     <button class="d-add" id="add-proj">+ Add project</button>
   </div>
 
@@ -492,20 +503,20 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Section eyebrow</label><input id="ts-eye" value="What colleagues say"></div>
     <div class="af"><label>Section title</label><input id="ts-title" value="Recommendations"></div>
     <hr class="ap-div">
-    <div id="testi-admin"></div>
+    <div id="testi-admin"><div class="di"><div class="di-head"><span class="di-lbl">Md. Ripon Mahmud</span><button class="d-del" onclick="D.testis.splice(0,1);renderTestiAdmin()">✕</button></div><div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis[0].q=this.value">Rabbi consistently delivers accurate, insightful dashboards that management can act on immediately. His ERP validation work has transformed how we approach data quality.</textarea></div><div class="r2a"><div class="af"><label>Name</label><input value="Md. Ripon Mahmud" onchange="D.testis[0].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="RM" onchange="D.testis[0].init=this.value"></div></div><div class="r2a"><div class="af"><label>Role &amp; company</label><input value="Executive, Sales Coordination · City Group" onchange="D.testis[0].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="5" onchange="D.testis[0].stars=+this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Md. Abu Saleh</span><button class="d-del" onclick="D.testis.splice(1,1);renderTestiAdmin()">✕</button></div><div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis[1].q=this.value">His ability to translate complex operational data into clear executive reports is exceptional. Rabbi brings both technical depth and business acumen to every project.</textarea></div><div class="r2a"><div class="af"><label>Name</label><input value="Md. Abu Saleh" onchange="D.testis[1].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="AS" onchange="D.testis[1].init=this.value"></div></div><div class="r2a"><div class="af"><label>Role &amp; company</label><input value="Executive, Audit &amp; Finance · Sundarban Courier" onchange="D.testis[1].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="5" onchange="D.testis[1].stars=+this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Senior Manager</span><button class="d-del" onclick="D.testis.splice(2,1);renderTestiAdmin()">✕</button></div><div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis[2].q=this.value">A rare professional who understands both the business side and the technical systems. Under tight deadlines, Rabbi delivered consistently high-quality MIS reports.</textarea></div><div class="r2a"><div class="af"><label>Name</label><input value="Senior Manager" onchange="D.testis[2].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="SM" onchange="D.testis[2].init=this.value"></div></div><div class="r2a"><div class="af"><label>Role &amp; company</label><input value="Management · Dekko Foods Ltd." onchange="D.testis[2].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="5" onchange="D.testis[2].stars=+this.value"></div></div></div></div>
     <button class="d-add" id="add-testi">+ Add testimonial</button>
   </div>
 
   <!-- EDUCATION -->
   <div class="ap-sec" id="t-edu">
     <div class="af"><label>Section eyebrow</label><input id="ed-eye" value="Academic background"></div>
-    <div class="af"><label>Section title</label><input id="ed-title" value="Education & Certifications"></div>
+    <div class="af"><label>Section title</label><input id="ed-title" value="Education &amp; Certifications"></div>
     <hr class="ap-div">
     <div class="ap-sublbl">Education entries</div>
-    <div id="edu-admin"></div>
+    <div id="edu-admin"><div class="di"><div class="di-head"><span class="di-lbl">BSc in Computer Science &amp; Engineering</span><button class="d-del" onclick="D.edus.splice(0,1);renderEduAdmin()">✕</button></div><div class="af"><label>Year</label><input value="2022" onchange="D.edus[0].y=this.value"></div><div class="af"><label>Degree</label><input value="BSc in Computer Science &amp; Engineering" onchange="D.edus[0].d=this.value;renderEduAdmin()"></div><div class="af"><label>Institution</label><input value="Green University of Bangladesh" onchange="D.edus[0].i=this.value"></div><div class="af"><label>Grade</label><input value="CGPA 3.06" onchange="D.edus[0].g=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Diploma in Computer Technology</span><button class="d-del" onclick="D.edus.splice(1,1);renderEduAdmin()">✕</button></div><div class="af"><label>Year</label><input value="2018" onchange="D.edus[1].y=this.value"></div><div class="af"><label>Degree</label><input value="Diploma in Computer Technology" onchange="D.edus[1].d=this.value;renderEduAdmin()"></div><div class="af"><label>Institution</label><input value="Jhenaidah Polytechnic Institute" onchange="D.edus[1].i=this.value"></div><div class="af"><label>Grade</label><input value="CGPA 2.82" onchange="D.edus[1].g=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">SSC (Business Studies)</span><button class="d-del" onclick="D.edus.splice(2,1);renderEduAdmin()">✕</button></div><div class="af"><label>Year</label><input value="2014" onchange="D.edus[2].y=this.value"></div><div class="af"><label>Degree</label><input value="SSC (Business Studies)" onchange="D.edus[2].d=this.value;renderEduAdmin()"></div><div class="af"><label>Institution</label><input value="Jhenaidah Govt. High School" onchange="D.edus[2].i=this.value"></div><div class="af"><label>Grade</label><input value="GPA 4.94" onchange="D.edus[2].g=this.value"></div></div></div>
     <button class="d-add" id="add-edu">+ Add education</button>
     <div class="ap-sublbl" style="margin-top:.6rem">Certifications</div>
-    <div id="cert-admin"></div>
+    <div id="cert-admin"><div class="di"><div class="di-head"><span class="di-lbl">Advanced Microsoft Excel</span><button class="d-del" onclick="D.certs.splice(0,1);renderCertAdmin()">✕</button></div><div class="af"><label>Title</label><input value="Advanced Microsoft Excel" onchange="D.certs[0].t=this.value;renderCertAdmin()"></div><div class="r2a"><div class="af"><label>Issuer</label><input value="Microsoft Certified" onchange="D.certs[0].o=this.value"></div><div class="af"><label>Year</label><input value="2023" onchange="D.certs[0].y=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">ERP Systems Management</span><button class="d-del" onclick="D.certs.splice(1,1);renderCertAdmin()">✕</button></div><div class="af"><label>Title</label><input value="ERP Systems Management" onchange="D.certs[1].t=this.value;renderCertAdmin()"></div><div class="r2a"><div class="af"><label>Issuer</label><input value="Professional Training" onchange="D.certs[1].o=this.value"></div><div class="af"><label>Year</label><input value="2024" onchange="D.certs[1].y=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Data Analytics Fundamentals</span><button class="d-del" onclick="D.certs.splice(2,1);renderCertAdmin()">✕</button></div><div class="af"><label>Title</label><input value="Data Analytics Fundamentals" onchange="D.certs[2].t=this.value;renderCertAdmin()"></div><div class="r2a"><div class="af"><label>Issuer</label><input value="Online Certification" onchange="D.certs[2].o=this.value"></div><div class="af"><label>Year</label><input value="2023" onchange="D.certs[2].y=this.value"></div></div></div><div class="di"><div class="di-head"><span class="di-lbl">Sales Operations Management</span><button class="d-del" onclick="D.certs.splice(3,1);renderCertAdmin()">✕</button></div><div class="af"><label>Title</label><input value="Sales Operations Management" onchange="D.certs[3].t=this.value;renderCertAdmin()"></div><div class="r2a"><div class="af"><label>Issuer</label><input value="Industry Certificate" onchange="D.certs[3].o=this.value"></div><div class="af"><label>Year</label><input value="2024" onchange="D.certs[3].y=this.value"></div></div></div></div>
     <button class="d-add" id="add-cert">+ Add certification</button>
   </div>
 
@@ -517,17 +528,17 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Footer right text</label><input id="ft-r" value="Dhaka, Bangladesh"></div>
     <hr class="ap-div">
     <div class="ap-sublbl">Contact links</div>
-    <div id="contact-admin"></div>
+    <div id="contact-admin"><div class="di"><div class="di-head"><span class="di-lbl">Email</span><button class="d-del" onclick="D.contacts.splice(0,1);renderContactAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="✉️" onchange="D.contacts[0].ico=this.value"></div><div class="af"><label>Label</label><input value="Email" onchange="D.contacts[0].l=this.value;renderContactAdmin()"></div></div><div class="af"><label>Display value</label><input value="rabbiahemed1@gmail.com" onchange="D.contacts[0].v=this.value"></div><div class="af"><label>URL</label><input value="mailto:rabbiahemed1@gmail.com" onchange="D.contacts[0].h=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Phone (Primary)</span><button class="d-del" onclick="D.contacts.splice(1,1);renderContactAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📞" onchange="D.contacts[1].ico=this.value"></div><div class="af"><label>Label</label><input value="Phone (Primary)" onchange="D.contacts[1].l=this.value;renderContactAdmin()"></div></div><div class="af"><label>Display value</label><input value="+880 1791-177273" onchange="D.contacts[1].v=this.value"></div><div class="af"><label>URL</label><input value="tel:+8801791177273" onchange="D.contacts[1].h=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Phone (Secondary)</span><button class="d-del" onclick="D.contacts.splice(2,1);renderContactAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📞" onchange="D.contacts[2].ico=this.value"></div><div class="af"><label>Label</label><input value="Phone (Secondary)" onchange="D.contacts[2].l=this.value;renderContactAdmin()"></div></div><div class="af"><label>Display value</label><input value="+880 1884-418569" onchange="D.contacts[2].v=this.value"></div><div class="af"><label>URL</label><input value="tel:+8801884418569" onchange="D.contacts[2].h=this.value"></div></div><div class="di"><div class="di-head"><span class="di-lbl">Address</span><button class="d-del" onclick="D.contacts.splice(3,1);renderContactAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Icon</label><input value="📍" onchange="D.contacts[3].ico=this.value"></div><div class="af"><label>Label</label><input value="Address" onchange="D.contacts[3].l=this.value;renderContactAdmin()"></div></div><div class="af"><label>Display value</label><input value="Natun Bazar, Dhaka, Bangladesh" onchange="D.contacts[3].v=this.value"></div><div class="af"><label>URL</label><input value="#" onchange="D.contacts[3].h=this.value"></div></div></div>
     <button class="d-add" id="add-clink">+ Add contact link</button>
   </div>
 
   <!-- SECTIONS MANAGER -->
   <div class="ap-sec" id="t-sections">
     <p style="font-size:.78rem;color:var(--text3);line-height:1.6;margin-bottom:.75rem">Toggle sections on/off. Hidden sections are removed from the public site. You can also add entirely new custom sections below.</p>
-    <div class="sec-mgr" id="sec-mgr-list"></div>
+    <div class="sec-mgr" id="sec-mgr-list"><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Hero</span><button class="sec-mgr-toggle on" data-sec="hero" onclick="toggleSec('hero',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">About</span><button class="sec-mgr-toggle on" data-sec="about" onclick="toggleSec('about',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Metrics Band</span><button class="sec-mgr-toggle on" data-sec="metrics" onclick="toggleSec('metrics',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Skills</span><button class="sec-mgr-toggle on" data-sec="skills" onclick="toggleSec('skills',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Experience</span><button class="sec-mgr-toggle on" data-sec="exp" onclick="toggleSec('exp',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Projects</span><button class="sec-mgr-toggle on" data-sec="projects" onclick="toggleSec('projects',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Testimonials</span><button class="sec-mgr-toggle on" data-sec="testi" onclick="toggleSec('testi',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Education</span><button class="sec-mgr-toggle on" data-sec="edu" onclick="toggleSec('edu',this)">On</button></div><div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">Contact</span><button class="sec-mgr-toggle on" data-sec="contact" onclick="toggleSec('contact',this)">On</button></div></div>
     <hr class="ap-div" style="margin-top:.75rem">
     <div class="ap-sublbl">Add a new custom section</div>
-    <div class="af"><label>Section title</label><input id="new-sec-title" placeholder="e.g. Awards & Recognition"></div>
+    <div class="af"><label>Section title</label><input id="new-sec-title" placeholder="e.g. Awards &amp; Recognition"></div>
     <div class="af"><label>Section content (HTML or plain text)</label><textarea id="new-sec-content" rows="4" placeholder="Write content or paste HTML..."></textarea></div>
     <button class="d-add" id="add-custom-sec" style="margin-top:.25rem">+ Create custom section</button>
   </div>
@@ -535,7 +546,7 @@ body.aopen{margin-left:380px}
   <!-- THEME -->
   <div class="ap-sec" id="t-theme">
     <div class="ap-sublbl">Color presets</div>
-    <div class="sw-grid" id="sw-grid"></div>
+    <div class="sw-grid" id="sw-grid"><div class="sw on" style="background:#4F8EF7" data-th="blue" title="blue"></div><div class="sw" style="background:#6366F1" data-th="indigo" title="indigo"></div><div class="sw" style="background:#10B981" data-th="emerald" title="emerald"></div><div class="sw" style="background:#8B5CF6" data-th="violet" title="violet"></div><div class="sw" style="background:#F43F5E" data-th="rose" title="rose"></div><div class="sw" style="background:#F59E0B" data-th="amber" title="amber"></div><div class="sw" style="background:#06B6D4" data-th="cyan" title="cyan"></div><div class="sw" style="background:#94A3B8" data-th="slate" title="slate"></div></div>
     <div class="r2a">
       <div class="af"><label>Accent color</label><input type="color" id="th-a" value="#4F8EF7"></div>
       <div class="af"><label>Accent 2</label><input type="color" id="th-a2" value="#7EAAFF"></div>
@@ -549,43 +560,37 @@ body.aopen{margin-left:380px}
 
   <!-- SEO -->
   <div class="ap-sec" id="t-seo">
-    <div class="af"><label>Page title</label><input id="seo-title" value="Md. Rabbi Ahemed — Sales & MIS Professional"></div>
-    <div class="af"><label>Meta description</label><textarea id="seo-desc" rows="3">Md. Rabbi Ahemed — Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.</textarea></div>
-    <div class="af"><label>OG title</label><input id="seo-ogt" value="Md. Rabbi Ahemed — Sales & MIS Professional"></div>
-    <div class="af"><label>OG description</label><textarea id="seo-ogd" rows="2">Results-driven Sales Admin & MIS Professional. Expert in ERP, dashboards, forecasting.</textarea></div>
+    <div class="af"><label>Page title</label><input id="seo-title" value="Md. Rabbi Ahemed — Sales &amp; MIS Professional"></div>
+    <div class="af"><label>Meta description</label><textarea id="seo-desc" rows="3">Md. Rabbi Ahemed — Sales Admin &amp; MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.</textarea></div>
+    <div class="af"><label>OG title</label><input id="seo-ogt" value="Md. Rabbi Ahemed — Sales &amp; MIS Professional"></div>
+    <div class="af"><label>OG description</label><textarea id="seo-ogd" rows="2">Results-driven Sales Admin &amp; MIS Professional. Expert in ERP, dashboards, forecasting.</textarea></div>
     <div class="af"><label>Keywords</label><input id="seo-kw" value="Sales Admin, MIS, ERP, Bangladesh, FMCG, Dashboards, Business Analytics"></div>
     <div class="af"><label>Author</label><input id="seo-auth" value="Md. Rabbi Ahemed"></div>
   </div>
 
-  <button class="ap-save" id="ap-save">💾 Save & Publish</button>
+  <button class="ap-save" id="ap-save" disabled="">⏳ Saving to GitHub...</button>
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast"></div>
+<div class="toast success" id="toast">Welcome back, Rabbi 👋</div>
 
 <!-- ════════════════ SITE ════════════════ -->
 <div id="site">
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" class="scrolled">
   <div class="nav-left">
-    <div class="nav-mark" id="p-mark">RA</div>
+    <div class="nav-mark" id="p-mark">MR</div>
     <span class="nav-name" id="p-brand">Md. Rabbi Ahemed</span>
   </div>
-  <ul class="nav-center" id="p-navlinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <ul class="nav-center" id="p-navlinks"><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
   <div class="nav-right">
     <div class="nav-avail"><div class="nav-avail-dot"></div><span id="p-avail">Available</span></div>
     <button class="btn-nav" id="p-nctabtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
     <button class="nav-ham" id="nav-ham">☰</button>
   </div>
 </nav>
-<div class="mob-nav" id="mob-nav"></div>
+<div class="mob-nav" id="mob-nav"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
 
 <!-- HERO -->
 <div class="hero-wrap" id="sec-hero">
@@ -593,15 +598,11 @@ body.aopen{margin-left:380px}
     <div class="hero-text">
       <div class="hero-eyebrow">
         <div class="eyebrow-line"></div>
-        <span class="eyebrow-text" id="p-eye">Sales Operations & MIS Professional</span>
+        <span class="eyebrow-text" id="p-eye">Sales Operations &amp; MIS Professional</span>
       </div>
       <h1 class="hero-h1"><span id="p-n1">Md. Rabbi</span><br><span class="grad" id="p-n2">Ahemed</span></h1>
-      <p class="hero-sub" id="p-sub">Results-driven Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</p>
-      <div class="hero-chips" id="p-chips">
-        <span class="chip">Sales Operations</span><span class="chip">MIS Reporting</span>
-        <span class="chip">ERP Systems</span><span class="chip">Dashboard Dev</span>
-        <span class="chip">FMCG</span><span class="chip">Data Analytics</span>
-      </div>
+      <p class="hero-sub" id="p-sub">Results-driven Sales Admin &amp; MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</p>
+      <div class="hero-chips" id="p-chips"><span class="chip">Sales Operations</span><span class="chip">MIS Reporting</span><span class="chip">ERP Systems</span><span class="chip">Dashboard Dev</span><span class="chip">FMCG</span><span class="chip">Data Analytics</span></div>
       <div class="hero-actions">
         <a class="btn-primary" id="p-b1" href="#">⬇ Download CV</a>
         <a class="btn-secondary" id="p-b2" href="#contact">✉ Get In Touch</a>
@@ -611,33 +612,23 @@ body.aopen{margin-left:380px}
       <div class="hcard">
         <div class="hcard-top-line"></div>
         <div class="hcard-profile">
-          <div class="avatar" id="p-avatar">RA</div>
+          <div class="avatar" id="p-avatar">MR</div>
           <div>
             <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
-            <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
+            <div class="hcard-role" id="p-crole">Sales Admin &amp; MIS Professional</div>
             <div class="hcard-status" id="p-cstatus">● Available for new opportunities</div>
           </div>
         </div>
-        <div class="hcard-rows" id="p-hcard-rows">
-          <div class="hcard-row"><span class="hrow-label">Location</span><span class="hrow-val">Dhaka, Bangladesh</span></div>
-          <div class="hcard-row"><span class="hrow-label">Experience</span><span class="hrow-val">3+ Years</span></div>
-          <div class="hcard-row"><span class="hrow-label">Sector</span><span class="hrow-val">FMCG & E-commerce</span></div>
-          <div class="hcard-row"><span class="hrow-label">Availability</span><span class="hrow-val">Immediate</span></div>
-        </div>
+        <div class="hcard-rows" id="p-hcard-rows"><div class="hcard-row"><span class="hrow-label">Location</span><span class="hrow-val">Dhaka, Bangladesh</span></div><div class="hcard-row"><span class="hrow-label">Experience</span><span class="hrow-val">3+ Years</span></div><div class="hcard-row"><span class="hrow-label">Sector</span><span class="hrow-val">FMCG &amp; E-commerce</span></div><div class="hcard-row"><span class="hrow-label">Availability</span><span class="hrow-val">Immediate</span></div></div>
       </div>
-      <div class="mini-grid" id="p-ministats">
-        <div class="mini-cell"><span class="mini-num">3+</span><span class="mini-label">Yrs Experience</span></div>
-        <div class="mini-cell"><span class="mini-num">500+</span><span class="mini-label">Reports Built</span></div>
-        <div class="mini-cell"><span class="mini-num">10+</span><span class="mini-label">Dashboards</span></div>
-        <div class="mini-cell"><span class="mini-num">BSc</span><span class="mini-label">CS Engineering</span></div>
-      </div>
+      <div class="mini-grid" id="p-ministats"><div class="mini-cell"><span class="mini-num">3+</span><span class="mini-label">Yrs Experience</span></div><div class="mini-cell"><span class="mini-num">500+</span><span class="mini-label">Reports Built</span></div><div class="mini-cell"><span class="mini-num">10+</span><span class="mini-label">Dashboards</span></div><div class="mini-cell"><span class="mini-num">BSc</span><span class="mini-label">CS Engineering</span></div></div>
     </div>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div class="sec-divider"></div>
-<div id="sec-about"><div class="section rv" id="about">
+<div id="sec-about"><div class="section rv in" id="about">
   <div class="sec-head">
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ab-eye">About me</span></div>
     <h2 class="sec-title" id="p-ab-title">Turning data into <i>decisions</i></h2>
@@ -645,24 +636,13 @@ body.aopen{margin-left:380px}
   </div>
   <div class="about-layout">
     <div class="about-body">
-      <p id="p-ab-p1">I'm a Sales Admin & MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</p>
+      <p id="p-ab-p1">I'm a Sales Admin &amp; MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</p>
       <p id="p-ab-p2">At City Group, I architect zone-wise and distributor-wise target frameworks, run ERP validation processes, and build performance dashboards that inform C-suite decisions daily.</p>
-      <p id="p-ab-p3">My BSc in Computer Science & Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</p>
-      <div class="about-tags" id="p-ab-tags">
-        <span class="about-tag">English (Professional)</span><span class="about-tag">Bengali (Native)</span>
-        <span class="about-tag">Open to Opportunities</span><span class="about-tag">FMCG Expert</span>
-        <span class="about-tag">ERP Specialist</span><span class="about-tag">Dhaka-Based</span>
-      </div>
+      <p id="p-ab-p3">My BSc in Computer Science &amp; Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</p>
+      <div class="about-tags" id="p-ab-tags"><span class="about-tag">English (Professional)</span><span class="about-tag">Bengali (Native)</span><span class="about-tag">Open to Opportunities</span><span class="about-tag">FMCG Expert</span><span class="about-tag">ERP Specialist</span><span class="about-tag">Dhaka-Based</span></div>
     </div>
     <div class="about-side">
-      <div class="info-box" id="p-about-infobox">
-        <div class="info-box-head">Quick Info</div>
-        <div class="info-item"><span class="info-lbl">Full Name</span><span class="info-val">Md. Rabbi Ahemed</span></div>
-        <div class="info-item"><span class="info-lbl">Email</span><span class="info-val">rabbiahemed1@gmail.com</span></div>
-        <div class="info-item"><span class="info-lbl">Phone</span><span class="info-val">+8801791177273</span></div>
-        <div class="info-item"><span class="info-lbl">Location</span><span class="info-val">Dhaka, Bangladesh</span></div>
-        <div class="info-item"><span class="info-lbl">Languages</span><span class="info-val">English, Bengali</span></div>
-      </div>
+      <div class="info-box" id="p-about-infobox"><div class="info-box-head">Quick Info</div><div class="info-item"><span class="info-lbl">Full Name</span><span class="info-val">Md. Rabbi Ahemed</span></div><div class="info-item"><span class="info-lbl">Email</span><span class="info-val">rabbiahemed1@gmail.com</span></div><div class="info-item"><span class="info-lbl">Phone</span><span class="info-val">+8801791177273</span></div><div class="info-item"><span class="info-lbl">Location</span><span class="info-val">Dhaka, Bangladesh</span></div><div class="info-item"><span class="info-lbl">Languages</span><span class="info-val">English, Bengali</span></div></div>
     </div>
   </div>
 </div></div>
@@ -674,7 +654,7 @@ body.aopen{margin-left:380px}
       <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-mt-eye">Business impact</span></div>
       <h2 class="sec-title" style="font-size:1.9rem" id="p-mt-title">Impact at a <i>glance</i></h2>
     </div>
-    <div id="p-metrics-grid" style="display:contents"></div>
+    <div id="p-metrics-grid" style="display:contents"><div class="metric-cell"><span class="metric-num">3+</span><span class="metric-lbl">Years Experience</span><div class="metric-sub">FMCG &amp; E-commerce</div></div><div class="metric-cell"><span class="metric-num">500+</span><span class="metric-lbl">Reports Generated</span><div class="metric-sub">IMS &amp; ERP-based</div></div><div class="metric-cell"><span class="metric-num">10+</span><span class="metric-lbl">Dashboards Built</span><div class="metric-sub">For C-suite decisions</div></div><div class="metric-cell"><span class="metric-num">3</span><span class="metric-lbl">Companies Served</span><div class="metric-sub">Across sectors</div></div><div class="metric-cell"><span class="metric-num">100%</span><span class="metric-lbl">Data Accuracy</span><div class="metric-sub">Post ERP validation</div></div><div class="metric-cell"><span class="metric-num">5+</span><span class="metric-lbl">Regions Managed</span><div class="metric-sub">Territory coverage</div></div></div>
   </div>
 </div></div>
 
@@ -683,10 +663,10 @@ body.aopen{margin-left:380px}
 <div id="sec-skills"><div class="section rv" id="skills">
   <div class="sec-head">
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-sk-eye">Technical proficiency</span></div>
-    <h2 class="sec-title" id="p-sk-title">Skills & <i>Expertise</i></h2>
+    <h2 class="sec-title" id="p-sk-title">Skills &amp; <i>Expertise</i></h2>
   </div>
-  <div class="skill-tabs" id="p-skill-tabs"></div>
-  <div id="p-skill-panels"></div>
+  <div class="skill-tabs" id="p-skill-tabs"><button class="stab on" onclick="switchSkillTab(0,this)">Sales Operations</button><button class="stab" onclick="switchSkillTab(1,this)">MIS &amp; Reporting</button><button class="stab" onclick="switchSkillTab(2,this)">Technical Tools</button></div>
+  <div id="p-skill-panels"><div class="skill-panel on" id="skp-0"><div class="skill-card"><div class="sk-head"><span class="sk-name">Sales Planning &amp; Target Allocation</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:95%"></div></div><div class="sk-desc">Product, zone &amp; distributor-level target management</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">Incentive &amp; Commission Design</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:90%"></div></div><div class="sk-desc">Transparent framework design aligned with business goals</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">Order &amp; Distribution Management</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:88%"></div></div><div class="sk-desc">End-to-end order coordination across channels</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">Cross-functional Coordination</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:92%"></div></div><div class="sk-desc">Sales, finance &amp; distribution team alignment</div></div></div><div class="skill-panel" id="skp-1"><div class="skill-card"><div class="sk-head"><span class="sk-name">Dashboard &amp; MIS Reporting</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:95%"></div></div><div class="sk-desc">Daily, weekly &amp; monthly performance dashboards</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">ERP &amp; IMS Data Management</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:90%"></div></div><div class="sk-desc">Target uploads, ERP validation &amp; error reduction</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">Sales Forecasting &amp; Analysis</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:88%"></div></div><div class="sk-desc">Historical trend analysis and demand forecasting</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">Territory Analytics</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:85%"></div></div><div class="sk-desc">Region-wise performance analytics and field audits</div></div></div><div class="skill-panel" id="skp-2"><div class="skill-card"><div class="sk-head"><span class="sk-name">MS Excel (Advanced)</span><span class="sk-lvl">Expert</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:96%"></div></div><div class="sk-desc">Pivot tables, advanced formulas, reporting automation</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">ERP Systems</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:88%"></div></div><div class="sk-desc">National territory management and uploads</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">IMS &amp; PS Management Software</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:85%"></div></div><div class="sk-desc">Field performance and inventory management systems</div></div><div class="skill-card"><div class="sk-head"><span class="sk-name">MS PowerPoint</span><span class="sk-lvl">Advanced</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:80%"></div></div><div class="sk-desc">Executive presentations and management reports</div></div></div></div>
 </div></div>
 
 <!-- EXPERIENCE -->
@@ -696,7 +676,7 @@ body.aopen{margin-left:380px}
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ex-eye">Career journey</span></div>
     <h2 class="sec-title" id="p-ex-title">Professional <i>Experience</i></h2>
   </div>
-  <div class="exp-list" id="p-exp-list"></div>
+  <div class="exp-list" id="p-exp-list"><div class="exp-item"><div class="exp-left"><div class="exp-period-badge">Mar 2025 – Present</div><div class="exp-co">City Group</div><div class="exp-co-type">FMCG</div></div><div class="exp-right"><div class="exp-role">Sales Coordinator</div><div class="exp-tag-row"><span class="exp-tag">ERP</span><span class="exp-tag">MIS</span><span class="exp-tag">Sales Planning</span><span class="exp-tag">Dashboards</span><span class="exp-tag">Forecasting</span></div><ul class="exp-bullets"><li>Architect and manage product-wise, zone-wise, and distributor-wise sales targets aligned with corporate strategy</li><li>Deliver daily, weekly, and monthly executive performance dashboards for senior management review</li><li>Design structured incentive &amp; commission frameworks ensuring transparency and goal alignment across teams</li><li>Implement systematic ERP validation processes that significantly reduced reporting errors organization-wide</li><li>Orchestrate cross-functional alignment between Sales, Finance, and Distribution for operational continuity</li><li>Lead onboarding and field training sessions for new sales personnel on IMS systems and processes</li><li>Conduct historical trend analysis to forecast demand and optimize territory target planning</li></ul></div></div><div class="exp-item"><div class="exp-left"><div class="exp-period-badge">Jan 2024 – Dec 2024</div><div class="exp-co">Dekko Foods Ltd.</div><div class="exp-co-type">FMCG</div></div><div class="exp-right"><div class="exp-role">MIS Executive</div><div class="exp-tag-row"><span class="exp-tag">IMS</span><span class="exp-tag">ERP</span><span class="exp-tag">Analytics</span><span class="exp-tag">Reporting</span></div><ul class="exp-bullets"><li>Managed national territory-wise ERP target uploads with high accuracy across all product lines</li><li>Generated daily IMS-based sales performance reports consumed by regional and national management</li><li>Produced monthly sales closing reports and coverage analyses for executive management review</li><li>Compiled area-wise damage reports from field audits providing actionable supply chain intelligence</li><li>Developed region-wise weekly performance analytics dashboards improving visibility across 5+ territories</li></ul></div></div><div class="exp-item"><div class="exp-left"><div class="exp-period-badge">Jan 2020 – Dec 2020</div><div class="exp-co">BoiBazar.com</div><div class="exp-co-type">E-commerce</div></div><div class="exp-right"><div class="exp-role">Operations Executive</div><div class="exp-tag-row"><span class="exp-tag">Operations</span><span class="exp-tag">Inventory</span><span class="exp-tag">Logistics</span></div><ul class="exp-bullets"><li>Managed end-to-end order processing, invoicing, and shipment coordination workflows</li><li>Maintained inventory accuracy and ensured on-time dispatch performance targets were met</li><li>Administered website product catalogue and managed digital content workflow</li></ul></div></div></div>
 </div></div>
 
 <!-- PROJECTS -->
@@ -706,7 +686,7 @@ body.aopen{margin-left:380px}
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-pj-eye">Selected work</span></div>
     <h2 class="sec-title" id="p-pj-title">Project <i>Showcase</i></h2>
   </div>
-  <div class="proj-grid" id="p-proj-grid"></div>
+  <div class="proj-grid" id="p-proj-grid"><div class="proj-card"><div class="proj-top"><div class="proj-icon">📊</div><span class="proj-cat-badge">MIS Reporting</span></div><div class="proj-title">Executive Performance Dashboard System</div><div class="proj-desc">Designed and deployed a multi-layer dashboard system covering product, zone, and distributor KPIs for City Group C-suite.</div><div class="proj-kpi">✦ Reporting cycle cut by 40%</div><div class="proj-techs"><span class="proj-tech">Excel</span><span class="proj-tech">ERP</span><span class="proj-tech">Pivot Tables</span><span class="proj-tech">IMS</span></div></div><div class="proj-card"><div class="proj-top"><div class="proj-icon">🎯</div><span class="proj-cat-badge">Sales Analytics</span></div><div class="proj-title">Territory Target Allocation Engine</div><div class="proj-desc">Built a systematic ERP-based target allocation framework enabling precise national territory management at Dekko Foods.</div><div class="proj-kpi">✦ 100% ERP upload accuracy</div><div class="proj-techs"><span class="proj-tech">ERP</span><span class="proj-tech">IMS</span><span class="proj-tech">Excel</span><span class="proj-tech">Reporting</span></div></div><div class="proj-card"><div class="proj-top"><div class="proj-icon">💰</div><span class="proj-cat-badge">Incentive Design</span></div><div class="proj-title">Commission &amp; Incentive Framework</div><div class="proj-desc">Created a transparent, policy-aligned incentive structure for sales teams at City Group that reduced commission disputes to zero.</div><div class="proj-kpi">✦ Zero commission disputes</div><div class="proj-techs"><span class="proj-tech">Excel</span><span class="proj-tech">Policy Design</span><span class="proj-tech">Analytics</span></div></div><div class="proj-card"><div class="proj-top"><div class="proj-icon">📈</div><span class="proj-cat-badge">Forecasting</span></div><div class="proj-title">Demand Forecasting Model</div><div class="proj-desc">Developed a historical trend analysis model integrating IMS data to forecast demand and optimize target planning across product lines.</div><div class="proj-kpi">✦ Improved planning accuracy by 25%</div><div class="proj-techs"><span class="proj-tech">Excel</span><span class="proj-tech">Data Analysis</span><span class="proj-tech">ERP</span></div></div><div class="proj-card"><div class="proj-top"><div class="proj-icon">🔄</div><span class="proj-cat-badge">Process Automation</span></div><div class="proj-title">ERP Validation Workflow</div><div class="proj-desc">Implemented a multi-stage ERP data validation process that systematically eliminated reporting errors and improved data integrity.</div><div class="proj-kpi">✦ Near-zero data errors</div><div class="proj-techs"><span class="proj-tech">ERP</span><span class="proj-tech">Process Design</span><span class="proj-tech">Audit</span></div></div><div class="proj-card"><div class="proj-top"><div class="proj-icon">📦</div><span class="proj-cat-badge">Operations</span></div><div class="proj-title">Delivery Management System</div><div class="proj-desc">Maintained and optimized DMS infrastructure at Dekko Foods improving coverage tracking and field audit report quality.</div><div class="proj-kpi">✦ Streamlined 5+ region ops</div><div class="proj-techs"><span class="proj-tech">DMS</span><span class="proj-tech">Coordination</span><span class="proj-tech">Reporting</span></div></div></div>
 </div></div>
 
 <!-- TESTIMONIALS -->
@@ -716,7 +696,7 @@ body.aopen{margin-left:380px}
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ts-eye">What colleagues say</span></div>
     <h2 class="sec-title" id="p-ts-title"><i>Recommendations</i></h2>
   </div>
-  <div class="testi-grid" id="p-testi-grid"></div>
+  <div class="testi-grid" id="p-testi-grid"><div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-quote">Rabbi consistently delivers accurate, insightful dashboards that management can act on immediately. His ERP validation work has transformed how we approach data quality.</div><div class="testi-author"><div class="testi-av">RM</div><div><div class="testi-name">Md. Ripon Mahmud</div><div class="testi-role">Executive, Sales Coordination · City Group</div></div></div></div><div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-quote">His ability to translate complex operational data into clear executive reports is exceptional. Rabbi brings both technical depth and business acumen to every project.</div><div class="testi-author"><div class="testi-av">AS</div><div><div class="testi-name">Md. Abu Saleh</div><div class="testi-role">Executive, Audit &amp; Finance · Sundarban Courier</div></div></div></div><div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-quote">A rare professional who understands both the business side and the technical systems. Under tight deadlines, Rabbi delivered consistently high-quality MIS reports.</div><div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Senior Manager</div><div class="testi-role">Management · Dekko Foods Ltd.</div></div></div></div></div>
 </div></div>
 
 <!-- EDUCATION & CERTS -->
@@ -724,11 +704,11 @@ body.aopen{margin-left:380px}
 <div id="sec-edu"><div class="section rv">
   <div class="sec-head">
     <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ed-eye">Academic background</span></div>
-    <h2 class="sec-title" id="p-ed-title">Education & <i>Certifications</i></h2>
+    <h2 class="sec-title" id="p-ed-title">Education &amp; <i>Certifications</i></h2>
   </div>
   <div class="edu-cert-grid">
-    <div><div class="subsec-title">Education</div><div class="edu-list" id="p-edu-list"></div></div>
-    <div><div class="subsec-title">Certifications</div><div class="cert-list" id="p-cert-list"></div></div>
+    <div><div class="subsec-title">Education</div><div class="edu-list" id="p-edu-list"><div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">BSc in Computer Science &amp; Engineering</div><div class="edu-inst">Green University of Bangladesh</div><span class="edu-yr">2022 · CGPA 3.06</span></div></div><div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">Diploma in Computer Technology</div><div class="edu-inst">Jhenaidah Polytechnic Institute</div><span class="edu-yr">2018 · CGPA 2.82</span></div></div><div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">SSC (Business Studies)</div><div class="edu-inst">Jhenaidah Govt. High School</div><span class="edu-yr">2014 · GPA 4.94</span></div></div></div></div>
+    <div><div class="subsec-title">Certifications</div><div class="cert-list" id="p-cert-list"><div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">Advanced Microsoft Excel</div><div class="cert-org">Microsoft Certified</div><span class="cert-yr">2023</span></div></div><div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">ERP Systems Management</div><div class="cert-org">Professional Training</div><span class="cert-yr">2024</span></div></div><div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">Data Analytics Fundamentals</div><div class="cert-org">Online Certification</div><span class="cert-yr">2023</span></div></div><div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">Sales Operations Management</div><div class="cert-org">Industry Certificate</div><span class="cert-yr">2024</span></div></div></div></div>
   </div>
 </div></div>
 
@@ -742,7 +722,7 @@ body.aopen{margin-left:380px}
     <div>
       <h2 class="contact-h" id="p-ct-h">Let's work <i>together.</i></h2>
       <p class="contact-p" id="p-ct-p">Open to senior roles in Sales Operations, MIS, and Business Analytics. I respond within 24 hours.</p>
-      <div id="p-clinks"></div>
+      <div id="p-clinks"><a class="clink" href="mailto:rabbiahemed1@gmail.com"><div class="clink-ico">✉️</div><div><div class="clink-lbl">Email</div><div class="clink-val">rabbiahemed1@gmail.com</div></div></a><a class="clink" href="tel:+8801791177273"><div class="clink-ico">📞</div><div><div class="clink-lbl">Phone (Primary)</div><div class="clink-val">+880 1791-177273</div></div></a><a class="clink" href="tel:+8801884418569"><div class="clink-ico">📞</div><div><div class="clink-lbl">Phone (Secondary)</div><div class="clink-val">+880 1884-418569</div></div></a><a class="clink" href="#"><div class="clink-ico">📍</div><div><div class="clink-lbl">Address</div><div class="clink-val">Natun Bazar, Dhaka, Bangladesh</div></div></a></div>
     </div>
     <div class="form-box">
       <div class="form-h">Send a message</div>
@@ -1302,5 +1282,6 @@ renderContactAdmin();renderSecMgr();
 render();
 setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){revealObs.observe(el)})},200);
 </script>
-</body>
-</html>
+
+
+</body></html>
