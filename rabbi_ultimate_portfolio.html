@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" id="meta-desc" content="Md. Rabbi Ahemed — Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.">
+<meta property="og:title" id="og-title" content="Md. Rabbi Ahemed — Sales & MIS Professional">
+<meta property="og:description" id="og-desc" content="Results-driven Sales Admin & MIS Professional. Expert in ERP, dashboards, forecasting.">
+<meta name="author" content="Md. Rabbi Ahemed">
+<meta name="keywords" content="Sales Admin, MIS Professional, ERP, Bangladesh, FMCG, Dashboard, Business Analytics">
+<title id="page-title">Md. Rabbi Ahemed — Sales & MIS Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050709;--bg2:#08090F;--bg3:#0D1017;--card:#0A0C12;
+  --border:rgba(148,163,184,0.08);--border2:rgba(148,163,184,0.16);--border3:rgba(148,163,184,0.28);
+  --a:#4F8EF7;--a2:#7EAAFF;--a3:rgba(79,142,247,0.12);
+  --gold:#E8B84B;--green:#3DD68C;--red:#F87171;--purple:#A78BFA;
+  --text:#F1F5F9;--text2:#94A3B8;--text3:#475569;--text4:#1E293B;
+  --glass:rgba(8,9,15,0.6);
+  --r:12px;--r2:20px;
+  --serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --sh:0 0 0 1px rgba(148,163,184,0.08),0 4px 24px rgba(0,0,0,0.4);
+  --sh2:0 0 0 1px rgba(79,142,247,0.2),0 8px 40px rgba(79,142,247,0.12);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--a);border-radius:2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:var(--sans)}
+input,textarea,select{font-family:var(--sans)}
+
+/* NOISE OVERLAY */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* GRADIENT ORBS */
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(79,142,247,.07),transparent 70%);top:-200px;left:-100px;animation:orb-drift 20s ease-in-out infinite}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(167,139,250,.05),transparent 70%);bottom:-100px;right:-100px;animation:orb-drift 25s ease-in-out infinite reverse}
+@keyframes orb-drift{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(-20px,20px)}}
+
+/* WRAPPER */
+#site{position:relative;z-index:1}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  background:rgba(5,7,9,.85);backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+#nav.scrolled{box-shadow:0 1px 0 rgba(148,163,184,.06),0 8px 32px rgba(0,0,0,.5)}
+.nav-left{display:flex;align-items:center;gap:10px}
+.nav-mark{width:30px;height:30px;border-radius:8px;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff;letter-spacing:-.01em;flex-shrink:0}
+.nav-name{font-size:.88rem;font-weight:600;color:var(--text);letter-spacing:-.02em}
+.nav-center{display:flex;gap:.25rem;list-style:none}
+.nav-center a{padding:.4rem .75rem;border-radius:8px;font-size:.78rem;font-weight:500;color:var(--text2);transition:all .2s;display:block}
+.nav-center a:hover{color:var(--text);background:rgba(148,163,184,.06)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-avail{display:flex;align-items:center;gap:6px;background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.2);border-radius:20px;padding:.3rem .75rem;font-size:.7rem;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase}
+.nav-avail-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.btn-nav{background:var(--a);color:#fff;border:none;padding:.45rem 1.1rem;border-radius:8px;font-size:.78rem;font-weight:600;letter-spacing:.01em;transition:all .2s}
+.btn-nav:hover{background:var(--a2);transform:translateY(-1px)}
+.nav-ham{display:none;background:none;border:none;color:var(--text);font-size:1.2rem;padding:.4rem}
+
+/* ── HERO ── */
+.hero-wrap{padding-top:60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.hero{max-width:1100px;margin:0 auto;padding:5rem 2.5rem 4rem;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+.hero-eyebrow{display:flex;align-items:center;gap:.6rem;margin-bottom:1.25rem}
+.eyebrow-line{width:24px;height:1px;background:var(--a);opacity:.7}
+.eyebrow-text{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--a2)}
+.hero-h1{font-size:clamp(2.6rem,5vw,4rem);font-family:var(--serif);line-height:1.06;letter-spacing:-.03em;color:var(--text);margin-bottom:.75rem}
+.hero-h1 .grad{background:linear-gradient(135deg,var(--a),var(--a2) 50%,var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--text2);font-weight:300;max-width:480px;line-height:1.9;margin-bottom:2rem}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.25rem}
+.chip{font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.3rem .7rem;border-radius:6px;border:1px solid var(--border2);color:var(--text3);background:var(--bg3);transition:all .2s}
+.chip:hover{border-color:var(--a);color:var(--a2);background:var(--a3)}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;background:var(--a);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:var(--r);font-size:.85rem;font-weight:600;letter-spacing:.01em;transition:all .2s;box-shadow:0 0 0 1px rgba(79,142,247,.3),0 4px 20px rgba(79,142,247,.2)}
+.btn-primary:hover{background:var(--a2);transform:translateY(-1px);box-shadow:0 0 0 1px rgba(79,142,247,.4),0 8px 32px rgba(79,142,247,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--text2);border:1px solid var(--border2);padding:.75rem 1.5rem;border-radius:var(--r);font-size:.85rem;font-weight:500;transition:all .2s}
+.btn-secondary:hover{border-color:var(--border3);color:var(--text);background:rgba(148,163,184,.04)}
+/* HERO CARD */
+.hero-card-wrap{display:flex;flex-direction:column;gap:.75rem}
+.hcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;position:relative;overflow:hidden}
+.hcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,142,247,.03),transparent 60%);pointer-events:none}
+.hcard-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--purple),var(--a2))}
+.hcard-profile{display:flex;align-items:center;gap:.85rem;margin-bottom:1.1rem}
+.avatar{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--a2));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
+.hcard-name{font-size:.95rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.hcard-role{font-size:.73rem;color:var(--text3);margin-top:2px}
+.hcard-status{display:inline-flex;align-items:center;gap:5px;background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.18);border-radius:20px;padding:.2rem .55rem;font-size:.62rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.hcard-rows{border-top:1px solid var(--border)}
+.hcard-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.hcard-row:last-child{border-bottom:none}
+.hrow-label{color:var(--text3)}
+.hrow-val{color:var(--text2);font-weight:500;text-align:right}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.mini-cell{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:.85rem;text-align:center}
+.mini-num{font-family:var(--serif);font-size:1.4rem;color:var(--a);display:block;line-height:1;font-weight:700}
+.mini-label{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:3px;display:block}
+
+/* ── SECTION BASE ── */
+.section{max-width:1100px;margin:0 auto;padding:5rem 2.5rem}
+.sec-divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
+.sec-head{margin-bottom:2.75rem}
+.sec-eye{display:inline-flex;align-items:center;gap:6px;margin-bottom:.6rem}
+.sec-eye-line{width:16px;height:1px;background:var(--a);opacity:.7}
+.sec-eye-txt{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--a2)}
+.sec-title{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.5rem);color:var(--text);letter-spacing:-.03em;line-height:1.1}
+.sec-title i{font-style:italic;color:var(--a2)}
+.sec-sub{font-size:.9rem;color:var(--text3);margin-top:.5rem;max-width:500px;line-height:1.75}
+
+/* ── METRICS BAND ── */
+.metrics-band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.metrics-inner{max-width:1100px;margin:0 auto;padding:3.5rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1.5rem}
+.metric-cell{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 1rem;text-align:center;transition:border-color .3s,transform .3s}
+.metric-cell:hover{border-color:var(--a);transform:translateY(-3px);box-shadow:var(--sh2)}
+.metric-num{font-family:var(--serif);font-size:2.4rem;color:var(--a);display:block;line-height:1;font-weight:700}
+.metric-lbl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-top:6px;display:block}
+.metric-sub{font-size:.72rem;color:var(--text3);margin-top:3px}
+
+/* ── ABOUT ── */
+.about-layout{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+.about-body p{color:var(--text2);font-size:.95rem;font-weight:300;line-height:1.9;margin-bottom:.9rem}
+.about-body p:last-child{margin-bottom:0}
+.about-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem}
+.about-tag{font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.25rem .65rem;border:1px solid var(--border2);border-radius:6px;color:var(--text3);transition:all .2s}
+.about-tag:hover{border-color:var(--a);color:var(--a2)}
+.info-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.25rem;overflow:hidden}
+.info-box-head{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a);margin-bottom:.85rem}
+.info-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;gap:.5rem}
+.info-item:last-child{border-bottom:none}
+.info-lbl{color:var(--text3);flex-shrink:0}
+.info-val{color:var(--text2);font-weight:500;text-align:right;word-break:break-word}
+
+/* ── SKILLS ── */
+.skill-tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:2rem}
+.stab{background:transparent;border:1px solid var(--border);color:var(--text3);padding:.38rem .9rem;border-radius:8px;font-size:.75rem;font-weight:500;transition:all .2s}
+.stab.on{background:rgba(79,142,247,.12);border-color:rgba(79,142,247,.3);color:var(--a2)}
+.skill-panel{display:none}
+.skill-panel.on{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;transition:all .2s}
+.skill-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.sk-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem}
+.sk-name{font-size:.85rem;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.sk-lvl{font-size:.65rem;font-weight:700;color:var(--a2);text-transform:uppercase;letter-spacing:.05em}
+.sk-bar-bg{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.sk-bar-fill{height:100%;background:linear-gradient(90deg,var(--a),var(--a2));border-radius:2px}
+.sk-desc{font-size:.74rem;color:var(--text3);margin-top:.55rem;line-height:1.5}
+
+/* ── EXPERIENCE ── */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:160px 1fr;padding:2.5rem 0;border-bottom:1px solid var(--border);gap:2rem;position:relative}
+.exp-item:first-child{border-top:1px solid var(--border)}
+.exp-left{}
+.exp-period-badge{display:inline-block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--a);background:var(--a3);border:1px solid rgba(79,142,247,.2);border-radius:6px;padding:.22rem .6rem;margin-bottom:.5rem}
+.exp-co{font-size:.88rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.exp-co-type{font-size:.72rem;color:var(--text3);margin-top:2px}
+.exp-right{}
+.exp-role{font-family:var(--serif);font-size:1.35rem;color:var(--text);letter-spacing:-.02em;margin-bottom:.6rem;line-height:1.2}
+.exp-tag-row{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.85rem}
+.exp-tag{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:.2rem .55rem;border-radius:5px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.18);color:var(--purple)}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.exp-bullets li{font-size:.88rem;color:var(--text2);padding-left:1.1rem;position:relative;font-weight:300;line-height:1.7}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--a);font-size:.7rem;top:.25rem}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;transition:all .3s;position:relative;overflow:hidden}
+.proj-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--a2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.proj-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:var(--sh)}
+.proj-card:hover::before{transform:scaleX(1)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-icon{width:42px;height:42px;border-radius:10px;background:var(--a3);border:1px solid rgba(79,142,247,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.proj-cat-badge{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:.22rem .6rem;border-radius:6px;color:var(--gold);background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.2)}
+.proj-title{font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.3}
+.proj-desc{font-size:.83rem;color:var(--text3);line-height:1.75;font-weight:300}
+.proj-kpi{display:flex;align-items:center;gap:6px;background:rgba(61,214,140,.06);border:1px solid rgba(61,214,140,.15);border-radius:8px;padding:.5rem .75rem;font-size:.76rem;color:var(--green);font-weight:600}
+.proj-techs{display:flex;flex-wrap:wrap;gap:.3rem}
+.proj-tech{font-size:.6rem;font-weight:600;text-transform:uppercase;padding:.18rem .5rem;border-radius:4px;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:border-color .2s}
+.testi-card:hover{border-color:var(--border2)}
+.testi-stars{font-size:.8rem;color:var(--gold);letter-spacing:1px;margin-bottom:.65rem}
+.testi-quote{font-size:.86rem;color:var(--text2);font-weight:300;line-height:1.8;font-style:italic;margin-bottom:1.1rem;position:relative;padding-left:.9rem}
+.testi-quote::before{content:'"';position:absolute;left:0;top:-.15rem;font-family:var(--serif);font-size:1.5rem;color:var(--a);line-height:1}
+.testi-author{display:flex;align-items:center;gap:.65rem}
+.testi-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--purple));display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;flex-shrink:0}
+.testi-name{font-size:.83rem;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.testi-role{font-size:.7rem;color:var(--text3)}
+
+/* ── EDUCATION & CERT ── */
+.edu-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.subsec-title{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem}
+.edu-list,.cert-list{display:flex;flex-direction:column;gap:.75rem}
+.edu-card,.cert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem;display:flex;align-items:flex-start;gap:.85rem;transition:border-color .2s}
+.edu-card:hover,.cert-card:hover{border-color:var(--border2)}
+.edu-ico,.cert-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.edu-ico{background:var(--a3);border:1px solid rgba(79,142,247,.2)}
+.cert-ico{background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.2)}
+.edu-degree,.cert-title{font-size:.85rem;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.edu-inst,.cert-org{font-size:.75rem;color:var(--text3);margin-top:2px}
+.edu-yr,.cert-yr{font-size:.65rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;display:block}
+
+/* ── CONTACT ── */
+.contact-wrap{background:var(--bg2);border-top:1px solid var(--border)}
+.contact-layout{display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:start}
+.contact-h{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);color:var(--text);letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem}
+.contact-h i{font-style:italic;color:var(--a2)}
+.contact-p{font-size:.92rem;color:var(--text3);font-weight:300;line-height:1.8;margin-bottom:2rem}
+.clink{display:flex;align-items:center;gap:.85rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.1rem;text-decoration:none;transition:border-color .2s;margin-bottom:.65rem}
+.clink:hover{border-color:var(--border2)}
+.clink-ico{width:36px;height:36px;border-radius:8px;background:var(--a3);border:1px solid rgba(79,142,247,.2);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.clink-lbl{font-size:.67rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em}
+.clink-val{font-size:.85rem;color:var(--text2);font-weight:500;margin-top:1px}
+.form-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem}
+.form-h{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:1.25rem;letter-spacing:-.01em}
+.ff{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.85rem}
+.ff label{font-size:.67rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+.ff input,.ff textarea{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.65rem .85rem;font-size:.85rem;color:var(--text);transition:border-color .2s;resize:vertical}
+.ff input:focus,.ff textarea:focus{outline:none;border-color:rgba(79,142,247,.5);box-shadow:0 0 0 3px rgba(79,142,247,.08)}
+.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.form-btn{width:100%;background:var(--a);color:#fff;border:none;padding:.8rem;border-radius:var(--r);font-size:.88rem;font-weight:600;letter-spacing:.01em;transition:all .2s}
+.form-btn:hover{background:var(--a2);transform:translateY(-1px)}
+.form-ok{display:none;text-align:center;padding:.85rem;color:var(--green);font-weight:600;font-size:.88rem}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:.75rem;color:var(--text3)}
+.footer-right{display:flex;gap:1.5rem}
+.footer-right a{font-size:.75rem;color:var(--text3);transition:color .2s}
+.footer-right a:hover{color:var(--a2)}
+
+/* ── ADMIN LOGIN MODAL ── */
+#login-modal{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.9);backdrop-filter:blur(16px);align-items:center;justify-content:center}
+#login-modal.show{display:flex}
+.login-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);padding:2.5rem;width:360px}
+.login-logo{display:flex;align-items:center;gap:8px;margin-bottom:1.5rem}
+.login-mark{width:28px;height:28px;border-radius:7px;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#fff}
+.login-title{font-size:.9rem;font-weight:700;color:var(--text)}
+.login-sub{font-size:.8rem;color:var(--text3);margin-bottom:1.5rem;line-height:1.6}
+.login-box .ff{margin-bottom:.75rem}
+.login-btn{width:100%;background:var(--a);color:#fff;border:none;padding:.8rem;border-radius:var(--r);font-size:.88rem;font-weight:600;transition:all .2s;margin-bottom:.65rem}
+.login-btn:hover{background:var(--a2)}
+.login-cancel{width:100%;background:transparent;color:var(--text3);border:1px solid var(--border);padding:.7rem;border-radius:var(--r);font-size:.82rem;transition:all .2s}
+.login-cancel:hover{border-color:var(--border2);color:var(--text2)}
+.login-err{display:none;font-size:.78rem;color:var(--red);text-align:center;margin-bottom:.5rem;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.2);border-radius:6px;padding:.5rem}
+
+/* ── ADMIN PANEL ── */
+#admin{display:none;position:fixed;top:0;left:0;bottom:0;width:380px;z-index:8000;flex-direction:column;background:var(--bg2);border-right:1px solid var(--border2);overflow-y:auto}
+#admin.show{display:flex}
+body.aopen{margin-left:380px}
+.ap-bar{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.85rem 1.1rem;display:flex;align-items:center;justify-content:space-between}
+.ap-brand{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:var(--text)}
+.ap-brand-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.ap-btns{display:flex;gap:.4rem}
+.ap-btn{background:transparent;border:1px solid var(--border2);color:var(--text2);padding:.28rem .7rem;border-radius:6px;font-size:.68rem;font-weight:600;transition:all .2s}
+.ap-btn:hover{background:var(--a3);border-color:rgba(79,142,247,.3);color:var(--a2)}
+.ap-btn.red{border-color:rgba(248,113,113,.2);color:var(--red)}
+.ap-btn.red:hover{background:rgba(248,113,113,.08)}
+.ap-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--border);position:sticky;top:49px;z-index:9;background:var(--bg2)}
+.at{padding:.45rem .72rem;font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);border:none;background:transparent;border-bottom:2px solid transparent;transition:color .2s;white-space:nowrap}
+.at:hover{color:var(--a2)}
+.at.on{color:var(--a);border-bottom-color:var(--a)}
+.ap-sec{display:none;flex-direction:column;gap:.75rem;padding:1rem 1.1rem}
+.ap-sec.on{display:flex}
+/* ADMIN FORM FIELDS */
+.af{display:flex;flex-direction:column;gap:.28rem}
+.af label{font-size:.63rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.09em}
+.af input,.af textarea,.af select{background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:.48rem .65rem;font-size:.8rem;color:var(--text);resize:vertical;transition:border-color .2s}
+.af input:focus,.af textarea:focus{outline:none;border-color:rgba(79,142,247,.45)}
+.af textarea{min-height:60px}
+.af input[type=range]{padding:0;background:none;border:none;cursor:pointer}
+.af input[type=color]{padding:.2rem;height:34px;border-radius:6px;cursor:pointer}
+.r2a{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.ap-div{border:none;border-top:1px solid var(--border);margin:.1rem 0}
+.ap-sublbl{font-size:.63rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin:.15rem 0}
+.di{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:.85rem;display:flex;flex-direction:column;gap:.55rem;margin-bottom:.5rem}
+.di-head{display:flex;justify-content:space-between;align-items:center}
+.di-lbl{font-size:.75rem;font-weight:600;color:var(--text2)}
+.d-del{background:transparent;border:1px solid rgba(248,113,113,.18);color:var(--red);padding:.18rem .5rem;border-radius:5px;font-size:.63rem;font-weight:600}
+.d-del:hover{background:rgba(248,113,113,.08)}
+.d-add{width:100%;background:transparent;border:1px dashed var(--border2);color:var(--text3);padding:.5rem;border-radius:8px;font-size:.75rem;transition:all .2s;text-align:center}
+.d-add:hover{border-color:rgba(79,142,247,.3);color:var(--a2)}
+.ap-save{background:var(--a);color:#fff;border:none;margin:.75rem 1.1rem 1.1rem;padding:.7rem 1rem;border-radius:var(--r);font-size:.82rem;font-weight:700;letter-spacing:.02em;transition:all .2s}
+.ap-save:hover{background:var(--a2)}
+/* Section Manager */
+.sec-mgr{display:flex;flex-direction:column;gap:.5rem}
+.sec-mgr-item{display:flex;align-items:center;gap:.6rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.6rem .75rem}
+.sec-mgr-drag{color:var(--text3);font-size:.75rem;cursor:grab}
+.sec-mgr-name{flex:1;font-size:.8rem;font-weight:500;color:var(--text2)}
+.sec-mgr-toggle{width:36px;height:20px;border-radius:20px;border:none;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
+.sec-mgr-toggle.on{background:var(--a)}
+.sec-mgr-toggle.off{background:var(--bg2)}
+.sec-mgr-toggle::after{content:'';position:absolute;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .2s}
+.sec-mgr-toggle.on::after{left:18px}
+.sec-mgr-toggle.off::after{left:3px}
+/* Theme swatches */
+.sw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-bottom:.75rem}
+.sw{height:32px;border-radius:7px;cursor:pointer;border:2px solid transparent;transition:border-color .2s}
+.sw.on{border-color:#fff}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--bg2);border:1px solid var(--border2);color:var(--text);padding:.65rem 1.1rem;border-radius:var(--r);font-size:.8rem;font-weight:600;z-index:99999;opacity:0;transform:translateY(6px);transition:all .25s;pointer-events:none;box-shadow:var(--sh)}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.success{border-color:rgba(61,214,140,.3);color:var(--green)}
+.toast.error{border-color:rgba(248,113,113,.3);color:var(--red)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* MOBILE NAV MENU */
+.mob-nav{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(5,7,9,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:700;padding:1rem 1.5rem;flex-direction:column;gap:.25rem}
+.mob-nav.show{display:flex}
+.mob-nav a{padding:.65rem .75rem;border-radius:8px;font-size:.9rem;color:var(--text2);transition:all .2s;display:block}
+.mob-nav a:hover{background:var(--bg3);color:var(--text)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:4rem}
+  .hero-card-wrap{display:none}
+  .about-layout{grid-template-columns:1fr}
+  .edu-cert-grid{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr}
+  .exp-item{grid-template-columns:1fr;gap:.5rem}
+  body.aopen{margin-left:0}
+  #admin{width:100%;height:65vh;top:auto;bottom:0;left:0;border-right:none;border-top:1px solid var(--border2)}
+  .section{padding:3.5rem 1.25rem}
+  footer{padding:1.25rem}
+}
+@media(max-width:640px){
+  #nav{padding:0 1.25rem}
+  .nav-center{display:none}
+  .nav-avail{display:none}
+  .nav-ham{display:block}
+  .hero{padding:3.5rem 1.25rem 2.5rem}
+  .hero-h1{font-size:2.4rem}
+  .metrics-inner{grid-template-columns:repeat(2,1fr)}
+  .proj-grid,.testi-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<!-- ── LOGIN MODAL ── -->
+<div id="login-modal">
+  <div class="login-box">
+    <div class="login-logo"><div class="login-mark">RA</div><span class="login-title">Admin Access</span></div>
+    <p class="login-sub">This area is restricted. Enter your password to access the content management system.</p>
+    <div class="login-err" id="login-err">Incorrect password. Please try again.</div>
+    <div class="ff"><label>Password</label><input type="password" id="pw-input" placeholder="Enter admin password" autocomplete="new-password"></div>
+    <button class="login-btn" id="do-login">Sign In →</button>
+    <button class="login-cancel" id="cancel-login">Cancel</button>
+  </div>
+</div>
+
+<!-- ── ADMIN PANEL ── -->
+<div id="admin">
+  <div class="ap-bar">
+    <div class="ap-brand"><div class="ap-brand-dot"></div>Portfolio CMS</div>
+    <div class="ap-btns">
+      <button class="ap-btn" id="ap-preview">Preview</button>
+      <button class="ap-btn red" id="ap-logout">Sign Out</button>
+    </div>
+  </div>
+  <div class="ap-tabs">
+    <button class="at on" data-t="hero">Hero</button>
+    <button class="at" data-t="nav">Nav</button>
+    <button class="at" data-t="about">About</button>
+    <button class="at" data-t="metrics">Metrics</button>
+    <button class="at" data-t="skills">Skills</button>
+    <button class="at" data-t="exp">Experience</button>
+    <button class="at" data-t="projects">Projects</button>
+    <button class="at" data-t="testi">Testimonials</button>
+    <button class="at" data-t="edu">Education</button>
+    <button class="at" data-t="contact">Contact</button>
+    <button class="at" data-t="sections">Sections</button>
+    <button class="at" data-t="theme">Theme</button>
+    <button class="at" data-t="seo">SEO</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="ap-sec on" id="t-hero">
+    <div class="af"><label>Eyebrow label</label><input id="f-eye" value="Sales Operations & MIS Professional"></div>
+    <div class="r2a">
+      <div class="af"><label>Name line 1</label><input id="f-n1" value="Md. Rabbi"></div>
+      <div class="af"><label>Name line 2 (gradient)</label><input id="f-n2" value="Ahemed"></div>
+    </div>
+    <div class="af"><label>Subtitle / tagline</label><textarea id="f-sub" rows="3">Results-driven Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</textarea></div>
+    <div class="af"><label>Specialty chips (comma-separated)</label><input id="f-chips" value="Sales Operations,MIS Reporting,ERP Systems,Dashboard Dev,FMCG,Data Analytics"></div>
+    <div class="r2a">
+      <div class="af"><label>CTA 1 text</label><input id="f-b1t" value="Download CV"></div>
+      <div class="af"><label>CTA 1 link</label><input id="f-b1l" value="#"></div>
+    </div>
+    <div class="r2a">
+      <div class="af"><label>CTA 2 text</label><input id="f-b2t" value="Get In Touch"></div>
+      <div class="af"><label>CTA 2 link</label><input id="f-b2l" value="#contact"></div>
+    </div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Profile card fields</div>
+    <div id="hcard-fields-admin"></div>
+    <button class="d-add" id="add-hcf">+ Add card field</button>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Card name & status</div>
+    <div class="af"><label>Card full name</label><input id="f-cname" value="Md. Rabbi Ahemed"></div>
+    <div class="af"><label>Card role</label><input id="f-crole" value="Sales Admin & MIS Professional"></div>
+    <div class="af"><label>Status badge text</label><input id="f-cstatus" value="Available for new opportunities"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Mini stat boxes</div>
+    <div id="ministats-admin"></div>
+    <button class="d-add" id="add-mstat">+ Add stat</button>
+  </div>
+
+  <!-- NAV -->
+  <div class="ap-sec" id="t-nav">
+    <div class="af"><label>Brand / logo name</label><input id="f-brand" value="Md. Rabbi Ahemed"></div>
+    <div class="af"><label>Availability badge text</label><input id="f-avail" value="Available"></div>
+    <div class="af"><label>Nav CTA button text</label><input id="f-nctxt" value="Hire Me"></div>
+    <div class="af"><label>Nav CTA button link</label><input id="f-nclink" value="#contact"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Navigation links</div>
+    <div id="navlinks-admin"></div>
+    <button class="d-add" id="add-navlink">+ Add nav link</button>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="ap-sec" id="t-about">
+    <div class="af"><label>Section eyebrow</label><input id="ab-eye" value="About me"></div>
+    <div class="af"><label>Section title (last word becomes italic)</label><input id="ab-title" value="Turning data into decisions"></div>
+    <div class="af"><label>Section subtitle</label><input id="ab-sub" value="A business operations professional who bridges the gap between raw data and strategic growth."></div>
+    <div class="af"><label>Paragraph 1</label><textarea id="ab-p1" rows="4">I'm a Sales Admin & MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</textarea></div>
+    <div class="af"><label>Paragraph 2</label><textarea id="ab-p2" rows="4">At City Group, I architect zone-wise and distributor-wise target frameworks, run ERP validation processes, and build performance dashboards that inform C-suite decisions daily.</textarea></div>
+    <div class="af"><label>Paragraph 3</label><textarea id="ab-p3" rows="4">My BSc in Computer Science & Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</textarea></div>
+    <div class="af"><label>Tags (comma-separated)</label><input id="ab-tags" value="English (Professional),Bengali (Native),Open to Opportunities,FMCG Expert,ERP Specialist,Dhaka-Based"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Info card rows</div>
+    <div id="about-info-admin"></div>
+    <button class="d-add" id="add-abinfo">+ Add info row</button>
+  </div>
+
+  <!-- METRICS -->
+  <div class="ap-sec" id="t-metrics">
+    <div class="af"><label>Section eyebrow</label><input id="mt-eye" value="Business impact"></div>
+    <div class="af"><label>Section title</label><input id="mt-title" value="Impact at a glance"></div>
+    <hr class="ap-div">
+    <div id="metrics-admin"></div>
+    <button class="d-add" id="add-metric">+ Add metric</button>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="ap-sec" id="t-skills">
+    <div class="af"><label>Section eyebrow</label><input id="sk-eye" value="Technical proficiency"></div>
+    <div class="af"><label>Section title</label><input id="sk-title" value="Skills & Expertise"></div>
+    <hr class="ap-div">
+    <div id="skills-admin"></div>
+    <button class="d-add" id="add-skcat">+ Add skill category</button>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="ap-sec" id="t-exp">
+    <div class="af"><label>Section eyebrow</label><input id="ex-eye" value="Career journey"></div>
+    <div class="af"><label>Section title</label><input id="ex-title" value="Professional Experience"></div>
+    <hr class="ap-div">
+    <div id="exp-admin"></div>
+    <button class="d-add" id="add-exp">+ Add experience</button>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="ap-sec" id="t-projects">
+    <div class="af"><label>Section eyebrow</label><input id="pj-eye" value="Selected work"></div>
+    <div class="af"><label>Section title</label><input id="pj-title" value="Project Showcase"></div>
+    <hr class="ap-div">
+    <div id="proj-admin"></div>
+    <button class="d-add" id="add-proj">+ Add project</button>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="ap-sec" id="t-testi">
+    <div class="af"><label>Section eyebrow</label><input id="ts-eye" value="What colleagues say"></div>
+    <div class="af"><label>Section title</label><input id="ts-title" value="Recommendations"></div>
+    <hr class="ap-div">
+    <div id="testi-admin"></div>
+    <button class="d-add" id="add-testi">+ Add testimonial</button>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="ap-sec" id="t-edu">
+    <div class="af"><label>Section eyebrow</label><input id="ed-eye" value="Academic background"></div>
+    <div class="af"><label>Section title</label><input id="ed-title" value="Education & Certifications"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Education entries</div>
+    <div id="edu-admin"></div>
+    <button class="d-add" id="add-edu">+ Add education</button>
+    <div class="ap-sublbl" style="margin-top:.6rem">Certifications</div>
+    <div id="cert-admin"></div>
+    <button class="d-add" id="add-cert">+ Add certification</button>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="ap-sec" id="t-contact">
+    <div class="af"><label>Contact heading</label><input id="ct-h" value="Let's work together."></div>
+    <div class="af"><label>Contact subtext</label><textarea id="ct-p" rows="3">Open to senior roles in Sales Operations, MIS, and Business Analytics. I respond within 24 hours.</textarea></div>
+    <div class="af"><label>Footer left text</label><input id="ft-l" value="© 2026 Md. Rabbi Ahemed · All rights reserved."></div>
+    <div class="af"><label>Footer right text</label><input id="ft-r" value="Dhaka, Bangladesh"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Contact links</div>
+    <div id="contact-admin"></div>
+    <button class="d-add" id="add-clink">+ Add contact link</button>
+  </div>
+
+  <!-- SECTIONS MANAGER -->
+  <div class="ap-sec" id="t-sections">
+    <p style="font-size:.78rem;color:var(--text3);line-height:1.6;margin-bottom:.75rem">Toggle sections on/off. Hidden sections are removed from the public site. You can also add entirely new custom sections below.</p>
+    <div class="sec-mgr" id="sec-mgr-list"></div>
+    <hr class="ap-div" style="margin-top:.75rem">
+    <div class="ap-sublbl">Add a new custom section</div>
+    <div class="af"><label>Section title</label><input id="new-sec-title" placeholder="e.g. Awards & Recognition"></div>
+    <div class="af"><label>Section content (HTML or plain text)</label><textarea id="new-sec-content" rows="4" placeholder="Write content or paste HTML..."></textarea></div>
+    <button class="d-add" id="add-custom-sec" style="margin-top:.25rem">+ Create custom section</button>
+  </div>
+
+  <!-- THEME -->
+  <div class="ap-sec" id="t-theme">
+    <div class="ap-sublbl">Color presets</div>
+    <div class="sw-grid" id="sw-grid"></div>
+    <div class="r2a">
+      <div class="af"><label>Accent color</label><input type="color" id="th-a" value="#4F8EF7"></div>
+      <div class="af"><label>Accent 2</label><input type="color" id="th-a2" value="#7EAAFF"></div>
+    </div>
+    <div class="r2a">
+      <div class="af"><label>Background</label><input type="color" id="th-bg" value="#050709"></div>
+      <div class="af"><label>Card color</label><input type="color" id="th-card" value="#0A0C12"></div>
+    </div>
+    <div class="af"><label>Font (Google Fonts name)</label><input id="th-font" value="Inter" placeholder="Inter, Outfit, DM Sans..."></div>
+  </div>
+
+  <!-- SEO -->
+  <div class="ap-sec" id="t-seo">
+    <div class="af"><label>Page title</label><input id="seo-title" value="Md. Rabbi Ahemed — Sales & MIS Professional"></div>
+    <div class="af"><label>Meta description</label><textarea id="seo-desc" rows="3">Md. Rabbi Ahemed — Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. Expert in ERP systems, dashboards, and data-driven decision making.</textarea></div>
+    <div class="af"><label>OG title</label><input id="seo-ogt" value="Md. Rabbi Ahemed — Sales & MIS Professional"></div>
+    <div class="af"><label>OG description</label><textarea id="seo-ogd" rows="2">Results-driven Sales Admin & MIS Professional. Expert in ERP, dashboards, forecasting.</textarea></div>
+    <div class="af"><label>Keywords</label><input id="seo-kw" value="Sales Admin, MIS, ERP, Bangladesh, FMCG, Dashboards, Business Analytics"></div>
+    <div class="af"><label>Author</label><input id="seo-auth" value="Md. Rabbi Ahemed"></div>
+  </div>
+
+  <button class="ap-save" id="ap-save">💾 Save & Apply Changes</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ════════════════ SITE ════════════════ -->
+<div id="site">
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-left">
+    <div class="nav-mark" id="p-mark">RA</div>
+    <span class="nav-name" id="p-brand">Md. Rabbi Ahemed</span>
+  </div>
+  <ul class="nav-center" id="p-navlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-avail"><div class="nav-avail-dot"></div><span id="p-avail">Available</span></div>
+    <button class="btn-nav" id="p-nctabtn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+    <button class="nav-ham" id="nav-ham">☰</button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav"></div>
+
+<!-- HERO -->
+<div class="hero-wrap" id="sec-hero">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text" id="p-eye">Sales Operations & MIS Professional</span>
+      </div>
+      <h1 class="hero-h1"><span id="p-n1">Md. Rabbi</span><br><span class="grad" id="p-n2">Ahemed</span></h1>
+      <p class="hero-sub" id="p-sub">Results-driven Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</p>
+      <div class="hero-chips" id="p-chips">
+        <span class="chip">Sales Operations</span><span class="chip">MIS Reporting</span>
+        <span class="chip">ERP Systems</span><span class="chip">Dashboard Dev</span>
+        <span class="chip">FMCG</span><span class="chip">Data Analytics</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-primary" id="p-b1" href="#">⬇ Download CV</a>
+        <a class="btn-secondary" id="p-b2" href="#contact">✉ Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-card-wrap">
+      <div class="hcard">
+        <div class="hcard-top-line"></div>
+        <div class="hcard-profile">
+          <div class="avatar" id="p-avatar">RA</div>
+          <div>
+            <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
+            <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
+            <div class="hcard-status" id="p-cstatus">● Available for new opportunities</div>
+          </div>
+        </div>
+        <div class="hcard-rows" id="p-hcard-rows">
+          <div class="hcard-row"><span class="hrow-label">Location</span><span class="hrow-val">Dhaka, Bangladesh</span></div>
+          <div class="hcard-row"><span class="hrow-label">Experience</span><span class="hrow-val">3+ Years</span></div>
+          <div class="hcard-row"><span class="hrow-label">Sector</span><span class="hrow-val">FMCG & E-commerce</span></div>
+          <div class="hcard-row"><span class="hrow-label">Availability</span><span class="hrow-val">Immediate</span></div>
+        </div>
+      </div>
+      <div class="mini-grid" id="p-ministats">
+        <div class="mini-cell"><span class="mini-num">3+</span><span class="mini-label">Yrs Experience</span></div>
+        <div class="mini-cell"><span class="mini-num">500+</span><span class="mini-label">Reports Built</span></div>
+        <div class="mini-cell"><span class="mini-num">10+</span><span class="mini-label">Dashboards</span></div>
+        <div class="mini-cell"><span class="mini-num">BSc</span><span class="mini-label">CS Engineering</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="sec-divider"></div>
+<div id="sec-about"><div class="section rv" id="about">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ab-eye">About me</span></div>
+    <h2 class="sec-title" id="p-ab-title">Turning data into <i>decisions</i></h2>
+    <p class="sec-sub" id="p-ab-sub">A business operations professional who bridges the gap between raw data and strategic growth.</p>
+  </div>
+  <div class="about-layout">
+    <div class="about-body">
+      <p id="p-ab-p1">I'm a Sales Admin & MIS professional with 3+ years of experience spanning FMCG and e-commerce sectors. My expertise lies at the intersection of data systems, operational reporting, and cross-functional coordination.</p>
+      <p id="p-ab-p2">At City Group, I architect zone-wise and distributor-wise target frameworks, run ERP validation processes, and build performance dashboards that inform C-suite decisions daily.</p>
+      <p id="p-ab-p3">My BSc in Computer Science & Engineering gives me a technical edge most operations professionals lack — I don't just consume reports, I design and build the systems that generate them.</p>
+      <div class="about-tags" id="p-ab-tags">
+        <span class="about-tag">English (Professional)</span><span class="about-tag">Bengali (Native)</span>
+        <span class="about-tag">Open to Opportunities</span><span class="about-tag">FMCG Expert</span>
+        <span class="about-tag">ERP Specialist</span><span class="about-tag">Dhaka-Based</span>
+      </div>
+    </div>
+    <div class="about-side">
+      <div class="info-box" id="p-about-infobox">
+        <div class="info-box-head">Quick Info</div>
+        <div class="info-item"><span class="info-lbl">Full Name</span><span class="info-val">Md. Rabbi Ahemed</span></div>
+        <div class="info-item"><span class="info-lbl">Email</span><span class="info-val">rabbiahemed1@gmail.com</span></div>
+        <div class="info-item"><span class="info-lbl">Phone</span><span class="info-val">+8801791177273</span></div>
+        <div class="info-item"><span class="info-lbl">Location</span><span class="info-val">Dhaka, Bangladesh</span></div>
+        <div class="info-item"><span class="info-lbl">Languages</span><span class="info-val">English, Bengali</span></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- METRICS -->
+<div id="sec-metrics"><div class="metrics-band rv">
+  <div class="metrics-inner">
+    <div style="grid-column:1/-1;margin-bottom:.5rem">
+      <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-mt-eye">Business impact</span></div>
+      <h2 class="sec-title" style="font-size:1.9rem" id="p-mt-title">Impact at a <i>glance</i></h2>
+    </div>
+    <div id="p-metrics-grid" style="display:contents"></div>
+  </div>
+</div></div>
+
+<!-- SKILLS -->
+<div class="sec-divider"></div>
+<div id="sec-skills"><div class="section rv" id="skills">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-sk-eye">Technical proficiency</span></div>
+    <h2 class="sec-title" id="p-sk-title">Skills & <i>Expertise</i></h2>
+  </div>
+  <div class="skill-tabs" id="p-skill-tabs"></div>
+  <div id="p-skill-panels"></div>
+</div></div>
+
+<!-- EXPERIENCE -->
+<div class="sec-divider"></div>
+<div id="sec-exp"><div class="section rv" id="experience">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ex-eye">Career journey</span></div>
+    <h2 class="sec-title" id="p-ex-title">Professional <i>Experience</i></h2>
+  </div>
+  <div class="exp-list" id="p-exp-list"></div>
+</div></div>
+
+<!-- PROJECTS -->
+<div class="sec-divider"></div>
+<div id="sec-projects"><div class="section rv" id="projects">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-pj-eye">Selected work</span></div>
+    <h2 class="sec-title" id="p-pj-title">Project <i>Showcase</i></h2>
+  </div>
+  <div class="proj-grid" id="p-proj-grid"></div>
+</div></div>
+
+<!-- TESTIMONIALS -->
+<div class="sec-divider"></div>
+<div id="sec-testi"><div class="section rv">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ts-eye">What colleagues say</span></div>
+    <h2 class="sec-title" id="p-ts-title"><i>Recommendations</i></h2>
+  </div>
+  <div class="testi-grid" id="p-testi-grid"></div>
+</div></div>
+
+<!-- EDUCATION & CERTS -->
+<div class="sec-divider"></div>
+<div id="sec-edu"><div class="section rv">
+  <div class="sec-head">
+    <div class="sec-eye"><div class="sec-eye-line"></div><span class="sec-eye-txt" id="p-ed-eye">Academic background</span></div>
+    <h2 class="sec-title" id="p-ed-title">Education & <i>Certifications</i></h2>
+  </div>
+  <div class="edu-cert-grid">
+    <div><div class="subsec-title">Education</div><div class="edu-list" id="p-edu-list"></div></div>
+    <div><div class="subsec-title">Certifications</div><div class="cert-list" id="p-cert-list"></div></div>
+  </div>
+</div></div>
+
+<!-- CUSTOM SECTIONS CONTAINER -->
+<div id="custom-sections-wrap"></div>
+
+<!-- CONTACT -->
+<div class="sec-divider"></div>
+<div id="sec-contact"><div class="contact-wrap" id="contact"><div class="section rv">
+  <div class="contact-layout">
+    <div>
+      <h2 class="contact-h" id="p-ct-h">Let's work <i>together.</i></h2>
+      <p class="contact-p" id="p-ct-p">Open to senior roles in Sales Operations, MIS, and Business Analytics. I respond within 24 hours.</p>
+      <div id="p-clinks"></div>
+    </div>
+    <div class="form-box">
+      <div class="form-h">Send a message</div>
+      <div class="form-row2">
+        <div class="ff"><label>Name</label><input id="fm-name" placeholder="Your name"></div>
+        <div class="ff"><label>Email</label><input type="email" id="fm-email" placeholder="you@company.com"></div>
+      </div>
+      <div class="ff"><label>Subject</label><input id="fm-sub" placeholder="Opportunity / Collaboration"></div>
+      <div class="ff"><label>Message</label><textarea id="fm-msg" rows="4" placeholder="Tell me about the role or opportunity..."></textarea></div>
+      <button class="form-btn" id="fm-send">Send Message →</button>
+      <div class="form-ok" id="fm-ok">✓ Message received! I'll be in touch within 24 hours.</div>
+    </div>
+  </div>
+</div></div></div>
+
+<footer>
+  <span class="footer-copy" id="p-ft-l">© 2026 Md. Rabbi Ahemed · All rights reserved.</span>
+  <div class="footer-right">
+    <a href="#top">Top ↑</a>
+    <a href="#contact">Contact</a>
+    <span id="p-ft-r" style="color:var(--text3);font-size:.75rem">Dhaka, Bangladesh</span>
+  </div>
+</footer>
+</div><!-- /site -->
+
+<script>
+// ══ DATA ══
+var D={
+  hcf:[{l:'Location',v:'Dhaka, Bangladesh'},{l:'Experience',v:'3+ Years'},{l:'Sector',v:'FMCG & E-commerce'},{l:'Availability',v:'Immediate'}],
+  mstats:[{n:'3+',l:'Yrs Experience'},{n:'500+',l:'Reports Built'},{n:'10+',l:'Dashboards'},{n:'BSc',l:'CS Engineering'}],
+  abinfo:[{l:'Full Name',v:'Md. Rabbi Ahemed'},{l:'Email',v:'rabbiahemed1@gmail.com'},{l:'Phone',v:'+8801791177273'},{l:'Location',v:'Dhaka, Bangladesh'},{l:'Languages',v:'English, Bengali'}],
+  metrics:[
+    {n:'3+',l:'Years Experience',s:'FMCG & E-commerce'},
+    {n:'500+',l:'Reports Generated',s:'IMS & ERP-based'},
+    {n:'10+',l:'Dashboards Built',s:'For C-suite decisions'},
+    {n:'3',l:'Companies Served',s:'Across sectors'},
+    {n:'100%',l:'Data Accuracy',s:'Post ERP validation'},
+    {n:'5+',l:'Regions Managed',s:'Territory coverage'}
+  ],
+  skillCats:[
+    {name:'Sales Operations',skills:[
+      {n:'Sales Planning & Target Allocation',p:95,d:'Product, zone & distributor-level target management'},
+      {n:'Incentive & Commission Design',p:90,d:'Transparent framework design aligned with business goals'},
+      {n:'Order & Distribution Management',p:88,d:'End-to-end order coordination across channels'},
+      {n:'Cross-functional Coordination',p:92,d:'Sales, finance & distribution team alignment'}
+    ]},
+    {name:'MIS & Reporting',skills:[
+      {n:'Dashboard & MIS Reporting',p:95,d:'Daily, weekly & monthly performance dashboards'},
+      {n:'ERP & IMS Data Management',p:90,d:'Target uploads, ERP validation & error reduction'},
+      {n:'Sales Forecasting & Analysis',p:88,d:'Historical trend analysis and demand forecasting'},
+      {n:'Territory Analytics',p:85,d:'Region-wise performance analytics and field audits'}
+    ]},
+    {name:'Technical Tools',skills:[
+      {n:'MS Excel (Advanced)',p:96,d:'Pivot tables, advanced formulas, reporting automation'},
+      {n:'ERP Systems',p:88,d:'National territory management and uploads'},
+      {n:'IMS & PS Management Software',p:85,d:'Field performance and inventory management systems'},
+      {n:'MS PowerPoint',p:80,d:'Executive presentations and management reports'}
+    ]}
+  ],
+  navlinks:[{t:'About',h:'#about'},{t:'Experience',h:'#experience'},{t:'Projects',h:'#projects'},{t:'Skills',h:'#skills'},{t:'Contact',h:'#contact'}],
+  exps:[
+    {period:'Mar 2025 – Present',role:'Sales Coordinator',co:'City Group',type:'FMCG',tags:['ERP','MIS','Sales Planning','Dashboards','Forecasting'],bullets:[
+      'Architect and manage product-wise, zone-wise, and distributor-wise sales targets aligned with corporate strategy',
+      'Deliver daily, weekly, and monthly executive performance dashboards for senior management review',
+      'Design structured incentive & commission frameworks ensuring transparency and goal alignment across teams',
+      'Implement systematic ERP validation processes that significantly reduced reporting errors organization-wide',
+      'Orchestrate cross-functional alignment between Sales, Finance, and Distribution for operational continuity',
+      'Lead onboarding and field training sessions for new sales personnel on IMS systems and processes',
+      'Conduct historical trend analysis to forecast demand and optimize territory target planning'
+    ]},
+    {period:'Jan 2024 – Aug 2024',role:'MIS Executive',co:'Dekko Foods Ltd.',type:'FMCG',tags:['IMS','ERP','Analytics','Reporting'],bullets:[
+      'Managed national territory-wise ERP target uploads with high accuracy across all product lines',
+      'Generated daily IMS-based sales performance reports consumed by regional and national management',
+      'Produced monthly sales closing reports and coverage analyses for executive management review',
+      'Compiled area-wise damage reports from field audits providing actionable supply chain intelligence',
+      'Developed region-wise weekly performance analytics dashboards improving visibility across 5+ territories'
+    ]},
+    {period:'Jan 2020 – Dec 2020',role:'Operations Executive',co:'BoiBazar.com',type:'E-commerce',tags:['Operations','Inventory','Logistics'],bullets:[
+      'Managed end-to-end order processing, invoicing, and shipment coordination workflows',
+      'Maintained inventory accuracy and ensured on-time dispatch performance targets were met',
+      'Administered website product catalogue and managed digital content workflow'
+    ]}
+  ],
+  projects:[
+    {icon:'📊',cat:'MIS Reporting',title:'Executive Performance Dashboard System',desc:'Designed and deployed a multi-layer dashboard system covering product, zone, and distributor KPIs for City Group C-suite.',kpi:'Reporting cycle cut by 40%',tech:['Excel','ERP','Pivot Tables','IMS']},
+    {icon:'🎯',cat:'Sales Analytics',title:'Territory Target Allocation Engine',desc:'Built a systematic ERP-based target allocation framework enabling precise national territory management at Dekko Foods.',kpi:'100% ERP upload accuracy',tech:['ERP','IMS','Excel','Reporting']},
+    {icon:'💰',cat:'Incentive Design',title:'Commission & Incentive Framework',desc:'Created a transparent, policy-aligned incentive structure for sales teams at City Group that reduced commission disputes to zero.',kpi:'Zero commission disputes',tech:['Excel','Policy Design','Analytics']},
+    {icon:'📈',cat:'Forecasting',title:'Demand Forecasting Model',desc:'Developed a historical trend analysis model integrating IMS data to forecast demand and optimize target planning across product lines.',kpi:'Improved planning accuracy by 25%',tech:['Excel','Data Analysis','ERP']},
+    {icon:'🔄',cat:'Process Automation',title:'ERP Validation Workflow',desc:'Implemented a multi-stage ERP data validation process that systematically eliminated reporting errors and improved data integrity.',kpi:'Near-zero data errors',tech:['ERP','Process Design','Audit']},
+    {icon:'📦',cat:'Operations',title:'Delivery Management System',desc:'Maintained and optimized DMS infrastructure at Dekko Foods improving coverage tracking and field audit report quality.',kpi:'Streamlined 5+ region ops',tech:['DMS','Coordination','Reporting']}
+  ],
+  testis:[
+    {stars:5,q:'Rabbi consistently delivers accurate, insightful dashboards that management can act on immediately. His ERP validation work has transformed how we approach data quality.',name:'Md. Ripon Mahmud',role:'Executive, Sales Coordination · City Group',init:'RM'},
+    {stars:5,q:'His ability to translate complex operational data into clear executive reports is exceptional. Rabbi brings both technical depth and business acumen to every project.',name:'Md. Abu Saleh',role:'Executive, Audit & Finance · Sundarban Courier',init:'AS'},
+    {stars:5,q:'A rare professional who understands both the business side and the technical systems. Under tight deadlines, Rabbi delivered consistently high-quality MIS reports.',name:'Senior Manager',role:'Management · Dekko Foods Ltd.',init:'SM'}
+  ],
+  edus:[
+    {y:'2022',d:'BSc in Computer Science & Engineering',i:'Green University of Bangladesh',g:'CGPA 3.06'},
+    {y:'2018',d:'Diploma in Computer Technology',i:'Jhenaidah Polytechnic Institute',g:'CGPA 2.82'},
+    {y:'2014',d:'SSC (Business Studies)',i:'Jhenaidah Govt. High School',g:'GPA 4.94'}
+  ],
+  certs:[
+    {t:'Advanced Microsoft Excel',o:'Microsoft Certified',y:'2023'},
+    {t:'ERP Systems Management',o:'Professional Training',y:'2024'},
+    {t:'Data Analytics Fundamentals',o:'Online Certification',y:'2023'},
+    {t:'Sales Operations Management',o:'Industry Certificate',y:'2024'}
+  ],
+  contacts:[
+    {ico:'✉️',l:'Email',v:'rabbiahemed1@gmail.com',h:'mailto:rabbiahemed1@gmail.com'},
+    {ico:'📞',l:'Phone (Primary)',v:'+880 1791-177273',h:'tel:+8801791177273'},
+    {ico:'📞',l:'Phone (Secondary)',v:'+880 1884-418569',h:'tel:+8801884418569'},
+    {ico:'📍',l:'Address',v:'Natun Bazar, Dhaka, Bangladesh',h:'#'}
+  ],
+  sections:{hero:true,about:true,metrics:true,skills:true,exp:true,projects:true,testi:true,edu:true,contact:true},
+  customSections:[],
+  sectionOrder:['hero','about','metrics','skills','exp','projects','testi','edu','contact']
+};
+
+// ══ THEME PRESETS ══
+var THEMES={
+  blue:{a:'#4F8EF7',a2:'#7EAAFF',bg:'#050709',card:'#0A0C12'},
+  indigo:{a:'#6366F1',a2:'#818CF8',bg:'#050709',card:'#09090F'},
+  emerald:{a:'#10B981',a2:'#34D399',bg:'#020B07',card:'#04110A'},
+  violet:{a:'#8B5CF6',a2:'#A78BFA',bg:'#060407',card:'#0A070F'},
+  rose:{a:'#F43F5E',a2:'#FB7185',bg:'#090305',card:'#110308'},
+  amber:{a:'#F59E0B',a2:'#FCD34D',bg:'#080601',card:'#100D02'},
+  cyan:{a:'#06B6D4',a2:'#22D3EE',bg:'#010809',card:'#030F11'},
+  slate:{a:'#94A3B8',a2:'#CBD5E1',bg:'#050709',card:'#0A0C12'}
+};
+function applyTheme(t){
+  var r=document.documentElement.style;
+  r.setProperty('--a',t.a);r.setProperty('--a2',t.a2);r.setProperty('--bg',t.bg);r.setProperty('--card',t.card);
+  g('th-a').value=t.a;g('th-a2').value=t.a2;g('th-bg').value=t.bg;g('th-card').value=t.card;
+}
+function buildSwatches(){
+  var keys=Object.keys(THEMES);
+  var colors={blue:'#4F8EF7',indigo:'#6366F1',emerald:'#10B981',violet:'#8B5CF6',rose:'#F43F5E',amber:'#F59E0B',cyan:'#06B6D4',slate:'#94A3B8'};
+  g('sw-grid').innerHTML=keys.map(function(k){
+    return '<div class="sw" style="background:'+colors[k]+'" data-th="'+k+'" title="'+k+'"></div>';
+  }).join('');
+  g('sw-grid').querySelectorAll('.sw').forEach(function(s){
+    s.onclick=function(){
+      document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on')});
+      s.classList.add('on');applyTheme(THEMES[s.dataset.th]);
+    };
+  });
+  g('sw-grid').querySelector('.sw').classList.add('on');
+}
+['th-a','th-a2','th-bg','th-card'].forEach(function(id){
+  g(id).oninput=function(){
+    var map={'th-a':'--a','th-a2':'--a2','th-bg':'--bg','th-card':'--card'};
+    document.documentElement.style.setProperty(map[id],this.value);
+  };
+});
+
+// ══ RENDER SITE ══
+function render(){
+  // NAV
+  var n1=g('f-n1').value,n2=g('f-n2').value;
+  var init=((n1.trim().split(' ').map(function(w){return w[0]||''}).join(''))+n2.trim()[0]).toUpperCase().slice(0,2);
+  g('p-mark').textContent=init;
+  g('p-brand').textContent=g('f-brand').value;
+  g('p-avail').textContent=g('f-avail').value;
+  g('p-nctabtn').textContent=g('f-nctxt').value;
+  g('p-nctabtn').href=g('f-nclink').value;
+  g('p-navlinks').innerHTML=D.navlinks.map(function(l){return '<li><a href="'+l.h+'">'+l.t+'</a></li>'}).join('');
+  g('mob-nav').innerHTML=D.navlinks.map(function(l){return '<a href="'+l.h+'">'+l.t+'</a>'}).join('');
+  // HERO
+  g('p-eye').textContent=g('f-eye').value;
+  g('p-n1').textContent=n1;g('p-n2').textContent=n2;
+  g('p-sub').textContent=g('f-sub').value;
+  g('p-chips').innerHTML=g('f-chips').value.split(',').map(function(c){return '<span class="chip">'+c.trim()+'</span>'}).join('');
+  g('p-b1').innerHTML='⬇ '+g('f-b1t').value;g('p-b1').href=g('f-b1l').value;
+  g('p-b2').innerHTML='✉ '+g('f-b2t').value;g('p-b2').href=g('f-b2l').value;
+  g('p-avatar').textContent=init;
+  g('p-cname').textContent=g('f-cname').value;
+  g('p-crole').textContent=g('f-crole').value;
+  g('p-cstatus').textContent='● '+g('f-cstatus').value;
+  g('p-hcard-rows').innerHTML=D.hcf.map(function(f){return '<div class="hcard-row"><span class="hrow-label">'+f.l+'</span><span class="hrow-val">'+f.v+'</span></div>'}).join('');
+  g('p-ministats').innerHTML=D.mstats.map(function(s){return '<div class="mini-cell"><span class="mini-num">'+s.n+'</span><span class="mini-label">'+s.l+'</span></div>'}).join('');
+  // ABOUT
+  g('p-ab-eye').textContent=g('ab-eye').value;
+  var abt=g('ab-title').value.trim().split(' '),abl=abt.pop();
+  g('p-ab-title').innerHTML=abt.join(' ')+' <i>'+abl+'</i>';
+  g('p-ab-sub').textContent=g('ab-sub').value;
+  g('p-ab-p1').textContent=g('ab-p1').value;
+  g('p-ab-p2').textContent=g('ab-p2').value;
+  g('p-ab-p3').textContent=g('ab-p3').value;
+  g('p-ab-tags').innerHTML=g('ab-tags').value.split(',').map(function(t){return '<span class="about-tag">'+t.trim()+'</span>'}).join('');
+  g('p-about-infobox').innerHTML='<div class="info-box-head">Quick Info</div>'+D.abinfo.map(function(r){return '<div class="info-item"><span class="info-lbl">'+r.l+'</span><span class="info-val">'+r.v+'</span></div>'}).join('');
+  // METRICS
+  g('p-mt-eye').textContent=g('mt-eye').value;
+  var mtt=g('mt-title').value.trim().split(' '),mtl=mtt.pop();
+  g('p-mt-title').innerHTML=mtt.join(' ')+' <i>'+mtl+'</i>';
+  g('p-metrics-grid').innerHTML=D.metrics.map(function(m){return '<div class="metric-cell"><span class="metric-num">'+m.n+'</span><span class="metric-lbl">'+m.l+'</span><div class="metric-sub">'+m.s+'</div></div>'}).join('');
+  // SKILLS
+  g('p-sk-eye').textContent=g('sk-eye').value;
+  var skt=g('sk-title').value.trim().split(' '),skl=skt.pop();
+  g('p-sk-title').innerHTML=skt.join(' ')+' <i>'+skl+'</i>';
+  g('p-skill-tabs').innerHTML=D.skillCats.map(function(c,i){return '<button class="stab'+(i===0?' on':'')+'" onclick="switchSkillTab('+i+',this)">'+c.name+'</button>'}).join('');
+  g('p-skill-panels').innerHTML=D.skillCats.map(function(c,i){
+    return '<div class="skill-panel'+(i===0?' on':'')+'" id="skp-'+i+'">'+c.skills.map(function(s){
+      var lv=s.p>=90?'Expert':s.p>=75?'Advanced':'Proficient';
+      return '<div class="skill-card"><div class="sk-head"><span class="sk-name">'+s.n+'</span><span class="sk-lvl">'+lv+'</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:'+s.p+'%"></div></div><div class="sk-desc">'+s.d+'</div></div>';
+    }).join('')+'</div>';
+  }).join('');
+  // EXPERIENCE
+  g('p-ex-eye').textContent=g('ex-eye').value;
+  var ext=g('ex-title').value.trim().split(' '),exl=ext.pop();
+  g('p-ex-title').innerHTML=ext.join(' ')+' <i>'+exl+'</i>';
+  g('p-exp-list').innerHTML=D.exps.map(function(e){
+    return '<div class="exp-item"><div class="exp-left"><div class="exp-period-badge">'+e.period+'</div><div class="exp-co">'+e.co+'</div><div class="exp-co-type">'+e.type+'</div></div><div class="exp-right"><div class="exp-role">'+e.role+'</div><div class="exp-tag-row">'+e.tags.map(function(t){return '<span class="exp-tag">'+t+'</span>'}).join('')+'</div><ul class="exp-bullets">'+e.bullets.map(function(b){return '<li>'+b+'</li>'}).join('')+'</ul></div></div>';
+  }).join('');
+  // PROJECTS
+  g('p-pj-eye').textContent=g('pj-eye').value;
+  var pjt=g('pj-title').value.trim().split(' '),pjl=pjt.pop();
+  g('p-pj-title').innerHTML=pjt.join(' ')+' <i>'+pjl+'</i>';
+  g('p-proj-grid').innerHTML=D.projects.map(function(p){
+    return '<div class="proj-card"><div class="proj-top"><div class="proj-icon">'+p.icon+'</div><span class="proj-cat-badge">'+p.cat+'</span></div><div class="proj-title">'+p.title+'</div><div class="proj-desc">'+p.desc+'</div><div class="proj-kpi">✦ '+p.kpi+'</div><div class="proj-techs">'+p.tech.map(function(t){return '<span class="proj-tech">'+t+'</span>'}).join('')+'</div></div>';
+  }).join('');
+  // TESTIMONIALS
+  g('p-ts-eye').textContent=g('ts-eye').value;
+  var tst=g('ts-title').value;
+  g('p-ts-title').innerHTML='<i>'+tst+'</i>';
+  g('p-testi-grid').innerHTML=D.testis.map(function(t){
+    return '<div class="testi-card"><div class="testi-stars">'+Array(t.stars+1).join('★')+'</div><div class="testi-quote">'+t.q+'</div><div class="testi-author"><div class="testi-av">'+t.init+'</div><div><div class="testi-name">'+t.name+'</div><div class="testi-role">'+t.role+'</div></div></div></div>';
+  }).join('');
+  // EDUCATION & CERTS
+  g('p-ed-eye').textContent=g('ed-eye').value;
+  var edt=g('ed-title').value.trim().split(' '),edl=edt.pop();
+  g('p-ed-title').innerHTML=edt.join(' ')+' <i>'+edl+'</i>';
+  g('p-edu-list').innerHTML=D.edus.map(function(e){return '<div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">'+e.d+'</div><div class="edu-inst">'+e.i+'</div><span class="edu-yr">'+e.y+' · '+e.g+'</span></div></div>'}).join('');
+  g('p-cert-list').innerHTML=D.certs.map(function(c){return '<div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">'+c.t+'</div><div class="cert-org">'+c.o+'</div><span class="cert-yr">'+c.y+'</span></div></div>'}).join('');
+  // CONTACT
+  var cth=g('ct-h').value.trim().split(' '),ctl=cth.pop();
+  g('p-ct-h').innerHTML=cth.join(' ')+' <i>'+ctl+'</i>';
+  g('p-ct-p').textContent=g('ct-p').value;
+  g('p-clinks').innerHTML=D.contacts.map(function(c){return '<a class="clink" href="'+c.h+'"><div class="clink-ico">'+c.ico+'</div><div><div class="clink-lbl">'+c.l+'</div><div class="clink-val">'+c.v+'</div></div></a>'}).join('');
+  g('p-ft-l').textContent=g('ft-l').value;
+  g('p-ft-r').textContent=g('ft-r').value;
+  // SEO
+  document.title=g('seo-title').value;
+  setMeta('description',g('seo-desc').value);
+  setMeta('keywords',g('seo-kw').value);
+  setMeta('author',g('seo-auth').value);
+  g('og-title').content=g('seo-ogt').value;
+  g('og-desc').content=g('seo-ogd').value;
+  // SECTIONS visibility
+  var secMap={hero:'sec-hero',about:'sec-about',metrics:'sec-metrics',skills:'sec-skills',exp:'sec-exp',projects:'sec-projects',testi:'sec-testi',edu:'sec-edu',contact:'sec-contact'};
+  Object.keys(secMap).forEach(function(k){
+    var el=g(secMap[k]);if(el)el.style.display=D.sections[k]===false?'none':'';
+  });
+  // CUSTOM SECTIONS
+  var cw=g('custom-sections-wrap');cw.innerHTML='';
+  D.customSections.forEach(function(s){
+    if(s.visible===false)return;
+    var div=document.createElement('div');
+    div.innerHTML='<div class="sec-divider"></div><div class="section rv"><div class="sec-head"><h2 class="sec-title">'+s.title+'</h2></div><div style="color:var(--text2);font-size:.9rem;line-height:1.8">'+s.content+'</div></div>';
+    cw.appendChild(div);
+  });
+  // Re-run reveal on new elements
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){revealObs.observe(el)});
+}
+function setMeta(n,v){var el=document.querySelector('meta[name="'+n+'"]');if(el)el.setAttribute('content',v)}
+function switchSkillTab(i,btn){
+  document.querySelectorAll('.stab').forEach(function(t){t.classList.remove('on')});
+  document.querySelectorAll('.skill-panel').forEach(function(p){p.classList.remove('on')});
+  btn.classList.add('on');var el=g('skp-'+i);if(el)el.classList.add('on');
+}
+
+// ══ RENDER ADMIN ══
+function renderHCF(){
+  g('hcard-fields-admin').innerHTML=D.hcf.map(function(f,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+f.l+'</span><button class="d-del" onclick="D.hcf.splice('+i+',1);renderHCF()">✕</button></div><div class="af"><label>Label</label><input value="'+esc(f.l)+'" onchange="D.hcf['+i+'].l=this.value"></div><div class="af"><label>Value</label><input value="'+esc(f.v)+'" onchange="D.hcf['+i+'].v=this.value"></div></div>';
+  }).join('');
+}
+g('add-hcf').onclick=function(){D.hcf.push({l:'Field',v:'Value'});renderHCF()};
+
+function renderMstats(){
+  g('ministats-admin').innerHTML=D.mstats.map(function(s,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">Stat '+(i+1)+'</span><button class="d-del" onclick="D.mstats.splice('+i+',1);renderMstats()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="'+esc(s.n)+'" onchange="D.mstats['+i+'].n=this.value"></div><div class="af"><label>Label</label><input value="'+esc(s.l)+'" onchange="D.mstats['+i+'].l=this.value"></div></div></div>';
+  }).join('');
+}
+g('add-mstat').onclick=function(){D.mstats.push({n:'0',l:'Label'});renderMstats()};
+
+function renderNavlinks(){
+  g('navlinks-admin').innerHTML=D.navlinks.map(function(l,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+l.t+'</span><button class="d-del" onclick="D.navlinks.splice('+i+',1);renderNavlinks()">✕</button></div><div class="r2a"><div class="af"><label>Text</label><input value="'+esc(l.t)+'" onchange="D.navlinks['+i+'].t=this.value;renderNavlinks()"></div><div class="af"><label>Link</label><input value="'+esc(l.h)+'" onchange="D.navlinks['+i+'].h=this.value"></div></div></div>';
+  }).join('');
+}
+g('add-navlink').onclick=function(){D.navlinks.push({t:'New Link',h:'#'});renderNavlinks()};
+
+function renderAbInfo(){
+  g('about-info-admin').innerHTML=D.abinfo.map(function(r,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+r.l+'</span><button class="d-del" onclick="D.abinfo.splice('+i+',1);renderAbInfo()">✕</button></div><div class="r2a"><div class="af"><label>Label</label><input value="'+esc(r.l)+'" onchange="D.abinfo['+i+'].l=this.value;renderAbInfo()"></div><div class="af"><label>Value</label><input value="'+esc(r.v)+'" onchange="D.abinfo['+i+'].v=this.value"></div></div></div>';
+  }).join('');
+}
+g('add-abinfo').onclick=function(){D.abinfo.push({l:'Label',v:'Value'});renderAbInfo()};
+
+function renderMetricsAdmin(){
+  g('metrics-admin').innerHTML=D.metrics.map(function(m,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+m.l+'</span><button class="d-del" onclick="D.metrics.splice('+i+',1);renderMetricsAdmin()">✕</button></div><div class="r2a"><div class="af"><label>Number</label><input value="'+esc(m.n)+'" onchange="D.metrics['+i+'].n=this.value"></div><div class="af"><label>Label</label><input value="'+esc(m.l)+'" onchange="D.metrics['+i+'].l=this.value;renderMetricsAdmin()"></div></div><div class="af"><label>Subtitle</label><input value="'+esc(m.s)+'" onchange="D.metrics['+i+'].s=this.value"></div></div>';
+  }).join('');
+}
+g('add-metric').onclick=function(){D.metrics.push({n:'0',l:'Metric',s:'Subtitle'});renderMetricsAdmin()};
+
+function renderSkAdmin(){
+  g('skills-admin').innerHTML=D.skillCats.map(function(c,ci){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.name+'</span><button class="d-del" onclick="D.skillCats.splice('+ci+',1);renderSkAdmin()">✕</button></div><div class="af"><label>Category name</label><input value="'+esc(c.name)+'" onchange="D.skillCats['+ci+'].name=this.value;renderSkAdmin()"></div>'+
+    c.skills.map(function(s,si){
+      return '<div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">'+s.n+'</span><button class="d-del" onclick="D.skillCats['+ci+'].skills.splice('+si+',1);renderSkAdmin()">✕</button></div><div class="af"><label>Skill name</label><input value="'+esc(s.n)+'" onchange="D.skillCats['+ci+'].skills['+si+'].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % ('+s.p+')</label><input type="range" min="10" max="100" value="'+s.p+'" oninput="D.skillCats['+ci+'].skills['+si+'].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="'+esc(s.d)+'" onchange="D.skillCats['+ci+'].skills['+si+'].d=this.value"></div></div>';
+    }).join('')+
+    '<button class="d-add" style="margin-top:.4rem" onclick="D.skillCats['+ci+'].skills.push({n:\'New Skill\',p:75,d:\'\'}); renderSkAdmin()">+ Add skill</button></div>';
+  }).join('');
+}
+g('add-skcat').onclick=function(){D.skillCats.push({name:'New Category',skills:[]});renderSkAdmin()};
+
+function renderExpAdmin(){
+  g('exp-admin').innerHTML=D.exps.map(function(e,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+e.role+' @ '+e.co+'</span><button class="d-del" onclick="D.exps.splice('+i+',1);renderExpAdmin()">✕</button></div>'+
+    '<div class="af"><label>Period</label><input value="'+esc(e.period)+'" onchange="D.exps['+i+'].period=this.value"></div>'+
+    '<div class="r2a"><div class="af"><label>Role</label><input value="'+esc(e.role)+'" onchange="D.exps['+i+'].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="'+esc(e.co)+'" onchange="D.exps['+i+'].co=this.value"></div></div>'+
+    '<div class="r2a"><div class="af"><label>Industry type</label><input value="'+esc(e.type)+'" onchange="D.exps['+i+'].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="'+esc(e.tags.join(','))+'" onchange="D.exps['+i+'].tags=this.value.split(\',\').map(function(t){return t.trim()})"></div></div>'+
+    '<div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps['+i+'].bullets=this.value.split(\'\\n\').filter(Boolean)">'+esc(e.bullets.join('\n'))+'</textarea></div></div>';
+  }).join('');
+}
+g('add-exp').onclick=function(){D.exps.push({period:'Month Year – Present',role:'Role',co:'Company',type:'Industry',tags:[],bullets:['Key responsibility']});renderExpAdmin()};
+
+function renderProjAdmin(){
+  g('proj-admin').innerHTML=D.projects.map(function(p,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+p.title+'</span><button class="d-del" onclick="D.projects.splice('+i+',1);renderProjAdmin()">✕</button></div>'+
+    '<div class="r2a"><div class="af"><label>Icon</label><input value="'+esc(p.icon)+'" onchange="D.projects['+i+'].icon=this.value"></div><div class="af"><label>Category</label><input value="'+esc(p.cat)+'" onchange="D.projects['+i+'].cat=this.value"></div></div>'+
+    '<div class="af"><label>Title</label><input value="'+esc(p.title)+'" onchange="D.projects['+i+'].title=this.value;renderProjAdmin()"></div>'+
+    '<div class="af"><label>Description</label><textarea rows="3" onchange="D.projects['+i+'].desc=this.value">'+esc(p.desc)+'</textarea></div>'+
+    '<div class="af"><label>Key impact / result</label><input value="'+esc(p.kpi)+'" onchange="D.projects['+i+'].kpi=this.value"></div>'+
+    '<div class="af"><label>Tech stack (comma-sep)</label><input value="'+esc(p.tech.join(','))+'" onchange="D.projects['+i+'].tech=this.value.split(\',\').map(function(t){return t.trim()})"></div></div>';
+  }).join('');
+}
+g('add-proj').onclick=function(){D.projects.push({icon:'🔧',cat:'Category',title:'Project Title',desc:'',kpi:'',tech:[]});renderProjAdmin()};
+
+function renderTestiAdmin(){
+  g('testi-admin').innerHTML=D.testis.map(function(t,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+t.name+'</span><button class="d-del" onclick="D.testis.splice('+i+',1);renderTestiAdmin()">✕</button></div>'+
+    '<div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis['+i+'].q=this.value">'+esc(t.q)+'</textarea></div>'+
+    '<div class="r2a"><div class="af"><label>Name</label><input value="'+esc(t.name)+'" onchange="D.testis['+i+'].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="'+esc(t.init)+'" onchange="D.testis['+i+'].init=this.value"></div></div>'+
+    '<div class="r2a"><div class="af"><label>Role & company</label><input value="'+esc(t.role)+'" onchange="D.testis['+i+'].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="'+t.stars+'" onchange="D.testis['+i+'].stars=+this.value"></div></div></div>';
+  }).join('');
+}
+g('add-testi').onclick=function(){D.testis.push({stars:5,q:'',name:'Person Name',role:'Role · Company',init:'PN'});renderTestiAdmin()};
+
+function renderEduAdmin(){
+  g('edu-admin').innerHTML=D.edus.map(function(e,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+e.d+'</span><button class="d-del" onclick="D.edus.splice('+i+',1);renderEduAdmin()">✕</button></div>'+
+    '<div class="af"><label>Year</label><input value="'+esc(e.y)+'" onchange="D.edus['+i+'].y=this.value"></div>'+
+    '<div class="af"><label>Degree</label><input value="'+esc(e.d)+'" onchange="D.edus['+i+'].d=this.value;renderEduAdmin()"></div>'+
+    '<div class="af"><label>Institution</label><input value="'+esc(e.i)+'" onchange="D.edus['+i+'].i=this.value"></div>'+
+    '<div class="af"><label>Grade</label><input value="'+esc(e.g)+'" onchange="D.edus['+i+'].g=this.value"></div></div>';
+  }).join('');
+}
+g('add-edu').onclick=function(){D.edus.push({y:'2024',d:'Degree',i:'Institution',g:'Grade'});renderEduAdmin()};
+
+function renderCertAdmin(){
+  g('cert-admin').innerHTML=D.certs.map(function(c,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.t+'</span><button class="d-del" onclick="D.certs.splice('+i+',1);renderCertAdmin()">✕</button></div>'+
+    '<div class="af"><label>Title</label><input value="'+esc(c.t)+'" onchange="D.certs['+i+'].t=this.value;renderCertAdmin()"></div>'+
+    '<div class="r2a"><div class="af"><label>Issuer</label><input value="'+esc(c.o)+'" onchange="D.certs['+i+'].o=this.value"></div><div class="af"><label>Year</label><input value="'+esc(c.y)+'" onchange="D.certs['+i+'].y=this.value"></div></div></div>';
+  }).join('');
+}
+g('add-cert').onclick=function(){D.certs.push({t:'Certification',o:'Issuer',y:'2024'});renderCertAdmin()};
+
+function renderContactAdmin(){
+  g('contact-admin').innerHTML=D.contacts.map(function(c,i){
+    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.l+'</span><button class="d-del" onclick="D.contacts.splice('+i+',1);renderContactAdmin()">✕</button></div>'+
+    '<div class="r2a"><div class="af"><label>Icon</label><input value="'+esc(c.ico)+'" onchange="D.contacts['+i+'].ico=this.value"></div><div class="af"><label>Label</label><input value="'+esc(c.l)+'" onchange="D.contacts['+i+'].l=this.value;renderContactAdmin()"></div></div>'+
+    '<div class="af"><label>Display value</label><input value="'+esc(c.v)+'" onchange="D.contacts['+i+'].v=this.value"></div>'+
+    '<div class="af"><label>URL</label><input value="'+esc(c.h)+'" onchange="D.contacts['+i+'].h=this.value"></div></div>';
+  }).join('');
+}
+g('add-clink').onclick=function(){D.contacts.push({ico:'🔗',l:'Label',v:'Value',h:'#'});renderContactAdmin()};
+
+function renderSecMgr(){
+  var SEC_NAMES={hero:'Hero',about:'About',metrics:'Metrics Band',skills:'Skills',exp:'Experience',projects:'Projects',testi:'Testimonials',edu:'Education',contact:'Contact'};
+  g('sec-mgr-list').innerHTML=Object.keys(SEC_NAMES).map(function(k){
+    var on=D.sections[k]!==false;
+    return '<div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">'+SEC_NAMES[k]+'</span><button class="sec-mgr-toggle '+(on?'on':'off')+'" data-sec="'+k+'" onclick="toggleSec(\''+k+'\',this)">'+(on?'On':'Off')+'</button></div>';
+  }).join('')+
+  (D.customSections.length?'<div style="margin-top:.5rem;font-size:.67rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:700">Custom sections</div>'+
+  D.customSections.map(function(s,i){
+    var on=s.visible!==false;
+    return '<div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">'+s.title+'</span><button class="sec-mgr-toggle '+(on?'on':'off')+'" onclick="D.customSections['+i+'].visible='+(on?'false':'true')+';renderSecMgr();render()">'+(on?'On':'Off')+'</button><button class="d-del" onclick="D.customSections.splice('+i+',1);renderSecMgr();render()" style="margin-left:.3rem">✕</button></div>';
+  }).join(''):'');
+}
+function toggleSec(k,btn){
+  D.sections[k]=D.sections[k]===false?true:false;
+  btn.classList.toggle('on');btn.classList.toggle('off');
+  btn.textContent=D.sections[k]===false?'Off':'On';
+  render();
+}
+g('add-custom-sec').onclick=function(){
+  var t=g('new-sec-title').value.trim(),c=g('new-sec-content').value.trim();
+  if(!t){showToast('Please enter a section title','error');return;}
+  D.customSections.push({title:t,content:c||'',visible:true});
+  g('new-sec-title').value='';g('new-sec-content').value='';
+  renderSecMgr();render();
+  showToast('Section "'+t+'" created');
+};
+
+// ══ AUTH ══
+var PASS='rabbi2026admin';var authed=false;
+var combo=[],seq=[65,68,77,73,78]; // Shift+ADMIN
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&!authed){
+    combo.push(e.keyCode);if(combo.length>5)combo.shift();
+    if(JSON.stringify(combo)===JSON.stringify(seq))showLogin();
+  }
+});
+function showLogin(){g('login-modal').classList.add('show');setTimeout(function(){g('pw-input').focus()},100)}
+function doLogin(){
+  if(g('pw-input').value===PASS){
+    authed=true;g('login-modal').classList.remove('show');
+    g('admin').classList.add('show');document.body.classList.add('aopen');
+    g('pw-input').value='';g('login-err').style.display='none';
+    showToast('Welcome back, Rabbi 👋','success');
+  }else{
+    g('login-err').style.display='block';g('pw-input').value='';g('pw-input').focus();
+    setTimeout(function(){g('login-err').style.display='none'},3000);
+  }
+}
+g('do-login').onclick=doLogin;
+g('pw-input').onkeydown=function(e){if(e.key==='Enter')doLogin()};
+g('cancel-login').onclick=function(){g('login-modal').classList.remove('show')};
+g('ap-logout').onclick=function(){authed=false;g('admin').classList.remove('show');document.body.classList.remove('aopen');showToast('Signed out')};
+g('ap-preview').onclick=function(){g('admin').classList.remove('show');document.body.classList.remove('aopen')};
+
+// ══ TABS ══
+document.querySelectorAll('.at').forEach(function(t){
+  t.onclick=function(){
+    document.querySelectorAll('.at').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.ap-sec').forEach(function(s){s.classList.remove('on')});
+    t.classList.add('on');g('t-'+t.dataset.t).classList.add('on');
+  };
+});
+
+// ══ SAVE ══
+g('ap-save').onclick=function(){render();showToast('Saved ✓','success')};
+
+// ══ LIVE FIELDS ══
+['f-eye','f-n1','f-n2','f-sub','f-chips','f-b1t','f-b1l','f-b2t','f-b2l','f-cname','f-crole','f-cstatus',
+ 'f-brand','f-avail','f-nctxt','f-nclink',
+ 'ab-eye','ab-title','ab-sub','ab-p1','ab-p2','ab-p3','ab-tags',
+ 'mt-eye','mt-title','sk-eye','sk-title','ex-eye','ex-title',
+ 'pj-eye','pj-title','ts-eye','ts-title','ed-eye','ed-title',
+ 'ct-h','ct-p','ft-l','ft-r','seo-title','seo-desc'
+].forEach(function(id){var el=g(id);if(el)el.addEventListener('input',render)});
+
+// ══ CONTACT FORM ══
+g('fm-send').onclick=function(){
+  if(!g('fm-name').value||!g('fm-email').value||!g('fm-msg').value){
+    showToast('Please fill all required fields','error');return;
+  }
+  g('fm-send').style.display='none';g('fm-ok').style.display='block';
+};
+
+// ══ NAV SCROLL ══
+window.addEventListener('scroll',function(){
+  g('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+g('nav-ham').onclick=function(){g('mob-nav').classList.toggle('show')};
+document.addEventListener('click',function(e){
+  if(!g('nav').contains(e.target))g('mob-nav').classList.remove('show');
+});
+
+// ══ REVEAL ══
+var revealObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target)}});
+},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){revealObs.observe(el)});
+
+// ══ UTIL ══
+function g(id){return document.getElementById(id)}
+function esc(str){return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function showToast(msg,type){
+  var t=g('toast');t.textContent=msg;t.className='toast'+(type?' '+type:'');t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show')},2400);
+}
+
+// ══ INIT ══
+buildSwatches();
+renderHCF();renderMstats();renderNavlinks();renderAbInfo();
+renderMetricsAdmin();renderSkAdmin();renderExpAdmin();
+renderProjAdmin();renderTestiAdmin();renderEduAdmin();renderCertAdmin();
+renderContactAdmin();renderSecMgr();
+render();
+setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){revealObs.observe(el)})},200);
+</script>
+</body>
+</html>
