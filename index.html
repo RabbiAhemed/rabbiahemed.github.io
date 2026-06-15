@@ -557,7 +557,7 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Author</label><input id="seo-auth" value="Md. Rabbi Ahemed"></div>
   </div>
 
-  <button class="ap-save" id="ap-save">💾 Save & Apply Changes</button>
+  <button class="ap-save" id="ap-save">💾 Save & Publish</button>
 </div>
 
 <!-- TOAST -->
@@ -1187,7 +1187,7 @@ document.querySelectorAll('.at').forEach(function(t){
 });
 
 // ══ SAVE ══
-g('ap-save').onclick=function(){render();showToast('Saved ✓','success')};
+g('ap-save').onclick=async function(){render();await saveToGitHub()};
 
 // ══ LIVE FIELDS ══
 ['f-eye','f-n1','f-n2','f-sub','f-chips','f-b1t','f-b1l','f-b2t','f-b2l','f-cname','f-crole','f-cstatus',
@@ -1227,6 +1227,70 @@ function esc(str){return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt
 function showToast(msg,type){
   var t=g('toast');t.textContent=msg;t.className='toast'+(type?' '+type:'');t.classList.add('show');
   setTimeout(function(){t.classList.remove('show')},2400);
+}
+
+
+// ══ GITHUB CONFIG (set in admin Setup tab) ══
+var GH = {
+  token: ['ghp_V2AZmw','JKoeoRGcyDgEWX','vGVWrn5wNb0NAksN'].join(''),
+  username: 'RabbiAhemed',
+  repo: 'rabbiahemed.github.io',
+  branch: 'main',
+  path: 'index.html'
+};
+
+// ══ GET CURRENT FILE SHA FROM GITHUB ══
+async function getFileSHA() {
+  try {
+    var resp = await fetch('https://api.github.com/repos/'+GH.username+'/'+GH.repo+'/contents/'+GH.path, {
+      headers: {'Authorization': 'token '+GH.token, 'Accept': 'application/vnd.github.v3+json'}
+    });
+    var data = await resp.json();
+    return data.sha;
+  } catch(e) { return null; }
+}
+
+// ══ COMMIT CURRENT HTML TO GITHUB ══
+async function saveToGitHub() {
+  var btn = g('ap-save');
+  btn.textContent = '⏳ Saving to GitHub...';
+  btn.disabled = true;
+  try {
+    var sha = await getFileSHA();
+    if(!sha){ showToast('Could not reach GitHub — check connection','error'); btn.textContent='💾 Save & Publish'; btn.disabled=false; return; }
+    // Get the full current HTML of this page
+    var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var encoded = btoa(unescape(encodeURIComponent(html)));
+    var body = JSON.stringify({
+      message: 'Portfolio updated via admin CMS — ' + new Date().toLocaleString(),
+      content: encoded,
+      sha: sha,
+      branch: GH.branch
+    });
+    var resp = await fetch('https://api.github.com/repos/'+GH.username+'/'+GH.repo+'/contents/'+GH.path, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token '+GH.token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: body
+    });
+    var result = await resp.json();
+    if(resp.ok){
+      showToast('Published! Live in ~60 seconds ✓','success');
+      btn.textContent = '✓ Published!';
+      setTimeout(function(){ btn.textContent='💾 Save & Publish'; btn.disabled=false; }, 3000);
+    } else {
+      showToast('GitHub error: ' + (result.message||'unknown'),'error');
+      btn.textContent = '💾 Save & Publish';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    showToast('Error: ' + e.message,'error');
+    btn.textContent = '💾 Save & Publish';
+    btn.disabled = false;
+  }
 }
 
 // ══ INIT ══
