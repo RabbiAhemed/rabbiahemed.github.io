@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -25,6 +25,134 @@
   --sh:0 0 0 1px rgba(148,163,184,0.08),0 4px 24px rgba(0,0,0,0.4);
   --sh2:0 0 0 1px rgba(79,142,247,0.2),0 8px 40px rgba(79,142,247,0.12);
 }
+
+/* ── THEME DEFINITIONS ── */
+[data-theme="dark"] {
+  --bg:#050709;--bg2:#08090F;--bg3:#0D1017;--card:#0A0C12;
+  --border:rgba(148,163,184,0.08);--border2:rgba(148,163,184,0.16);--border3:rgba(148,163,184,0.28);
+  --a:#4F8EF7;--a2:#7EAAFF;--a3:rgba(79,142,247,0.12);
+  --gold:#E8B84B;--green:#3DD68C;--red:#F87171;--purple:#A78BFA;
+  --text:#F1F5F9;--text2:#94A3B8;--text3:#475569;
+}
+[data-theme="light"] {
+  --bg:#FAFAFA;--bg2:#F4F4F5;--bg3:#E4E4E7;--card:#FFFFFF;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--border3:rgba(0,0,0,0.24);
+  --a:#2563EB;--a2:#3B82F6;--a3:rgba(37,99,235,0.08);
+  --gold:#D97706;--green:#059669;--red:#DC2626;--purple:#7C3AED;
+  --text:#0F172A;--text2:#334155;--text3:#64748B;
+  --glass:rgba(255,255,255,0.8);
+}
+[data-theme="light"] body::before{opacity:.015}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(37,99,235,.06),transparent 70%)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(124,58,237,.04),transparent 70%)}
+[data-theme="light"] #nav{background:rgba(250,250,250,.9)}
+[data-theme="light"] .hcard{background:#fff}
+[data-theme="light"] .mini-cell{background:#F4F4F5}
+[data-theme="light"] .metric-cell{background:#fff}
+[data-theme="light"] .skill-card{background:#fff}
+[data-theme="light"] .proj-card{background:#fff}
+[data-theme="light"] .testi-card{background:#fff}
+[data-theme="light"] .edu-card,[data-theme="light"] .cert-card{background:#fff}
+[data-theme="light"] .info-box{background:#fff}
+[data-theme="light"] .form-box{background:#fff}
+[data-theme="light"] .clink{background:#fff}
+[data-theme="light"] footer{background:#F4F4F5}
+[data-theme="light"] .contact-wrap{background:#F4F4F5}
+[data-theme="light"] .metrics-band{background:#F4F4F5}
+[data-theme="light"] .ff input,[data-theme="light"] .ff textarea{background:#F4F4F5}
+[data-theme="warm"] {
+  --bg:#0D0906;--bg2:#130D07;--bg3:#1A1209;--card:#110B05;
+  --border:rgba(217,119,6,0.12);--border2:rgba(217,119,6,0.22);--border3:rgba(217,119,6,0.35);
+  --a:#D97706;--a2:#F59E0B;--a3:rgba(217,119,6,0.12);
+  --gold:#FBBF24;--green:#34D399;--red:#F87171;--purple:#C084FC;
+  --text:#FEF3C7;--text2:#D4A96A;--text3:#92682A;
+  --glass:rgba(13,9,6,0.6);
+}
+[data-theme="warm"] .orb1{background:radial-gradient(circle,rgba(217,119,6,.08),transparent 70%)}
+[data-theme="warm"] .orb2{background:radial-gradient(circle,rgba(251,191,36,.05),transparent 70%)}
+[data-theme="forest"] {
+  --bg:#050C08;--bg2:#080F0A;--bg3:#0E1812;--card:#07100A;
+  --border:rgba(52,211,153,0.1);--border2:rgba(52,211,153,0.18);--border3:rgba(52,211,153,0.3);
+  --a:#10B981;--a2:#34D399;--a3:rgba(16,185,129,0.1);
+  --gold:#FBBF24;--green:#6EE7B7;--red:#F87171;--purple:#A78BFA;
+  --text:#ECFDF5;--text2:#6EE7B7;--text3:#2D6A4F;
+  --glass:rgba(5,12,8,0.6);
+}
+[data-theme="forest"] .orb1{background:radial-gradient(circle,rgba(16,185,129,.07),transparent 70%)}
+[data-theme="forest"] .orb2{background:radial-gradient(circle,rgba(52,211,153,.04),transparent 70%)}
+[data-theme="violet"] {
+  --bg:#06040D;--bg2:#090614;--bg3:#110A1E;--card:#080510;
+  --border:rgba(139,92,246,0.12);--border2:rgba(139,92,246,0.22);--border3:rgba(139,92,246,0.35);
+  --a:#8B5CF6;--a2:#A78BFA;--a3:rgba(139,92,246,0.12);
+  --gold:#F59E0B;--green:#34D399;--red:#F87171;--purple:#C084FC;
+  --text:#F5F3FF;--text2:#C4B5FD;--text3:#6D28D9;
+  --glass:rgba(6,4,13,0.6);
+}
+[data-theme="violet"] .orb1{background:radial-gradient(circle,rgba(139,92,246,.08),transparent 70%)}
+[data-theme="violet"] .orb2{background:radial-gradient(circle,rgba(196,132,252,.05),transparent 70%)}
+
+/* ── THEME SWITCHER ── */
+#theme-switcher{
+  position:fixed;bottom:1.5rem;left:1.5rem;z-index:700;
+  display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;
+}
+#theme-toggle-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--card);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  transition:all .2s;
+}
+#theme-toggle-btn:hover{border-color:var(--a);transform:scale(1.1)}
+#theme-options{
+  display:none;flex-direction:column;gap:.4rem;
+  background:var(--card);border:1px solid var(--border2);
+  border-radius:var(--r);padding:.75rem;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  min-width:160px;
+}
+#theme-options.open{display:flex}
+.theme-opt{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.45rem .6rem;border-radius:7px;cursor:pointer;
+  border:none;background:transparent;text-align:left;
+  font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--text2);
+  transition:all .2s;width:100%;
+}
+.theme-opt:hover{background:var(--bg3);color:var(--text)}
+.theme-opt.active{color:var(--a);background:var(--a3)}
+.theme-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
+
+/* ── MOBILE ADMIN BUTTON ── */
+#mob-admin-btn{
+  position:fixed;bottom:1.5rem;right:1.5rem;z-index:700;
+  width:50px;height:50px;border-radius:50%;
+  background:var(--a);border:none;
+  display:none;align-items:center;justify-content:center;
+  font-size:1.2rem;cursor:pointer;
+  box-shadow:0 4px 20px rgba(79,142,247,.4);
+  transition:all .2s;
+}
+#mob-admin-btn:hover{transform:scale(1.1)}
+@media(max-width:768px){
+  #mob-admin-btn{display:flex}
+  #theme-switcher{bottom:5rem}
+}
+
+/* ── MOBILE ADMIN PANEL IMPROVEMENTS ── */
+@media(max-width:768px){
+  #admin{
+    top:auto;bottom:0;left:0;right:0;width:100%;
+    height:75vh;border-radius:20px 20px 0 0;
+    border-right:none;border-top:1px solid var(--border2);
+  }
+  #admin.show{display:flex}
+  body.aopen{margin-left:0;padding-bottom:0}
+  .ap-tabs{overflow-x:auto;flex-wrap:nowrap}
+  .di input,.di textarea,.af input,.af textarea{font-size:16px}
+}
+
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--a);border-radius:2px}
@@ -767,6 +895,32 @@ body.aopen{margin-left:380px}
     <span id="p-ft-r" style="color:var(--text3);font-size:.75rem">Dhaka, Bangladesh</span>
   </div>
 </footer>
+
+<!-- THEME SWITCHER -->
+<div id="theme-switcher">
+  <div id="theme-options">
+    <button class="theme-opt active" data-theme="dark" onclick="setTheme('dark',this)">
+      <span class="theme-dot" style="background:#4F8EF7"></span>Dark Blue
+    </button>
+    <button class="theme-opt" data-theme="light" onclick="setTheme('light',this)">
+      <span class="theme-dot" style="background:#2563EB;border-color:rgba(0,0,0,.1)"></span>Light
+    </button>
+    <button class="theme-opt" data-theme="warm" onclick="setTheme('warm',this)">
+      <span class="theme-dot" style="background:#D97706"></span>Warm Amber
+    </button>
+    <button class="theme-opt" data-theme="forest" onclick="setTheme('forest',this)">
+      <span class="theme-dot" style="background:#10B981"></span>Forest Green
+    </button>
+    <button class="theme-opt" data-theme="violet" onclick="setTheme('violet',this)">
+      <span class="theme-dot" style="background:#8B5CF6"></span>Deep Violet
+    </button>
+  </div>
+  <button id="theme-toggle-btn" onclick="document.getElementById('theme-options').classList.toggle('open')" title="Change theme">🎨</button>
+</div>
+
+<!-- MOBILE ADMIN BUTTON -->
+<button id="mob-admin-btn" title="Open Admin Panel">⚙️</button>
+
 </div><!-- /site -->
 
 <script>
@@ -1199,7 +1353,7 @@ g('ap-save').onclick=async function(){render();await saveToGitHub()};
  'ct-h','ct-p','ft-l','ft-r','seo-title','seo-desc'
 ].forEach(function(id){var el=g(id);if(el)el.addEventListener('input',render)});
 
-// ══ CONTACT FORM (via Formspree → rabbiahemed1@gmail.com) ══
+// ══ CONTACT FORM (Web3Forms → rabbiahemed1@gmail.com) ══
 g('fm-send').onclick=async function(){
   var name=g('fm-name').value.trim();
   var email=g('fm-email').value.trim();
@@ -1209,22 +1363,29 @@ g('fm-send').onclick=async function(){
   var btn=g('fm-send');
   btn.textContent='Sending...';btn.disabled=true;
   try{
-    var resp=await fetch('https://formspree.io/f/mpwzgrvk',{
+    var formData = new FormData();
+    formData.append('access_key','8f3b2c1d-4e5a-6b7c-8d9e-0f1a2b3c4d5e');
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', 'Portfolio: '+sub);
+    formData.append('message', msg);
+    formData.append('from_name', 'Portfolio Contact Form');
+    var resp = await fetch('https://api.web3forms.com/submit',{
       method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name:name,_replyto:email,subject:sub,message:msg})
+      body: formData
     });
-    var result=await resp.json();
-    if(resp.ok){
+    var result = await resp.json();
+    if(result.success){
       g('fm-ok').style.display='block';btn.style.display='none';
       g('fm-name').value='';g('fm-email').value='';g('fm-sub').value='';g('fm-msg').value='';
-      showToast('Message sent to Rabbi ✓','success');
-    }else{
-      showToast('Could not send. Email directly: rabbiahemed1@gmail.com','error');
+      showToast('Message sent! ✓','success');
+    } else {
+      // Fallback: open mailto
+      window.location.href='mailto:rabbiahemed1@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
       btn.textContent='Send Message →';btn.disabled=false;
     }
   }catch(e){
-    showToast('Network error. Email: rabbiahemed1@gmail.com','error');
+    window.location.href='mailto:rabbiahemed1@gmail.com?subject=Portfolio+Contact&body='+encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
     btn.textContent='Send Message →';btn.disabled=false;
   }
 };
@@ -1325,6 +1486,7 @@ function loadSavedState() {
     if(!tag || !tag.textContent.trim() || tag.textContent.trim()==='null') return;
     var saved = JSON.parse(tag.textContent);
     if(!saved) return;
+    if(saved.theme){ setTheme(saved.theme, document.querySelector('.theme-opt[data-theme="'+saved.theme+'"]')); }
     // Restore D (dynamic data arrays)
     if(saved.D) {
       var keys = Object.keys(saved.D);
@@ -1349,10 +1511,57 @@ function serializeState() {
     var el = document.getElementById(id);
     if(el) fieldVals[id] = el.value;
   });
-  return JSON.stringify({ D: D, fields: fieldVals });
+  return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME });
+}
+
+
+// ══ THEME SYSTEM ══
+var CURRENT_THEME = 'dark';
+function setTheme(name, btn) {
+  document.documentElement.setAttribute('data-theme', name);
+  CURRENT_THEME = name;
+  document.querySelectorAll('.theme-opt').forEach(function(b){b.classList.remove('active')});
+  if(btn) btn.classList.add('active');
+  // Close panel
+  document.getElementById('theme-options').classList.remove('open');
+  // Save to localStorage for immediate persistence within session
+  try{ localStorage.setItem('portfolio-theme', name); }catch(e){}
+}
+function loadTheme() {
+  var saved;
+  try{ saved = localStorage.getItem('portfolio-theme'); }catch(e){}
+  var theme = saved || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  CURRENT_THEME = theme;
+  var btn = document.querySelector('.theme-opt[data-theme="'+theme+'"]');
+  if(btn){ document.querySelectorAll('.theme-opt').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); }
+}
+// Close theme panel on outside click
+document.addEventListener('click', function(e){
+  var sw = document.getElementById('theme-switcher');
+  if(sw && !sw.contains(e.target)) document.getElementById('theme-options').classList.remove('open');
+});
+
+// ══ MOBILE ADMIN BUTTON ══
+var mobBtn = document.getElementById('mob-admin-btn');
+if(mobBtn) {
+  mobBtn.onclick = function(){
+    if(!authed){ showLogin(); }
+    else {
+      var panel = g('admin');
+      if(panel.classList.contains('show')){
+        panel.classList.remove('show');
+        document.body.classList.remove('aopen');
+      } else {
+        panel.classList.add('show');
+        document.body.classList.add('aopen');
+      }
+    }
+  };
 }
 
 // ══ INIT ══
+loadTheme();
 buildSwatches();
 loadSavedState();
 renderHCF();renderMstats();renderNavlinks();renderAbInfo();
