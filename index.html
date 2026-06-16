@@ -204,16 +204,37 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .btn-secondary:hover{border-color:var(--border3);color:var(--text);background:rgba(148,163,184,.04)}
 /* HERO CARD */
 .hero-card-wrap{display:flex;flex-direction:column;gap:.75rem}
-.hcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;position:relative;overflow:hidden}
-.hcard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,142,247,.03),transparent 60%);pointer-events:none}
+.hcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem 1.5rem 1.5rem;position:relative;overflow:hidden;text-align:center}
+.hcard::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(79,142,247,.04),transparent 55%);pointer-events:none}
 .hcard-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--purple),var(--a2))}
-.hcard-profile{display:flex;align-items:center;gap:.85rem;margin-bottom:1.1rem}
-.avatar{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--a2));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;flex-shrink:0}
-.hcard-name{font-size:.95rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
-.hcard-role{font-size:.73rem;color:var(--text3);margin-top:2px}
-.hcard-status{display:inline-flex;align-items:center;gap:5px;background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.18);border-radius:20px;padding:.2rem .55rem;font-size:.62rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
-.hcard-rows{border-top:1px solid var(--border)}
-.hcard-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.8rem}
+/* BIG PHOTO DISPLAY */
+.hcard-photo-wrap{
+  position:relative;width:160px;height:160px;margin:0 auto 1.25rem;
+}
+.hcard-photo-ring{
+  position:absolute;inset:-5px;border-radius:50%;
+  background:conic-gradient(var(--a),var(--purple),var(--a2),var(--a));
+  animation:spin-ring 6s linear infinite;
+  z-index:0;
+}
+@keyframes spin-ring{to{transform:rotate(360deg)}}
+.hcard-photo-inner{
+  position:absolute;inset:3px;border-radius:50%;
+  background:var(--bg);z-index:1;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar{
+  width:100%;height:100%;border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--a2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2.5rem;font-weight:700;color:#fff;
+}
+.hcard-profile{margin-bottom:.85rem}
+.hcard-name{font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.hcard-role{font-size:.75rem;color:var(--text3);margin-top:3px;letter-spacing:.02em}
+.hcard-status{display:inline-flex;align-items:center;gap:5px;background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.18);border-radius:20px;padding:.22rem .65rem;font-size:.62rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-top:.5rem}
+.hcard-rows{border-top:1px solid var(--border);text-align:left}
+.hcard-row{display:flex;justify-content:space-between;padding:.52rem 0;border-bottom:1px solid var(--border);font-size:.79rem}
 .hcard-row:last-child{border-bottom:none}
 .hrow-label{color:var(--text3)}
 .hrow-val{color:var(--text2);font-weight:500;text-align:right}
@@ -775,16 +796,21 @@ body.aopen{margin-left:380px}
     <div class="hero-card-wrap">
       <div class="hcard">
         <div class="hcard-top-line"></div>
-        <div class="hcard-profile">
-          <div class="avatar" id="p-avatar">
-          <img id="p-avatar-img" src="" alt="Profile photo" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:14px">
-          <span class="avatar-placeholder" id="p-avatar-initials">RA</span>
-        </div>
-          <div>
-            <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
-            <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
-            <div class="hcard-status" id="p-cstatus">● Available for new opportunities</div>
+        <!-- BIG PROFILE PHOTO -->
+        <div class="hcard-photo-wrap">
+          <div class="hcard-photo-ring"></div>
+          <div class="hcard-photo-inner">
+            <div class="avatar" id="p-avatar">
+              <img id="p-avatar-img" src="" alt="Profile photo of Md. Rabbi Ahemed" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:50%">
+              <span class="avatar-placeholder" id="p-avatar-initials">RA</span>
+            </div>
           </div>
+        </div>
+        <!-- NAME & ROLE BELOW PHOTO -->
+        <div class="hcard-profile">
+          <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
+          <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
+          <div class="hcard-status" id="p-cstatus">● Available for new opportunities</div>
         </div>
         <div class="hcard-rows" id="p-hcard-rows">
           <div class="hcard-row"><span class="hrow-label">Location</span><span class="hrow-val">Dhaka, Bangladesh</span></div>
@@ -1387,13 +1413,23 @@ function clearProfileImg(){
 function updateAvatarDisplay(){
   var img = g('p-avatar-img');
   var initials = g('p-avatar-initials');
-  if(PROFILE_IMG && img && initials){
+  if(!img || !initials) return;
+  if(PROFILE_IMG && PROFILE_IMG.length > 10){
     img.src = PROFILE_IMG;
     img.style.display = 'block';
     initials.style.display = 'none';
-  } else if(img && initials){
+    // Make avatar background transparent when showing photo
+    var av = g('p-avatar');
+    if(av) av.style.background = 'transparent';
+  } else {
     img.style.display = 'none';
-    initials.style.display = 'block';
+    initials.style.display = 'flex';
+    initials.style.alignItems = 'center';
+    initials.style.justifyContent = 'center';
+    initials.style.width = '100%';
+    initials.style.height = '100%';
+    var av = g('p-avatar');
+    if(av) av.style.background = '';
   }
 }
 
@@ -1648,18 +1684,25 @@ document.addEventListener('click', function(e){
   if(sw && !sw.contains(e.target)) document.getElementById('theme-options').classList.remove('open');
 });
 
-// ══ SECRET ADMIN ROUTE — visit ?admin=r4b81 to open login ══
+// ══ SECRET ADMIN ROUTE ══
+// Works two ways:
+// 1. ?admin=r4b81  (query param)
+// 2. #admin-r4b81  (hash — works on GitHub Pages without server)
 (function(){
-  var params = new URLSearchParams(window.location.search);
-  if(params.get('admin') === 'r4b81'){
-    // Clean the URL so the param isn't visible after login
-    window.history.replaceState({}, document.title, window.location.pathname);
-    // Show login after page loads
-    window.addEventListener('DOMContentLoaded', function(){
-      setTimeout(showLogin, 300);
-    });
-    // If DOM already loaded
-    if(document.readyState !== 'loading') setTimeout(showLogin, 300);
+  function checkAdminRoute(){
+    var params = new URLSearchParams(window.location.search);
+    var hash = window.location.hash;
+    var isAdmin = params.get('admin') === 'r4b81' || hash === '#admin-r4b81';
+    if(isAdmin){
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+      setTimeout(showLogin, 400);
+    }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', checkAdminRoute);
+  } else {
+    checkAdminRoute();
   }
 })();
 
