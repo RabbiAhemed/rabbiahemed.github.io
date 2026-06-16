@@ -187,7 +187,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 
 /* ── HERO ── */
 .hero-wrap{padding-top:60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
-.hero{max-width:1100px;margin:0 auto;padding:5rem 2.5rem 4rem;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+.hero{max-width:1200px;margin:0 auto;padding:4rem 2.5rem;display:grid;grid-template-columns:1fr 460px;gap:3rem;align-items:center}
 .hero-eyebrow{display:flex;align-items:center;gap:.6rem;margin-bottom:1.25rem}
 .eyebrow-line{width:24px;height:1px;background:var(--a);opacity:.7}
 .eyebrow-text{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--a2)}
@@ -204,40 +204,89 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .btn-secondary:hover{border-color:var(--border3);color:var(--text);background:rgba(148,163,184,.04)}
 /* HERO CARD */
 .hero-card-wrap{display:flex;flex-direction:column;gap:.75rem}
-.hcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem 1.5rem 1.5rem;position:relative;overflow:hidden;text-align:center}
-.hcard::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(79,142,247,.04),transparent 55%);pointer-events:none}
-.hcard-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--purple),var(--a2))}
-/* BIG PHOTO DISPLAY */
-.hcard-photo-wrap{
-  position:relative;width:160px;height:160px;margin:0 auto 1.25rem;
+/* ── HERO PHOTO SECTION ── */
+.hero-photo-section{
+  position:relative;display:flex;align-items:flex-end;justify-content:center;
+  height:520px;
 }
-.hcard-photo-ring{
-  position:absolute;inset:-5px;border-radius:50%;
-  background:conic-gradient(var(--a),var(--purple),var(--a2),var(--a));
-  animation:spin-ring 6s linear infinite;
+/* Decorative circle behind photo */
+.hero-photo-bg-circle{
+  position:absolute;
+  bottom:0;left:50%;transform:translateX(-50%);
+  width:380px;height:380px;border-radius:50%;
+  background:linear-gradient(135deg,var(--a3),rgba(167,139,250,.08));
+  border:1px solid var(--border2);
   z-index:0;
 }
-@keyframes spin-ring{to{transform:rotate(360deg)}}
-.hcard-photo-inner{
-  position:absolute;inset:3px;border-radius:50%;
-  background:var(--bg);z-index:1;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
+/* Accent ring */
+.hero-photo-accent{
+  position:absolute;
+  bottom:-8px;left:50%;transform:translateX(-50%);
+  width:420px;height:420px;border-radius:50%;
+  border:1px dashed rgba(79,142,247,.2);
+  z-index:0;animation:slow-spin 20s linear infinite;
 }
+.hero-photo-accent::before{
+  content:'';position:absolute;top:10px;left:10px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--a);box-shadow:0 0 12px var(--a);
+}
+@keyframes slow-spin{to{transform:translateX(-50%) rotate(360deg)}}
+/* Photo frame */
+.hero-photo-frame{
+  position:relative;z-index:2;
+  width:340px;height:460px;
+  border-radius:180px 180px 120px 120px;
+  overflow:hidden;
+  border:2px solid var(--border2);
+  box-shadow:0 32px 80px rgba(0,0,0,.5),0 0 0 1px var(--border),inset 0 1px 0 rgba(255,255,255,.05);
+  background:linear-gradient(180deg,var(--bg3) 0%,var(--card) 100%);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.hero-photo-frame img#p-avatar-img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+}
+/* Initials placeholder when no photo */
 .avatar{
-  width:100%;height:100%;border-radius:50%;
-  background:linear-gradient(135deg,var(--a),var(--a2));
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:2.5rem;font-weight:700;color:#fff;
+  width:100%;height:100%;
+  background:linear-gradient(160deg,var(--bg3),var(--card));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
 }
-.hcard-profile{margin-bottom:.85rem}
-.hcard-name{font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-.02em}
-.hcard-role{font-size:.75rem;color:var(--text3);margin-top:3px;letter-spacing:.02em}
-.hcard-status{display:inline-flex;align-items:center;gap:5px;background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.18);border-radius:20px;padding:.22rem .65rem;font-size:.62rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-top:.5rem}
-.hcard-rows{border-top:1px solid var(--border);text-align:left}
-.hcard-row{display:flex;justify-content:space-between;padding:.52rem 0;border-bottom:1px solid var(--border);font-size:.79rem}
-.hcard-row:last-child{border-bottom:none}
-.hrow-label{color:var(--text3)}
-.hrow-val{color:var(--text2);font-weight:500;text-align:right}
+.avatar-placeholder{
+  font-family:var(--serif);font-size:5rem;font-weight:700;
+  background:linear-gradient(135deg,var(--a),var(--a2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
+}
+.avatar-upload-hint{
+  font-size:.72rem;color:var(--text3);text-align:center;padding:0 1rem;line-height:1.5;
+}
+/* Floating stat badges on photo */
+.hero-photo-badge{
+  position:absolute;z-index:3;
+  background:rgba(8,9,15,.85);backdrop-filter:blur(12px);
+  border:1px solid var(--border2);border-radius:12px;
+  padding:.55rem .9rem;
+}
+.hero-photo-badge-left{bottom:3rem;left:-1rem}
+.hero-photo-badge-right{top:3rem;right:-1rem}
+.hpb-num{font-family:var(--serif);font-size:1.3rem;color:var(--a);font-weight:700;display:block;line-height:1}
+.hpb-lbl{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;display:block;margin-top:2px}
+/* Status badge floating top */
+.hero-status-float{
+  position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(8,9,15,.85);backdrop-filter:blur(12px);
+  border:1px solid rgba(61,214,140,.25);border-radius:20px;
+  padding:.35rem .9rem;white-space:nowrap;
+}
+.hero-status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+.hero-status-txt{font-size:.68rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.07em}
+/* mini stats row below hero */
+.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:1.25rem}
+.mini-cell{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:.85rem;text-align:center}
+.mini-num{font-family:var(--serif);font-size:1.4rem;color:var(--a);display:block;line-height:1;font-weight:700}
+.mini-label{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:3px;display:block}
 .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 .mini-cell{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:.85rem;text-align:center}
 .mini-num{font-family:var(--serif);font-size:1.4rem;color:var(--a);display:block;line-height:1;font-weight:700}
@@ -794,31 +843,38 @@ body.aopen{margin-left:380px}
       </div>
     </div>
     <div class="hero-card-wrap">
-      <div class="hcard">
-        <div class="hcard-top-line"></div>
-        <!-- BIG PROFILE PHOTO -->
-        <div class="hcard-photo-wrap">
-          <div class="hcard-photo-ring"></div>
-          <div class="hcard-photo-inner">
-            <div class="avatar" id="p-avatar">
-              <img id="p-avatar-img" src="" alt="Profile photo of Md. Rabbi Ahemed" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:50%">
+      <!-- LARGE PHOTO DISPLAY -->
+      <div class="hero-photo-section">
+        <!-- Decorative elements -->
+        <div class="hero-photo-bg-circle"></div>
+        <div class="hero-photo-accent"></div>
+        <!-- Status badge floating top -->
+        <div class="hero-status-float">
+          <div class="hero-status-dot"></div>
+          <span class="hero-status-txt" id="p-cstatus-txt">Available for opportunities</span>
+        </div>
+        <!-- Stat badge left -->
+        <div class="hero-photo-badge hero-photo-badge-left">
+          <span class="hpb-num" id="p-badge-num1">3+</span>
+          <span class="hpb-lbl" id="p-badge-lbl1">Yrs Experience</span>
+        </div>
+        <!-- Stat badge right -->
+        <div class="hero-photo-badge hero-photo-badge-right">
+          <span class="hpb-num" id="p-badge-num2">500+</span>
+          <span class="hpb-lbl" id="p-badge-lbl2">Reports Built</span>
+        </div>
+        <!-- The actual photo frame -->
+        <div class="hero-photo-frame" id="p-photo-frame">
+          <div class="avatar" id="p-avatar">
+            <img id="p-avatar-img" src="" alt="Profile photo of Md. Rabbi Ahemed" style="display:none;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem" id="p-avatar-initials-wrap">
               <span class="avatar-placeholder" id="p-avatar-initials">RA</span>
+              <span class="avatar-upload-hint">Upload your photo<br>in the admin panel</span>
             </div>
           </div>
         </div>
-        <!-- NAME & ROLE BELOW PHOTO -->
-        <div class="hcard-profile">
-          <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
-          <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
-          <div class="hcard-status" id="p-cstatus">● Available for new opportunities</div>
-        </div>
-        <div class="hcard-rows" id="p-hcard-rows">
-          <div class="hcard-row"><span class="hrow-label">Location</span><span class="hrow-val">Dhaka, Bangladesh</span></div>
-          <div class="hcard-row"><span class="hrow-label">Experience</span><span class="hrow-val">3+ Years</span></div>
-          <div class="hcard-row"><span class="hrow-label">Sector</span><span class="hrow-val">FMCG & E-commerce</span></div>
-          <div class="hcard-row"><span class="hrow-label">Availability</span><span class="hrow-val">Immediate</span></div>
-        </div>
       </div>
+      <!-- Mini stats below photo -->
       <div class="mini-grid" id="p-ministats">
         <div class="mini-cell"><span class="mini-num">3+</span><span class="mini-label">Yrs Experience</span></div>
         <div class="mini-cell"><span class="mini-num">500+</span><span class="mini-label">Reports Built</span></div>
@@ -1142,8 +1198,11 @@ function render(){
   updateAvatarDisplay();
   g('p-cname').textContent=g('f-cname').value;
   g('p-crole').textContent=g('f-crole').value;
-  g('p-cstatus').textContent='● '+g('f-cstatus').value;
-  g('p-hcard-rows').innerHTML=D.hcf.map(function(f){return '<div class="hcard-row"><span class="hrow-label">'+f.l+'</span><span class="hrow-val">'+f.v+'</span></div>'}).join('');
+  var csEl=g('p-cstatus-txt'); if(csEl) csEl.textContent=g('f-cstatus').value;
+  if(g('p-cstatus')) g('p-cstatus').textContent='● '+g('f-cstatus').value;
+  // Update floating stat badges from first 2 ministats
+  if(D.mstats[0]){ var b1n=g('p-badge-num1');var b1l=g('p-badge-lbl1'); if(b1n)b1n.textContent=D.mstats[0].n; if(b1l)b1l.textContent=D.mstats[0].l; }
+  if(D.mstats[1]){ var b2n=g('p-badge-num2');var b2l=g('p-badge-lbl2'); if(b2n)b2n.textContent=D.mstats[1].n; if(b2l)b2l.textContent=D.mstats[1].l; }
   g('p-ministats').innerHTML=D.mstats.map(function(s){return '<div class="mini-cell"><span class="mini-num">'+s.n+'</span><span class="mini-label">'+s.l+'</span></div>'}).join('');
   // ABOUT
   g('p-ab-eye').textContent=g('ab-eye').value;
@@ -1412,23 +1471,17 @@ function clearProfileImg(){
 
 function updateAvatarDisplay(){
   var img = g('p-avatar-img');
-  var initials = g('p-avatar-initials');
-  if(!img || !initials) return;
+  var initialsWrap = g('p-avatar-initials-wrap');
+  var av = g('p-avatar');
+  if(!img) return;
   if(PROFILE_IMG && PROFILE_IMG.length > 10){
     img.src = PROFILE_IMG;
     img.style.display = 'block';
-    initials.style.display = 'none';
-    // Make avatar background transparent when showing photo
-    var av = g('p-avatar');
+    if(initialsWrap) initialsWrap.style.display = 'none';
     if(av) av.style.background = 'transparent';
   } else {
     img.style.display = 'none';
-    initials.style.display = 'flex';
-    initials.style.alignItems = 'center';
-    initials.style.justifyContent = 'center';
-    initials.style.width = '100%';
-    initials.style.height = '100%';
-    var av = g('p-avatar');
+    if(initialsWrap) initialsWrap.style.display = 'flex';
     if(av) av.style.background = '';
   }
 }
