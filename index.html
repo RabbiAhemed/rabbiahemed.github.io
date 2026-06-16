@@ -222,6 +222,37 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .mini-num{font-family:var(--serif);font-size:1.4rem;color:var(--a);display:block;line-height:1;font-weight:700}
 .mini-label{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:3px;display:block}
 
+
+/* ── PROFILE IMAGE ── */
+.avatar img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:14px;display:block;
+}
+.avatar-placeholder{
+  font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;
+}
+.img-upload-label{
+  display:flex;align-items:center;gap:6px;
+  background:var(--bg3);border:1px dashed var(--border2);
+  border-radius:8px;padding:.5rem .75rem;cursor:pointer;
+  font-size:.75rem;color:var(--text3);transition:all .2s;
+  width:100%;justify-content:center;
+}
+.img-upload-label:hover{border-color:var(--a);color:var(--a2)}
+.img-preview-wrap{
+  position:relative;display:inline-block;
+  width:80px;height:80px;border-radius:12px;overflow:hidden;
+  border:2px solid var(--border2);margin-bottom:.5rem;
+}
+.img-preview-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.img-clear-btn{
+  position:absolute;top:2px;right:2px;
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(248,113,113,.9);border:none;color:#fff;
+  font-size:.65rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+}
+
 /* ── SECTION BASE ── */
 .section{max-width:1100px;margin:0 auto;padding:5rem 2.5rem}
 .sec-divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
@@ -513,6 +544,20 @@ body.aopen{margin-left:380px}
   <!-- HERO -->
   <div class="ap-sec on" id="t-hero">
     <div class="af"><label>Eyebrow label</label><input id="f-eye" value="Sales Operations & MIS Professional"></div>
+    <hr class="ap-div">
+    <div class="ap-sublbl">Profile Photo</div>
+    <div id="img-preview-area" style="display:none;margin-bottom:.4rem">
+      <div class="img-preview-wrap">
+        <img id="admin-img-preview" src="" alt="Preview">
+        <button class="img-clear-btn" onclick="clearProfileImg()" title="Remove photo">✕</button>
+      </div>
+    </div>
+    <label class="img-upload-label" for="img-file-input">
+      📷 Upload profile photo
+      <input type="file" id="img-file-input" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
+    </label>
+    <small style="font-size:.65rem;color:var(--text3);margin-top:3px;display:block">Recommended: square photo, JPG or PNG under 500KB</small>
+    <hr class="ap-div">
     <div class="r2a">
       <div class="af"><label>Name line 1</label><input id="f-n1" value="Md. Rabbi"></div>
       <div class="af"><label>Name line 2 (gradient)</label><input id="f-n2" value="Ahemed"></div>
@@ -731,7 +776,10 @@ body.aopen{margin-left:380px}
       <div class="hcard">
         <div class="hcard-top-line"></div>
         <div class="hcard-profile">
-          <div class="avatar" id="p-avatar">RA</div>
+          <div class="avatar" id="p-avatar">
+          <img id="p-avatar-img" src="" alt="Profile photo" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:14px">
+          <span class="avatar-placeholder" id="p-avatar-initials">RA</span>
+        </div>
           <div>
             <div class="hcard-name" id="p-cname">Md. Rabbi Ahemed</div>
             <div class="hcard-role" id="p-crole">Sales Admin & MIS Professional</div>
@@ -1061,7 +1109,11 @@ function render(){
   g('p-chips').innerHTML=g('f-chips').value.split(',').map(function(c){return '<span class="chip">'+c.trim()+'</span>'}).join('');
   g('p-b1').innerHTML='⬇ '+g('f-b1t').value;g('p-b1').href=g('f-b1l').value;g('p-b1').setAttribute('target','_blank');g('p-b1').setAttribute('rel','noopener');g('p-b1').target='_blank';g('p-b1').rel='noopener';
   g('p-b2').innerHTML='✉ '+g('f-b2t').value;g('p-b2').href=g('f-b2l').value;
-  g('p-avatar').textContent=init;
+  // Update initials text (inside avatar)
+  var initialsEl = g('p-avatar-initials');
+  if(initialsEl) initialsEl.textContent = init;
+  else if(g('p-avatar')) g('p-avatar').textContent = init;
+  updateAvatarDisplay();
   g('p-cname').textContent=g('f-cname').value;
   g('p-crole').textContent=g('f-crole').value;
   g('p-cstatus').textContent='● '+g('f-cstatus').value;
@@ -1296,6 +1348,56 @@ g('add-custom-sec').onclick=function(){
   showToast('Section "'+t+'" created');
 };
 
+
+// ══ PROFILE IMAGE ══
+var PROFILE_IMG = ''; // base64 data URL
+
+function handleImgUpload(input){
+  var file = input.files[0];
+  if(!file) return;
+  if(file.size > 800000){
+    showToast('Image too large — please use under 800KB','error');
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function(e){
+    PROFILE_IMG = e.target.result;
+    updateAvatarDisplay();
+    // Show preview in admin
+    var prev = g('admin-img-preview');
+    var prevWrap = g('img-preview-area');
+    if(prev){ prev.src = PROFILE_IMG; }
+    if(prevWrap){ prevWrap.style.display = 'block'; }
+    showToast('Photo uploaded — click Save & Publish to go live','success');
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearProfileImg(){
+  PROFILE_IMG = '';
+  updateAvatarDisplay();
+  var prev = g('admin-img-preview');
+  var prevWrap = g('img-preview-area');
+  if(prev){ prev.src = ''; }
+  if(prevWrap){ prevWrap.style.display = 'none'; }
+  var input = g('img-file-input');
+  if(input) input.value = '';
+}
+
+function updateAvatarDisplay(){
+  var img = g('p-avatar-img');
+  var initials = g('p-avatar-initials');
+  if(PROFILE_IMG && img && initials){
+    img.src = PROFILE_IMG;
+    img.style.display = 'block';
+    initials.style.display = 'none';
+  } else if(img && initials){
+    img.style.display = 'none';
+    initials.style.display = 'block';
+  }
+}
+
+
 // ══ AUTH ══
 var PASS='rabbi2026admin';var authed=false;
 var combo=[],seq=[65,68,77,73,78]; // Shift+ADMIN
@@ -1496,6 +1598,14 @@ function loadSavedState() {
       }
     });
     if(saved.web3key){ var w3=document.getElementById('web3-key'); if(w3){ w3.value=saved.web3key; WEB3_KEY=saved.web3key; } }
+    if(saved.profileImg && saved.profileImg.length > 10){
+      PROFILE_IMG = saved.profileImg;
+      updateAvatarDisplay();
+      var prev=document.getElementById('admin-img-preview');
+      var prevWrap=document.getElementById('img-preview-area');
+      if(prev){ prev.src=PROFILE_IMG; }
+      if(prevWrap){ prevWrap.style.display='block'; }
+    }
   } catch(e){ console.warn('Could not load saved state:', e); }
 }
 
@@ -1507,7 +1617,7 @@ function serializeState() {
     var el = document.getElementById(id);
     if(el) fieldVals[id] = el.value;
   });
-  var w3k=g('web3-key');return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME, web3key: w3k?w3k.value.trim():'' });
+  var w3k=g('web3-key');return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME, web3key: w3k?w3k.value.trim():'', profileImg: PROFILE_IMG });
 }
 
 
@@ -1538,31 +1648,20 @@ document.addEventListener('click', function(e){
   if(sw && !sw.contains(e.target)) document.getElementById('theme-options').classList.remove('open');
 });
 
-// ══ SECRET MOBILE ADMIN — tap bottom-left corner 5× within 3s ══
-var secretTaps = 0, secretTimer = null;
-document.addEventListener('touchstart', function(e){
-  var t = e.touches[0];
-  // Bottom-left corner: x < 60px, y > (screen height - 80px)
-  if(t.clientX < 60 && t.clientY > window.innerHeight - 80){
-    secretTaps++;
-    if(secretTimer) clearTimeout(secretTimer);
-    secretTimer = setTimeout(function(){ secretTaps = 0; }, 3000);
-    if(secretTaps >= 5){
-      secretTaps = 0;
-      if(!authed){ showLogin(); }
-      else {
-        var panel = g('admin');
-        if(panel.classList.contains('show')){
-          panel.classList.remove('show');
-          document.body.classList.remove('aopen');
-        } else {
-          panel.classList.add('show');
-          document.body.classList.add('aopen');
-        }
-      }
-    }
+// ══ SECRET ADMIN ROUTE — visit ?admin=r4b81 to open login ══
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  if(params.get('admin') === 'r4b81'){
+    // Clean the URL so the param isn't visible after login
+    window.history.replaceState({}, document.title, window.location.pathname);
+    // Show login after page loads
+    window.addEventListener('DOMContentLoaded', function(){
+      setTimeout(showLogin, 300);
+    });
+    // If DOM already loaded
+    if(document.readyState !== 'loading') setTimeout(showLogin, 300);
   }
-}, {passive:true});
+})();
 
 // ══ INIT ══
 loadTheme();
