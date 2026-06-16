@@ -124,20 +124,8 @@
 .theme-opt.active{color:var(--a);background:var(--a3)}
 .theme-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
 
-/* ── MOBILE ADMIN BUTTON ── */
-#mob-admin-btn{
-  position:fixed;bottom:1.5rem;right:1.5rem;z-index:700;
-  width:50px;height:50px;border-radius:50%;
-  background:var(--a);border:none;
-  display:none;align-items:center;justify-content:center;
-  font-size:1.2rem;cursor:pointer;
-  box-shadow:0 4px 20px rgba(79,142,247,.4);
-  transition:all .2s;
-}
-#mob-admin-btn:hover{transform:scale(1.1)}
 @media(max-width:768px){
-  #mob-admin-btn{display:flex}
-  #theme-switcher{bottom:5rem}
+  #theme-switcher{bottom:1.5rem}
 }
 
 /* ── MOBILE ADMIN PANEL IMPROVEMENTS ── */
@@ -341,7 +329,8 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 
 /* ── CONTACT ── */
 .contact-wrap{background:var(--bg2);border-top:1px solid var(--border)}
-.contact-layout{display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:start}
+.contact-layout > div:first-child{padding-top:.5rem}
+.contact-layout{display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:start}
 .contact-h{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);color:var(--text);letter-spacing:-.03em;line-height:1.1;margin-bottom:.75rem}
 .contact-h i{font-style:italic;color:var(--a2)}
 .contact-p{font-size:.92rem;color:var(--text3);font-weight:300;line-height:1.8;margin-bottom:2rem}
@@ -356,7 +345,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .ff label{font-size:.67rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
 .ff input,.ff textarea{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.65rem .85rem;font-size:.85rem;color:var(--text);transition:border-color .2s;resize:vertical}
 .ff input:focus,.ff textarea:focus{outline:none;border-color:rgba(79,142,247,.5);box-shadow:0 0 0 3px rgba(79,142,247,.08)}
-.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.form-row2{display:grid;grid-template-columns:1fr;gap:.65rem}
 .form-btn{width:100%;background:var(--a);color:#fff;border:none;padding:.8rem;border-radius:var(--r);font-size:.88rem;font-weight:600;letter-spacing:.01em;transition:all .2s}
 .form-btn:hover{background:var(--a2);transform:translateY(-1px)}
 .form-ok{display:none;text-align:center;padding:.85rem;color:var(--green);font-weight:600;font-size:.88rem}
@@ -640,6 +629,8 @@ body.aopen{margin-left:380px}
 
   <!-- CONTACT -->
   <div class="ap-sec" id="t-contact">
+    <div class="af"><label>📧 Web3Forms Access Key (for email delivery)</label><input id="web3-key" placeholder="Paste key from web3forms.com here"><small style="font-size:.65rem;color:var(--text3);margin-top:3px;display:block">Visit <strong>web3forms.com</strong> → enter rabbiahemed1@gmail.com → paste key above → Save & Publish</small></div>
+    <hr class="ap-div">
     <div class="af"><label>Contact heading</label><input id="ct-h" value="Let's work together."></div>
     <div class="af"><label>Contact subtext</label><textarea id="ct-p" rows="3">Open to senior roles in Sales Operations, MIS, and Business Analytics. I respond within 24 hours.</textarea></div>
     <div class="af"><label>Footer left text</label><input id="ft-l" value="© 2026 Md. Rabbi Ahemed · All rights reserved."></div>
@@ -918,8 +909,6 @@ body.aopen{margin-left:380px}
   <button id="theme-toggle-btn" onclick="document.getElementById('theme-options').classList.toggle('open')" title="Change theme">🎨</button>
 </div>
 
-<!-- MOBILE ADMIN BUTTON -->
-<button id="mob-admin-btn" title="Open Admin Panel">⚙️</button>
 
 </div><!-- /site -->
 
@@ -1138,6 +1127,8 @@ function render(){
   g('p-clinks').innerHTML=D.contacts.map(function(c){return '<a class="clink" href="'+c.h+'"><div class="clink-ico">'+c.ico+'</div><div><div class="clink-lbl">'+c.l+'</div><div class="clink-val">'+c.v+'</div></div></a>'}).join('');
   g('p-ft-l').textContent=g('ft-l').value;
   g('p-ft-r').textContent=g('ft-r').value;
+  // Update Web3Forms key
+  var w3el=g('web3-key');if(w3el)WEB3_KEY=w3el.value.trim();
   // SEO
   document.title=g('seo-title').value;
   setMeta('description',g('seo-desc').value);
@@ -1353,7 +1344,9 @@ g('ap-save').onclick=async function(){render();await saveToGitHub()};
  'ct-h','ct-p','ft-l','ft-r','seo-title','seo-desc'
 ].forEach(function(id){var el=g(id);if(el)el.addEventListener('input',render)});
 
-// ══ CONTACT FORM (Web3Forms → rabbiahemed1@gmail.com) ══
+// ══ CONTACT FORM ══
+// Uses mailto as reliable fallback + attempts Web3Forms if key is set
+var WEB3_KEY = ''; // Set this in admin after getting key from web3forms.com
 g('fm-send').onclick=async function(){
   var name=g('fm-name').value.trim();
   var email=g('fm-email').value.trim();
@@ -1362,33 +1355,35 @@ g('fm-send').onclick=async function(){
   if(!name||!email||!msg){showToast('Please fill name, email and message','error');return;}
   var btn=g('fm-send');
   btn.textContent='Sending...';btn.disabled=true;
-  try{
-    var formData = new FormData();
-    formData.append('access_key','8f3b2c1d-4e5a-6b7c-8d9e-0f1a2b3c4d5e');
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('subject', 'Portfolio: '+sub);
-    formData.append('message', msg);
-    formData.append('from_name', 'Portfolio Contact Form');
-    var resp = await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      body: formData
-    });
-    var result = await resp.json();
-    if(result.success){
-      g('fm-ok').style.display='block';btn.style.display='none';
-      g('fm-name').value='';g('fm-email').value='';g('fm-sub').value='';g('fm-msg').value='';
-      showToast('Message sent! ✓','success');
-    } else {
-      // Fallback: open mailto
-      window.location.href='mailto:rabbiahemed1@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
-      btn.textContent='Send Message →';btn.disabled=false;
-    }
-  }catch(e){
-    window.location.href='mailto:rabbiahemed1@gmail.com?subject=Portfolio+Contact&body='+encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
-    btn.textContent='Send Message →';btn.disabled=false;
+  var sent = false;
+  // Try Web3Forms if key is set
+  if(WEB3_KEY && WEB3_KEY.length > 10){
+    try{
+      var fd = new FormData();
+      fd.append('access_key', WEB3_KEY);
+      fd.append('name', name);
+      fd.append('email', email);
+      fd.append('subject', 'Portfolio: '+sub);
+      fd.append('message', msg);
+      var resp = await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+      var res = await resp.json();
+      if(res.success){ sent = true; }
+    }catch(e){ sent = false; }
   }
-};
+  if(sent){
+    g('fm-ok').style.display='block';btn.style.display='none';
+    g('fm-name').value='';g('fm-email').value='';g('fm-sub').value='';g('fm-msg').value='';
+    showToast('Message sent ✓','success');
+  } else {
+    // Reliable fallback: open mail client with pre-filled message
+    var body = 'From: '+name+' ('+email+')\nSubject: '+sub+'\n\n'+msg;
+    window.open('mailto:rabbiahemed1@gmail.com?subject='+encodeURIComponent('Portfolio: '+sub)+'&body='+encodeURIComponent(body));
+    g('fm-ok').innerHTML='✓ Your email app opened with the message pre-filled. Just hit send!';
+    g('fm-ok').style.display='block';
+    btn.style.display='none';
+    showToast('Email app opened ✓','success');
+  }
+};;
 
 // ══ NAV SCROLL ══
 window.addEventListener('scroll',function(){
@@ -1500,6 +1495,7 @@ function loadSavedState() {
         if(el) el.value = saved.fields[id];
       }
     });
+    if(saved.web3key){ var w3=document.getElementById('web3-key'); if(w3){ w3.value=saved.web3key; WEB3_KEY=saved.web3key; } }
   } catch(e){ console.warn('Could not load saved state:', e); }
 }
 
@@ -1511,7 +1507,7 @@ function serializeState() {
     var el = document.getElementById(id);
     if(el) fieldVals[id] = el.value;
   });
-  return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME });
+  var w3k=g('web3-key');return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME, web3key: w3k?w3k.value.trim():'' });
 }
 
 
@@ -1542,23 +1538,31 @@ document.addEventListener('click', function(e){
   if(sw && !sw.contains(e.target)) document.getElementById('theme-options').classList.remove('open');
 });
 
-// ══ MOBILE ADMIN BUTTON ══
-var mobBtn = document.getElementById('mob-admin-btn');
-if(mobBtn) {
-  mobBtn.onclick = function(){
-    if(!authed){ showLogin(); }
-    else {
-      var panel = g('admin');
-      if(panel.classList.contains('show')){
-        panel.classList.remove('show');
-        document.body.classList.remove('aopen');
-      } else {
-        panel.classList.add('show');
-        document.body.classList.add('aopen');
+// ══ SECRET MOBILE ADMIN — tap bottom-left corner 5× within 3s ══
+var secretTaps = 0, secretTimer = null;
+document.addEventListener('touchstart', function(e){
+  var t = e.touches[0];
+  // Bottom-left corner: x < 60px, y > (screen height - 80px)
+  if(t.clientX < 60 && t.clientY > window.innerHeight - 80){
+    secretTaps++;
+    if(secretTimer) clearTimeout(secretTimer);
+    secretTimer = setTimeout(function(){ secretTaps = 0; }, 3000);
+    if(secretTaps >= 5){
+      secretTaps = 0;
+      if(!authed){ showLogin(); }
+      else {
+        var panel = g('admin');
+        if(panel.classList.contains('show')){
+          panel.classList.remove('show');
+          document.body.classList.remove('aopen');
+        } else {
+          panel.classList.add('show');
+          document.body.classList.add('aopen');
+        }
       }
     }
-  };
-}
+  }
+}, {passive:true});
 
 // ══ INIT ══
 loadTheme();
