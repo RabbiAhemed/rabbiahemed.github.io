@@ -691,7 +691,7 @@ body.aopen{margin-left:380px}
     <div class="af"><label>Subtitle / tagline</label><textarea id="f-sub" rows="3">Results-driven Sales Admin & MIS Professional with 3+ years in FMCG and e-commerce. I build systems that turn raw data into measurable business outcomes.</textarea></div>
     <div class="af"><label>Specialty chips (comma-separated)</label><input id="f-chips" value="Sales Operations,MIS Reporting,ERP Systems,Dashboard Dev,FMCG,Data Analytics"></div>
     <div class="r2a">
-      <div class="af"><label>CTA 1 text</label><input id="f-b1t" value="Download CV"></div>
+      <div class="af"><label>CTA 1 text</label><input id="f-b1t" value="View CV"></div>
       <div class="af"><label>CTA 1 link</label><input id="f-b1l" value="https://drive.google.com/file/d/1n0l0XUY8V8Cb8wr26q1bERFSwH6vis3z/view?usp=sharing"></div>
     </div>
     <div class="r2a">
@@ -894,7 +894,7 @@ body.aopen{margin-left:380px}
         <span class="chip">FMCG</span><span class="chip">Data Analytics</span>
       </div>
       <div class="hero-actions">
-        <a class="btn-primary" id="p-b1" href="https://drive.google.com/file/d/1n0l0XUY8V8Cb8wr26q1bERFSwH6vis3z/view?usp=sharing" target="_blank" rel="noopener">⬆ View CV</a>
+        <a class="btn-primary" id="p-b1" href="https://drive.google.com/file/d/1n0l0XUY8V8Cb8wr26q1bERFSwH6vis3z/view?usp=sharing" target="_blank" rel="noopener"><i class="fa-solid fa-eye"></i> View CV</a>
         <a class="btn-secondary" id="p-b2" href="#contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Get In Touch</a>
       </div>
     </div>
@@ -1252,7 +1252,7 @@ function render(){
   var _n1=g('p-n1'),_n2=g('p-n2');if(_n1)_n1.textContent=n1;if(_n2)_n2.textContent=n2;
   var _su=g('p-sub');if(_su)_su.textContent=g('f-sub').value;
   var _ch=g('p-chips');if(_ch)_ch.innerHTML=g('f-chips').value.split(',').map(function(c){return '<span class="chip">'+c.trim()+'</span>'}).join('');
-  g('p-b1').innerHTML='⬇ '+g('f-b1t').value;g('p-b1').href=g('f-b1l').value;g('p-b1').setAttribute('target','_blank');g('p-b1').setAttribute('rel','noopener');g('p-b1').target='_blank';g('p-b1').rel='noopener';
+  g('p-b1').innerHTML='<i class="fa-solid fa-eye"></i> '+g('f-b1t').value;g('p-b1').href=g('f-b1l').value;g('p-b1').setAttribute('target','_blank');g('p-b1').setAttribute('rel','noopener');g('p-b1').target='_blank';g('p-b1').rel='noopener';
   g('p-b2').innerHTML='<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> '+g('f-b2t').value;g('p-b2').href=g('f-b2l').value;
   // Update initials
   var initialsEl=g('p-avatar-initials'); if(initialsEl) initialsEl.textContent=init;
