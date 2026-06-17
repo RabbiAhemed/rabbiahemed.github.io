@@ -204,6 +204,21 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .btn-secondary:hover{border-color:var(--border3);color:var(--text);background:rgba(148,163,184,.04)}
 /* HERO CARD */
 .hero-card-wrap{display:flex;flex-direction:column;gap:.75rem}
+
+/* ── PHOTO FRAME SHAPES ── */
+.hero-photo-frame.shape-rounded-tall{border-radius:180px 180px 120px 120px}
+.hero-photo-frame.shape-circle{border-radius:50%;width:320px;height:320px}
+.hero-photo-frame.shape-squircle{border-radius:40px;width:310px;height:400px}
+.hero-photo-frame.shape-arch{border-radius:200px 200px 20px 20px;width:300px;height:420px}
+.hero-photo-frame.shape-rect{border-radius:20px;width:320px;height:420px}
+.hero-photo-frame.shape-hex{width:300px;height:340px;border-radius:30px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);border:none}
+/* Border styles */
+.hero-photo-frame.border-glow{box-shadow:0 0 0 3px var(--a),0 0 40px rgba(79,142,247,.35),0 24px 60px rgba(0,0,0,.5)}
+.hero-photo-frame.border-gold{box-shadow:0 0 0 3px var(--gold),0 0 30px rgba(232,184,75,.25),0 24px 60px rgba(0,0,0,.5)}
+.hero-photo-frame.border-double{box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--a),0 24px 60px rgba(0,0,0,.5)}
+.hero-photo-frame.border-dashed{border:2px dashed var(--a2);box-shadow:0 0 0 6px rgba(79,142,247,.06),0 24px 60px rgba(0,0,0,.5)}
+.hero-photo-frame.border-gradient-anim{border:3px solid transparent;background-clip:padding-box}
+
 /* ── HERO PHOTO SECTION ── */
 .hero-photo-section{
   position:relative;display:flex;align-items:flex-end;justify-content:center;
@@ -626,7 +641,25 @@ body.aopen{margin-left:380px}
       📷 Upload profile photo
       <input type="file" id="img-file-input" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
     </label>
-    <small style="font-size:.65rem;color:var(--text3);margin-top:3px;display:block">Recommended: square photo, JPG or PNG under 500KB</small>
+    <small style="font-size:.65rem;color:var(--text3);margin-top:3px;display:block">Recommended: square photo, JPG or PNG under 500KB</small>    <hr class="ap-div">
+    <div class="ap-sublbl">📐 Frame Shape</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem" id="shape-grid">
+      <button class="shopt on" data-s="shape-rounded-tall" onclick="setPhotoShape('shape-rounded-tall',this)">Tall</button>
+      <button class="shopt" data-s="shape-arch" onclick="setPhotoShape('shape-arch',this)">Arch</button>
+      <button class="shopt" data-s="shape-rect" onclick="setPhotoShape('shape-rect',this)">Rect</button>
+      <button class="shopt" data-s="shape-squircle" onclick="setPhotoShape('shape-squircle',this)">Square</button>
+      <button class="shopt" data-s="shape-circle" onclick="setPhotoShape('shape-circle',this)">Circle</button>
+      <button class="shopt" data-s="shape-hex" onclick="setPhotoShape('shape-hex',this)">Hex</button>
+    </div>
+    <div class="ap-sublbl" style="margin-top:.5rem">✨ Border Style</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem" id="border-grid">
+      <button class="shopt on" data-b="b-default" onclick="setPhotoBorder('b-default',this)">Default</button>
+      <button class="shopt" data-b="border-glow" onclick="setPhotoBorder('border-glow',this)">Blue Glow</button>
+      <button class="shopt" data-b="border-gold" onclick="setPhotoBorder('border-gold',this)">Gold</button>
+      <button class="shopt" data-b="border-double" onclick="setPhotoBorder('border-double',this)">Double</button>
+      <button class="shopt" data-b="border-dashed" onclick="setPhotoBorder('border-dashed',this)">Dashed</button>
+    </div>
+    <style>.shopt{background:var(--bg3);border:1px solid var(--border);color:var(--text3);padding:.35rem .4rem;border-radius:7px;font-size:.7rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .15s;text-align:center}.shopt:hover{border-color:var(--a);color:var(--a2)}.shopt.on{background:var(--a3);border-color:var(--a);color:var(--a2)}</style>
     <hr class="ap-div">
     <div class="r2a">
       <div class="af"><label>Name line 1</label><input id="f-n1" value="Md. Rabbi"></div>
@@ -1177,93 +1210,92 @@ function render(){
   // NAV
   var n1=g('f-n1').value,n2=g('f-n2').value;
   var init=((n1.trim().split(' ').map(function(w){return w[0]||''}).join(''))+n2.trim()[0]).toUpperCase().slice(0,2);
-  g('p-mark').textContent=init;
-  g('p-brand').textContent=g('f-brand').value;
-  g('p-avail').textContent=g('f-avail').value;
-  g('p-nctabtn').textContent=g('f-nctxt').value;
-  g('p-nctabtn').href=g('f-nclink').value;
-  g('p-navlinks').innerHTML=D.navlinks.map(function(l){return '<li><a href="'+l.h+'">'+l.t+'</a></li>'}).join('');
-  g('mob-nav').innerHTML=D.navlinks.map(function(l){return '<a href="'+l.h+'">'+l.t+'</a>'}).join('');
+  var _mk=g('p-mark');if(_mk)_mk.textContent=init;
+  var _br=g('p-brand');if(_br)_br.textContent=g('f-brand').value;
+  var _av=g('p-avail');if(_av)_av.textContent=g('f-avail').value;
+  var _nc=g('p-nctabtn');if(_nc)_nc.textContent=g('f-nctxt').value;
+  if(_nc)_nc.href=g('f-nclink').value;
+  var _nl=g('p-navlinks');if(_nl)_nl.innerHTML=D.navlinks.map(function(l){return '<li><a href="'+l.h+'">'+l.t+'</a></li>'}).join('');
+  var _mn=g('mob-nav');if(_mn)_mn.innerHTML=D.navlinks.map(function(l){return '<a href="'+l.h+'">'+l.t+'</a>'}).join('');
   // HERO
-  g('p-eye').textContent=g('f-eye').value;
-  g('p-n1').textContent=n1;g('p-n2').textContent=n2;
-  g('p-sub').textContent=g('f-sub').value;
-  g('p-chips').innerHTML=g('f-chips').value.split(',').map(function(c){return '<span class="chip">'+c.trim()+'</span>'}).join('');
+  var _ey=g('p-eye');if(_ey)_ey.textContent=g('f-eye').value;
+  var _n1=g('p-n1'),_n2=g('p-n2');if(_n1)_n1.textContent=n1;if(_n2)_n2.textContent=n2;
+  var _su=g('p-sub');if(_su)_su.textContent=g('f-sub').value;
+  var _ch=g('p-chips');if(_ch)_ch.innerHTML=g('f-chips').value.split(',').map(function(c){return '<span class="chip">'+c.trim()+'</span>'}).join('');
   g('p-b1').innerHTML='⬇ '+g('f-b1t').value;g('p-b1').href=g('f-b1l').value;g('p-b1').setAttribute('target','_blank');g('p-b1').setAttribute('rel','noopener');g('p-b1').target='_blank';g('p-b1').rel='noopener';
   g('p-b2').innerHTML='✉ '+g('f-b2t').value;g('p-b2').href=g('f-b2l').value;
-  // Update initials text (inside avatar)
-  var initialsEl = g('p-avatar-initials');
-  if(initialsEl) initialsEl.textContent = init;
-  else if(g('p-avatar')) g('p-avatar').textContent = init;
-  updateAvatarDisplay();
-  g('p-cname').textContent=g('f-cname').value;
-  g('p-crole').textContent=g('f-crole').value;
-  var csEl=g('p-cstatus-txt'); if(csEl) csEl.textContent=g('f-cstatus').value;
-  if(g('p-cstatus')) g('p-cstatus').textContent='● '+g('f-cstatus').value;
-  // Update floating stat badges from first 2 ministats
-  if(D.mstats[0]){ var b1n=g('p-badge-num1');var b1l=g('p-badge-lbl1'); if(b1n)b1n.textContent=D.mstats[0].n; if(b1l)b1l.textContent=D.mstats[0].l; }
-  if(D.mstats[1]){ var b2n=g('p-badge-num2');var b2l=g('p-badge-lbl2'); if(b2n)b2n.textContent=D.mstats[1].n; if(b2l)b2l.textContent=D.mstats[1].l; }
-  g('p-ministats').innerHTML=D.mstats.map(function(s){return '<div class="mini-cell"><span class="mini-num">'+s.n+'</span><span class="mini-label">'+s.l+'</span></div>'}).join('');
+  // Update initials
+  var initialsEl=g('p-avatar-initials'); if(initialsEl) initialsEl.textContent=init;
+  updateAvatarDisplay(); applyPhotoStyles();
+  // Null-safe hero card fields
+  var _cn=g('p-cname'); if(_cn) _cn.textContent=g('f-cname').value;
+  var _cr=g('p-crole'); if(_cr) _cr.textContent=g('f-crole').value;
+  var _cs=g('p-cstatus-txt'); if(_cs) _cs.textContent=g('f-cstatus').value;
+  // Floating stat badges
+  var _b1n=g('p-badge-num1'),_b1l=g('p-badge-lbl1'),_b2n=g('p-badge-num2'),_b2l=g('p-badge-lbl2');
+  if(D.mstats[0]){if(_b1n)_b1n.textContent=D.mstats[0].n;if(_b1l)_b1l.textContent=D.mstats[0].l;}
+  if(D.mstats[1]){if(_b2n)_b2n.textContent=D.mstats[1].n;if(_b2l)_b2l.textContent=D.mstats[1].l;}
+  var _ms=g('p-ministats'); if(_ms) _ms.innerHTML=D.mstats.map(function(s){return '<div class="mini-cell"><span class="mini-num">'+s.n+'</span><span class="mini-label">'+s.l+'</span></div>'}).join('');
   // ABOUT
-  g('p-ab-eye').textContent=g('ab-eye').value;
+  var _abe=g('p-ab-eye');if(_abe)_abe.textContent=g('ab-eye').value;
   var abt=g('ab-title').value.trim().split(' '),abl=abt.pop();
   g('p-ab-title').innerHTML=abt.join(' ')+' <i>'+abl+'</i>';
-  g('p-ab-sub').textContent=g('ab-sub').value;
-  g('p-ab-p1').textContent=g('ab-p1').value;
-  g('p-ab-p2').textContent=g('ab-p2').value;
-  g('p-ab-p3').textContent=g('ab-p3').value;
-  g('p-ab-tags').innerHTML=g('ab-tags').value.split(',').map(function(t){return '<span class="about-tag">'+t.trim()+'</span>'}).join('');
-  g('p-about-infobox').innerHTML='<div class="info-box-head">Quick Info</div>'+D.abinfo.map(function(r){return '<div class="info-item"><span class="info-lbl">'+r.l+'</span><span class="info-val">'+r.v+'</span></div>'}).join('');
+  var _abs=g('p-ab-sub');if(_abs)_abs.textContent=g('ab-sub').value;
+  var _ap1=g('p-ab-p1');if(_ap1)_ap1.textContent=g('ab-p1').value;
+  var _ap2=g('p-ab-p2');if(_ap2)_ap2.textContent=g('ab-p2').value;
+  var _ap3=g('p-ab-p3');if(_ap3)_ap3.textContent=g('ab-p3').value;
+  var _abtg=g('p-ab-tags');if(_abtg)_abtg.innerHTML=g('ab-tags').value.split(',').map(function(t){return '<span class="about-tag">'+t.trim()+'</span>'}).join('');
+  var _abi=g('p-about-infobox');if(_abi)_abi.innerHTML='<div class="info-box-head">Quick Info</div>'+D.abinfo.map(function(r){return '<div class="info-item"><span class="info-lbl">'+r.l+'</span><span class="info-val">'+r.v+'</span></div>'}).join('');
   // METRICS
-  g('p-mt-eye').textContent=g('mt-eye').value;
+  var _mte=g('p-mt-eye');if(_mte)_mte.textContent=g('mt-eye').value;
   var mtt=g('mt-title').value.trim().split(' '),mtl=mtt.pop();
   g('p-mt-title').innerHTML=mtt.join(' ')+' <i>'+mtl+'</i>';
-  g('p-metrics-grid').innerHTML=D.metrics.map(function(m){return '<div class="metric-cell"><span class="metric-num">'+m.n+'</span><span class="metric-lbl">'+m.l+'</span><div class="metric-sub">'+m.s+'</div></div>'}).join('');
+  var _mg=g('p-metrics-grid');if(_mg)_mg.innerHTML=D.metrics.map(function(m){return '<div class="metric-cell"><span class="metric-num">'+m.n+'</span><span class="metric-lbl">'+m.l+'</span><div class="metric-sub">'+m.s+'</div></div>'}).join('');
   // SKILLS
-  g('p-sk-eye').textContent=g('sk-eye').value;
+  var _ske=g('p-sk-eye');if(_ske)_ske.textContent=g('sk-eye').value;
   var skt=g('sk-title').value.trim().split(' '),skl=skt.pop();
   g('p-sk-title').innerHTML=skt.join(' ')+' <i>'+skl+'</i>';
-  g('p-skill-tabs').innerHTML=D.skillCats.map(function(c,i){return '<button class="stab'+(i===0?' on':'')+'" onclick="switchSkillTab('+i+',this)">'+c.name+'</button>'}).join('');
-  g('p-skill-panels').innerHTML=D.skillCats.map(function(c,i){
+  var _skt=g('p-skill-tabs');if(_skt)_skt.innerHTML=D.skillCats.map(function(c,i){return '<button class="stab'+(i===0?' on':'')+'" onclick="switchSkillTab('+i+',this)">'+c.name+'</button>'}).join('');
+  var _skp=g('p-skill-panels');if(_skp)_skp.innerHTML=D.skillCats.map(function(c,i){
     return '<div class="skill-panel'+(i===0?' on':'')+'" id="skp-'+i+'">'+c.skills.map(function(s){
       var lv=s.p>=90?'Expert':s.p>=75?'Advanced':'Proficient';
       return '<div class="skill-card"><div class="sk-head"><span class="sk-name">'+s.n+'</span><span class="sk-lvl">'+lv+'</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:'+s.p+'%"></div></div><div class="sk-desc">'+s.d+'</div></div>';
     }).join('')+'</div>';
   }).join('');
   // EXPERIENCE
-  g('p-ex-eye').textContent=g('ex-eye').value;
+  var _exe=g('p-ex-eye');if(_exe)_exe.textContent=g('ex-eye').value;
   var ext=g('ex-title').value.trim().split(' '),exl=ext.pop();
   g('p-ex-title').innerHTML=ext.join(' ')+' <i>'+exl+'</i>';
-  g('p-exp-list').innerHTML=D.exps.map(function(e){
+  var _exl=g('p-exp-list');if(_exl)_exl.innerHTML=D.exps.map(function(e){
     return '<div class="exp-item"><div class="exp-left"><div class="exp-period-badge">'+e.period+'</div><div class="exp-co">'+e.co+'</div><div class="exp-co-type">'+e.type+'</div></div><div class="exp-right"><div class="exp-role">'+e.role+'</div><div class="exp-tag-row">'+e.tags.map(function(t){return '<span class="exp-tag">'+t+'</span>'}).join('')+'</div><ul class="exp-bullets">'+e.bullets.map(function(b){return '<li>'+b+'</li>'}).join('')+'</ul></div></div>';
   }).join('');
   // PROJECTS
-  g('p-pj-eye').textContent=g('pj-eye').value;
+  var _pje=g('p-pj-eye');if(_pje)_pje.textContent=g('pj-eye').value;
   var pjt=g('pj-title').value.trim().split(' '),pjl=pjt.pop();
   g('p-pj-title').innerHTML=pjt.join(' ')+' <i>'+pjl+'</i>';
-  g('p-proj-grid').innerHTML=D.projects.map(function(p){
+  var _pjg=g('p-proj-grid');if(_pjg)_pjg.innerHTML=D.projects.map(function(p){
     return '<div class="proj-card"><div class="proj-top"><div class="proj-icon">'+p.icon+'</div><span class="proj-cat-badge">'+p.cat+'</span></div><div class="proj-title">'+p.title+'</div><div class="proj-desc">'+p.desc+'</div><div class="proj-kpi">✦ '+p.kpi+'</div><div class="proj-techs">'+p.tech.map(function(t){return '<span class="proj-tech">'+t+'</span>'}).join('')+'</div></div>';
   }).join('');
   // TESTIMONIALS
-  g('p-ts-eye').textContent=g('ts-eye').value;
+  var _tse=g('p-ts-eye');if(_tse)_tse.textContent=g('ts-eye').value;
   var tst=g('ts-title').value;
   g('p-ts-title').innerHTML='<i>'+tst+'</i>';
-  g('p-testi-grid').innerHTML=D.testis.map(function(t){
+  var _tsg=g('p-testi-grid');if(_tsg)_tsg.innerHTML=D.testis.map(function(t){
     return '<div class="testi-card"><div class="testi-stars">'+Array(t.stars+1).join('★')+'</div><div class="testi-quote">'+t.q+'</div><div class="testi-author"><div class="testi-av">'+t.init+'</div><div><div class="testi-name">'+t.name+'</div><div class="testi-role">'+t.role+'</div></div></div></div>';
   }).join('');
   // EDUCATION & CERTS
-  g('p-ed-eye').textContent=g('ed-eye').value;
+  var _ede=g('p-ed-eye');if(_ede)_ede.textContent=g('ed-eye').value;
   var edt=g('ed-title').value.trim().split(' '),edl=edt.pop();
   g('p-ed-title').innerHTML=edt.join(' ')+' <i>'+edl+'</i>';
-  g('p-edu-list').innerHTML=D.edus.map(function(e){return '<div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">'+e.d+'</div><div class="edu-inst">'+e.i+'</div><span class="edu-yr">'+e.y+' · '+e.g+'</span></div></div>'}).join('');
-  g('p-cert-list').innerHTML=D.certs.map(function(c){return '<div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">'+c.t+'</div><div class="cert-org">'+c.o+'</div><span class="cert-yr">'+c.y+'</span></div></div>'}).join('');
+  var _edl=g('p-edu-list');if(_edl)_edl.innerHTML=D.edus.map(function(e){return '<div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">'+e.d+'</div><div class="edu-inst">'+e.i+'</div><span class="edu-yr">'+e.y+' · '+e.g+'</span></div></div>'}).join('');
+  var _ctl=g('p-cert-list');if(_ctl)_ctl.innerHTML=D.certs.map(function(c){return '<div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">'+c.t+'</div><div class="cert-org">'+c.o+'</div><span class="cert-yr">'+c.y+'</span></div></div>'}).join('');
   // CONTACT
   var cth=g('ct-h').value.trim().split(' '),ctl=cth.pop();
   g('p-ct-h').innerHTML=cth.join(' ')+' <i>'+ctl+'</i>';
-  g('p-ct-p').textContent=g('ct-p').value;
-  g('p-clinks').innerHTML=D.contacts.map(function(c){return '<a class="clink" href="'+c.h+'"><div class="clink-ico">'+c.ico+'</div><div><div class="clink-lbl">'+c.l+'</div><div class="clink-val">'+c.v+'</div></div></a>'}).join('');
-  g('p-ft-l').textContent=g('ft-l').value;
-  g('p-ft-r').textContent=g('ft-r').value;
+  var _ctp=g('p-ct-p');if(_ctp)_ctp.textContent=g('ct-p').value;
+  var _clk=g('p-clinks');if(_clk)_clk.innerHTML=D.contacts.map(function(c){return '<a class="clink" href="'+c.h+'"><div class="clink-ico">'+c.ico+'</div><div><div class="clink-lbl">'+c.l+'</div><div class="clink-val">'+c.v+'</div></div></a>'}).join('');
+  var _ftl=g('p-ft-l');if(_ftl)_ftl.textContent=g('ft-l').value;
+  var _ftr=g('p-ft-r');if(_ftr)_ftr.textContent=g('ft-r').value;
   // Update Web3Forms key
   var w3el=g('web3-key');if(w3el)WEB3_KEY=w3el.value.trim();
   // SEO
@@ -1487,6 +1519,33 @@ function updateAvatarDisplay(){
 }
 
 
+
+// ══ PHOTO SHAPE & BORDER ══
+var PHOTO_SHAPE='shape-rounded-tall', PHOTO_BORDER='b-default';
+var ALL_SHAPES=['shape-rounded-tall','shape-arch','shape-rect','shape-squircle','shape-circle','shape-hex'];
+var ALL_BORDERS=['border-glow','border-gold','border-double','border-dashed'];
+function setPhotoShape(s,btn){
+  PHOTO_SHAPE=s;
+  var f=g('p-photo-frame');
+  if(f){ALL_SHAPES.forEach(function(x){f.classList.remove(x)});f.classList.add(s);}
+  if(btn){document.querySelectorAll('#shape-grid .shopt').forEach(function(b){b.classList.remove('on')});btn.classList.add('on');}
+}
+function setPhotoBorder(b,btn){
+  PHOTO_BORDER=b;
+  var f=g('p-photo-frame');
+  if(f){ALL_BORDERS.forEach(function(x){f.classList.remove(x)});if(b!=='b-default')f.classList.add(b);}
+  if(btn){document.querySelectorAll('#border-grid .shopt').forEach(function(b2){b2.classList.remove('on')});btn.classList.add('on');}
+}
+function applyPhotoStyles(){
+  var f=g('p-photo-frame');if(!f)return;
+  ALL_SHAPES.forEach(function(x){f.classList.remove(x)});f.classList.add(PHOTO_SHAPE);
+  ALL_BORDERS.forEach(function(x){f.classList.remove(x)});if(PHOTO_BORDER!=='b-default')f.classList.add(PHOTO_BORDER);
+  var sb=document.querySelector('#shape-grid .shopt[data-s="'+PHOTO_SHAPE+'"]');
+  if(sb){document.querySelectorAll('#shape-grid .shopt').forEach(function(b){b.classList.remove('on')});sb.classList.add('on');}
+  var bb=document.querySelector('#border-grid .shopt[data-b="'+PHOTO_BORDER+'"]');
+  if(bb){document.querySelectorAll('#border-grid .shopt').forEach(function(b){b.classList.remove('on')});bb.classList.add('on');}
+}
+
 // ══ AUTH ══
 var PASS='rabbi2026admin';var authed=false;
 var combo=[],seq=[65,68,77,73,78]; // Shift+ADMIN
@@ -1687,6 +1746,7 @@ function loadSavedState() {
       }
     });
     if(saved.web3key){ var w3=document.getElementById('web3-key'); if(w3){ w3.value=saved.web3key; WEB3_KEY=saved.web3key; } }
+    if(saved.photoShape){PHOTO_SHAPE=saved.photoShape;}if(saved.photoBorder){PHOTO_BORDER=saved.photoBorder;}applyPhotoStyles();
     if(saved.profileImg && saved.profileImg.length > 10){
       PROFILE_IMG = saved.profileImg;
       updateAvatarDisplay();
@@ -1706,7 +1766,7 @@ function serializeState() {
     var el = document.getElementById(id);
     if(el) fieldVals[id] = el.value;
   });
-  var w3k=g('web3-key');return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME, web3key: w3k?w3k.value.trim():'', profileImg: PROFILE_IMG });
+  var w3k=g('web3-key');return JSON.stringify({ D: D, fields: fieldVals, theme: CURRENT_THEME, web3key: w3k?w3k.value.trim():'', profileImg: PROFILE_IMG, photoShape: PHOTO_SHAPE, photoBorder: PHOTO_BORDER });
 }
 
 
@@ -1768,6 +1828,7 @@ renderMetricsAdmin();renderSkAdmin();renderExpAdmin();
 renderProjAdmin();renderTestiAdmin();renderEduAdmin();renderCertAdmin();
 renderContactAdmin();renderSecMgr();
 render();
+applyPhotoStyles();
 setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){revealObs.observe(el)})},200);
 </script>
 </body>
