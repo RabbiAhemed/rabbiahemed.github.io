@@ -560,18 +560,18 @@ body.aopen{margin-left:380px}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding-top:3rem;gap:2rem}
-  .hero-card-wrap{display:flex;flex-direction:column;gap:.75rem;order:-1}
-  .hero-photo-section{height:220px}
-  .hero-photo-frame{width:140px;height:190px}
-  .hero-photo-bg-circle{width:170px;height:170px}
-  .hero-photo-accent{width:190px;height:190px}
-  .hero-photo-badge-left{left:.25rem;bottom:1rem;padding:.35rem .6rem}
-  .hero-photo-badge-right{right:.25rem;top:1rem;padding:.35rem .6rem}
-  .hpb-num{font-size:1rem}
-  .hpb-lbl{font-size:.55rem}
-  .hero-status-float{font-size:.6rem;padding:.25rem .65rem}
-  .mini-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr;padding-top:3rem;gap:1.5rem}
+  .hero-card-wrap{display:flex;flex-direction:column;gap:1rem;order:-1;align-items:center}
+  /* Clean simple photo on mobile — no overlapping badges */
+  .hero-photo-section{height:auto;width:100%;display:flex;justify-content:center;padding:1.5rem 0 0}
+  .hero-photo-frame{width:160px;height:200px;border-radius:100px 100px 80px 80px}
+  .hero-photo-bg-circle{display:none}
+  .hero-photo-accent{display:none}
+  /* Hide floating badges on mobile — info shown in mini-grid below */
+  .hero-photo-badge{display:none}
+  /* Move status badge below photo, not floating on top of face */
+  .hero-status-float{position:static;transform:none;margin-top:.75rem;font-size:.68rem}
+  .mini-grid{grid-template-columns:repeat(2,1fr);width:100%}
   .about-layout{grid-template-columns:1fr}
   .edu-cert-grid{grid-template-columns:1fr}
   .contact-layout{grid-template-columns:1fr}
