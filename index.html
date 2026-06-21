@@ -338,6 +338,31 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
   font-weight:700;
 }
 
+
+/* ── HIDE/SHOW TOGGLE ── */
+.vis-toggle{
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  flex-shrink:0;
+}
+.vis-toggle input[type=checkbox]{display:none}
+.vis-track{
+  width:36px;height:20px;border-radius:20px;
+  background:var(--border2);position:relative;
+  transition:background .2s;flex-shrink:0;
+  border:1px solid var(--border2);
+}
+.vis-toggle input:checked + .vis-track{background:var(--a);border-color:var(--a)}
+.vis-thumb{
+  position:absolute;top:2px;left:2px;
+  width:14px;height:14px;border-radius:50%;
+  background:#fff;transition:left .2s;
+}
+.vis-toggle input:checked + .vis-track .vis-thumb{left:18px}
+.vis-label{font-size:.65rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+/* dim hidden items in admin */
+.di.is-hidden{opacity:.45}
+.di.is-hidden .di-lbl::after{content:' (hidden)';color:var(--text3);font-weight:400}
+
 /* ── SECTION BASE ── */
 .section{max-width:1100px;margin:0 auto;padding:5rem 2.5rem}
 .sec-divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
@@ -1114,28 +1139,28 @@ var D={
     {n:'5+',l:'Regions Managed',s:'Territory coverage'}
   ],
   skillCats:[
-    {name:'Sales Operations',skills:[
-      {n:'Sales Planning & Target Allocation',p:95,d:'Product, zone & distributor-level target management'},
-      {n:'Incentive & Commission Design',p:90,d:'Transparent framework design aligned with business goals'},
-      {n:'Order & Distribution Management',p:88,d:'End-to-end order coordination across channels'},
-      {n:'Cross-functional Coordination',p:92,d:'Sales, finance & distribution team alignment'}
+    {hidden:false,{name:'Sales Operations',skills:[
+      {hidden:false,n:'Sales Planning & Target Allocation',p:95,d:'Product, zone & distributor-level target management'},
+      {hidden:false,n:'Incentive & Commission Design',p:90,d:'Transparent framework design aligned with business goals'},
+      {hidden:false,n:'Order & Distribution Management',p:88,d:'End-to-end order coordination across channels'},
+      {hidden:false,n:'Cross-functional Coordination',p:92,d:'Sales, finance & distribution team alignment'}
     ]},
-    {name:'MIS & Reporting',skills:[
-      {n:'Dashboard & MIS Reporting',p:95,d:'Daily, weekly & monthly performance dashboards'},
-      {n:'ERP & IMS Data Management',p:90,d:'Target uploads, ERP validation & error reduction'},
-      {n:'Sales Forecasting & Analysis',p:88,d:'Historical trend analysis and demand forecasting'},
-      {n:'Territory Analytics',p:85,d:'Region-wise performance analytics and field audits'}
+    {hidden:false,{name:'MIS & Reporting',skills:[
+      {hidden:false,n:'Dashboard & MIS Reporting',p:95,d:'Daily, weekly & monthly performance dashboards'},
+      {hidden:false,n:'ERP & IMS Data Management',p:90,d:'Target uploads, ERP validation & error reduction'},
+      {hidden:false,n:'Sales Forecasting & Analysis',p:88,d:'Historical trend analysis and demand forecasting'},
+      {hidden:false,n:'Territory Analytics',p:85,d:'Region-wise performance analytics and field audits'}
     ]},
-    {name:'Technical Tools',skills:[
-      {n:'MS Excel (Advanced)',p:96,d:'Pivot tables, advanced formulas, reporting automation'},
-      {n:'ERP Systems',p:88,d:'National territory management and uploads'},
-      {n:'IMS & PS Management Software',p:85,d:'Field performance and inventory management systems'},
-      {n:'MS PowerPoint',p:80,d:'Executive presentations and management reports'}
+    {hidden:false,{name:'Technical Tools',skills:[
+      {hidden:false,n:'MS Excel (Advanced)',p:96,d:'Pivot tables, advanced formulas, reporting automation'},
+      {hidden:false,n:'ERP Systems',p:88,d:'National territory management and uploads'},
+      {hidden:false,n:'IMS & PS Management Software',p:85,d:'Field performance and inventory management systems'},
+      {hidden:false,n:'MS PowerPoint',p:80,d:'Executive presentations and management reports'}
     ]}
   ],
   navlinks:[{t:'About',h:'#about'},{t:'Experience',h:'#experience'},{t:'Projects',h:'#projects'},{t:'Skills',h:'#skills'},{t:'Contact',h:'#contact'}],
   exps:[
-    {period:'Mar 2025 – Present',role:'Sales Coordinator',co:'City Group',type:'FMCG',tags:['ERP','MIS','Sales Planning','Dashboards','Forecasting'],bullets:[
+    {hidden:false,{period:'Mar 2025 – Present',role:'Sales Coordinator',co:'City Group',type:'FMCG',tags:['ERP','MIS','Sales Planning','Dashboards','Forecasting'],bullets:[
       'Architect and manage product-wise, zone-wise, and distributor-wise sales targets aligned with corporate strategy',
       'Deliver daily, weekly, and monthly executive performance dashboards for senior management review',
       'Design structured incentive & commission frameworks ensuring transparency and goal alignment across teams',
@@ -1144,42 +1169,42 @@ var D={
       'Lead onboarding and field training sessions for new sales personnel on IMS systems and processes',
       'Conduct historical trend analysis to forecast demand and optimize territory target planning'
     ]},
-    {period:'Jan 2024 – Aug 2024',role:'MIS Executive',co:'Dekko Foods Ltd.',type:'FMCG',tags:['IMS','ERP','Analytics','Reporting'],bullets:[
+    {hidden:false,{period:'Jan 2024 – Aug 2024',role:'MIS Executive',co:'Dekko Foods Ltd.',type:'FMCG',tags:['IMS','ERP','Analytics','Reporting'],bullets:[
       'Managed national territory-wise ERP target uploads with high accuracy across all product lines',
       'Generated daily IMS-based sales performance reports consumed by regional and national management',
       'Produced monthly sales closing reports and coverage analyses for executive management review',
       'Compiled area-wise damage reports from field audits providing actionable supply chain intelligence',
       'Developed region-wise weekly performance analytics dashboards improving visibility across 5+ territories'
     ]},
-    {period:'Jan 2020 – Dec 2020',role:'Operations Executive',co:'BoiBazar.com',type:'E-commerce',tags:['Operations','Inventory','Logistics'],bullets:[
+    {hidden:false,{period:'Jan 2020 – Dec 2020',role:'Operations Executive',co:'BoiBazar.com',type:'E-commerce',tags:['Operations','Inventory','Logistics'],bullets:[
       'Managed end-to-end order processing, invoicing, and shipment coordination workflows',
       'Maintained inventory accuracy and ensured on-time dispatch performance targets were met',
       'Administered website product catalogue and managed digital content workflow'
     ]}
   ],
   projects:[
-    {icon:'📊',cat:'MIS Reporting',title:'Executive Performance Dashboard System',desc:'Designed and deployed a multi-layer dashboard system covering product, zone, and distributor KPIs for City Group C-suite.',kpi:'Reporting cycle cut by 40%',tech:['Excel','ERP','Pivot Tables','IMS']},
-    {icon:'🎯',cat:'Sales Analytics',title:'Territory Target Allocation Engine',desc:'Built a systematic ERP-based target allocation framework enabling precise national territory management at Dekko Foods.',kpi:'100% ERP upload accuracy',tech:['ERP','IMS','Excel','Reporting']},
-    {icon:'💰',cat:'Incentive Design',title:'Commission & Incentive Framework',desc:'Created a transparent, policy-aligned incentive structure for sales teams at City Group that reduced commission disputes to zero.',kpi:'Zero commission disputes',tech:['Excel','Policy Design','Analytics']},
-    {icon:'📈',cat:'Forecasting',title:'Demand Forecasting Model',desc:'Developed a historical trend analysis model integrating IMS data to forecast demand and optimize target planning across product lines.',kpi:'Improved planning accuracy by 25%',tech:['Excel','Data Analysis','ERP']},
-    {icon:'🔄',cat:'Process Automation',title:'ERP Validation Workflow',desc:'Implemented a multi-stage ERP data validation process that systematically eliminated reporting errors and improved data integrity.',kpi:'Near-zero data errors',tech:['ERP','Process Design','Audit']},
-    {icon:'📦',cat:'Operations',title:'Delivery Management System',desc:'Maintained and optimized DMS infrastructure at Dekko Foods improving coverage tracking and field audit report quality.',kpi:'Streamlined 5+ region ops',tech:['DMS','Coordination','Reporting']}
+    {hidden:false,icon:'📊',cat:'MIS Reporting',title:'Executive Performance Dashboard System',desc:'Designed and deployed a multi-layer dashboard system covering product, zone, and distributor KPIs for City Group C-suite.',kpi:'Reporting cycle cut by 40%',tech:['Excel','ERP','Pivot Tables','IMS']},
+    {hidden:false,icon:'🎯',cat:'Sales Analytics',title:'Territory Target Allocation Engine',desc:'Built a systematic ERP-based target allocation framework enabling precise national territory management at Dekko Foods.',kpi:'100% ERP upload accuracy',tech:['ERP','IMS','Excel','Reporting']},
+    {hidden:false,icon:'💰',cat:'Incentive Design',title:'Commission & Incentive Framework',desc:'Created a transparent, policy-aligned incentive structure for sales teams at City Group that reduced commission disputes to zero.',kpi:'Zero commission disputes',tech:['Excel','Policy Design','Analytics']},
+    {hidden:false,icon:'📈',cat:'Forecasting',title:'Demand Forecasting Model',desc:'Developed a historical trend analysis model integrating IMS data to forecast demand and optimize target planning across product lines.',kpi:'Improved planning accuracy by 25%',tech:['Excel','Data Analysis','ERP']},
+    {hidden:false,icon:'🔄',cat:'Process Automation',title:'ERP Validation Workflow',desc:'Implemented a multi-stage ERP data validation process that systematically eliminated reporting errors and improved data integrity.',kpi:'Near-zero data errors',tech:['ERP','Process Design','Audit']},
+    {hidden:false,icon:'📦',cat:'Operations',title:'Delivery Management System',desc:'Maintained and optimized DMS infrastructure at Dekko Foods improving coverage tracking and field audit report quality.',kpi:'Streamlined 5+ region ops',tech:['DMS','Coordination','Reporting']}
   ],
   testis:[
-    {stars:5,q:'Rabbi consistently delivers accurate, insightful dashboards that management can act on immediately. His ERP validation work has transformed how we approach data quality.',name:'Md. Ripon Mahmud',role:'Executive, Sales Coordination · City Group',init:'RM'},
-    {stars:5,q:'His ability to translate complex operational data into clear executive reports is exceptional. Rabbi brings both technical depth and business acumen to every project.',name:'Md. Abu Saleh',role:'Executive, Audit & Finance · Sundarban Courier',init:'AS'},
-    {stars:5,q:'A rare professional who understands both the business side and the technical systems. Under tight deadlines, Rabbi delivered consistently high-quality MIS reports.',name:'Senior Manager',role:'Management · Dekko Foods Ltd.',init:'SM'}
+    {hidden:false,stars:5,q:'Rabbi consistently delivers accurate, insightful dashboards that management can act on immediately. His ERP validation work has transformed how we approach data quality.',name:'Md. Ripon Mahmud',role:'Executive, Sales Coordination · City Group',init:'RM'},
+    {hidden:false,stars:5,q:'His ability to translate complex operational data into clear executive reports is exceptional. Rabbi brings both technical depth and business acumen to every project.',name:'Md. Abu Saleh',role:'Executive, Audit & Finance · Sundarban Courier',init:'AS'},
+    {hidden:false,stars:5,q:'A rare professional who understands both the business side and the technical systems. Under tight deadlines, Rabbi delivered consistently high-quality MIS reports.',name:'Senior Manager',role:'Management · Dekko Foods Ltd.',init:'SM'}
   ],
   edus:[
-    {y:'2022',d:'BSc in Computer Science & Engineering',i:'Green University of Bangladesh',g:'CGPA 3.06'},
-    {y:'2018',d:'Diploma in Computer Technology',i:'Jhenaidah Polytechnic Institute',g:'CGPA 2.82'},
-    {y:'2014',d:'SSC (Business Studies)',i:'Jhenaidah Govt. High School',g:'GPA 4.94'}
+    {hidden:false,y:'2022',d:'BSc in Computer Science & Engineering',i:'Green University of Bangladesh',g:'CGPA 3.06'},
+    {hidden:false,y:'2018',d:'Diploma in Computer Technology',i:'Jhenaidah Polytechnic Institute',g:'CGPA 2.82'},
+    {hidden:false,y:'2014',d:'SSC (Business Studies)',i:'Jhenaidah Govt. High School',g:'GPA 4.94'}
   ],
   certs:[
-    {t:'Advanced Microsoft Excel',o:'Microsoft Certified',y:'2023'},
-    {t:'ERP Systems Management',o:'Professional Training',y:'2024'},
-    {t:'Data Analytics Fundamentals',o:'Online Certification',y:'2023'},
-    {t:'Sales Operations Management',o:'Industry Certificate',y:'2024'}
+    {hidden:false,t:'Advanced Microsoft Excel',o:'Microsoft Certified',y:'2023'},
+    {hidden:false,t:'ERP Systems Management',o:'Professional Training',y:'2024'},
+    {hidden:false,t:'Data Analytics Fundamentals',o:'Online Certification',y:'2023'},
+    {hidden:false,t:'Sales Operations Management',o:'Industry Certificate',y:'2024'}
   ],
   contacts:[
     {ico:'✉️',l:'Email',v:'rabbiahemed1@gmail.com',h:'mailto:rabbiahemed1@gmail.com'},
@@ -1279,8 +1304,8 @@ function render(){
   var _ske=g('p-sk-eye');if(_ske)_ske.textContent=g('sk-eye').value;
   var skt=g('sk-title').value.trim().split(' '),skl=skt.pop();
   g('p-sk-title').innerHTML=skt.join(' ')+' <i>'+skl+'</i>';
-  var _skt=g('p-skill-tabs');if(_skt)_skt.innerHTML=D.skillCats.map(function(c,i){return '<button class="stab'+(i===0?' on':'')+'" onclick="switchSkillTab('+i+',this)">'+c.name+'</button>'}).join('');
-  var _skp=g('p-skill-panels');if(_skp)_skp.innerHTML=D.skillCats.map(function(c,i){
+  var _skt=g('p-skill-tabs');if(_skt)_skt.innerHTML=D.skillCats.filter(function(c){return !c.hidden}).map(function(c,i){return '<button class="stab'+(i===0?' on':'')+'" onclick="switchSkillTab('+i+',this)">'+c.name+'</button>'}).join('');
+  var _skp=g('p-skill-panels');if(_skp)_skp.innerHTML=D.skillCats.filter(function(c){return !c.hidden}).map(function(c,i){
     return '<div class="skill-panel'+(i===0?' on':'')+'" id="skp-'+i+'">'+c.skills.map(function(s){
       var lv=s.p>=90?'Expert':s.p>=75?'Advanced':'Proficient';
       return '<div class="skill-card"><div class="sk-head"><span class="sk-name">'+s.n+'</span><span class="sk-lvl">'+lv+'</span></div><div class="sk-bar-bg"><div class="sk-bar-fill" style="width:'+s.p+'%"></div></div><div class="sk-desc">'+s.d+'</div></div>';
@@ -1290,29 +1315,29 @@ function render(){
   var _exe=g('p-ex-eye');if(_exe)_exe.textContent=g('ex-eye').value;
   var ext=g('ex-title').value.trim().split(' '),exl=ext.pop();
   g('p-ex-title').innerHTML=ext.join(' ')+' <i>'+exl+'</i>';
-  var _exl=g('p-exp-list');if(_exl)_exl.innerHTML=D.exps.map(function(e){
+  var _exl=g('p-exp-list');if(_exl)_exl.innerHTML=D.exps.filter(function(e){return !e.hidden}).map(function(e){
     return '<div class="exp-item"><div class="exp-left"><div class="exp-period-badge">'+e.period+'</div><div class="exp-co">'+e.co+'</div><div class="exp-co-type">'+e.type+'</div></div><div class="exp-right"><div class="exp-role">'+e.role+'</div><div class="exp-tag-row">'+e.tags.map(function(t){return '<span class="exp-tag">'+t+'</span>'}).join('')+'</div><ul class="exp-bullets">'+e.bullets.map(function(b){return '<li>'+b+'</li>'}).join('')+'</ul></div></div>';
   }).join('');
   // PROJECTS
   var _pje=g('p-pj-eye');if(_pje)_pje.textContent=g('pj-eye').value;
   var pjt=g('pj-title').value.trim().split(' '),pjl=pjt.pop();
   g('p-pj-title').innerHTML=pjt.join(' ')+' <i>'+pjl+'</i>';
-  var _pjg=g('p-proj-grid');if(_pjg)_pjg.innerHTML=D.projects.map(function(p){
+  var _pjg=g('p-proj-grid');if(_pjg)_pjg.innerHTML=D.projects.filter(function(p){return !p.hidden}).map(function(p){
     return '<div class="proj-card"><div class="proj-top"><div class="proj-icon">'+p.icon+'</div><span class="proj-cat-badge">'+p.cat+'</span></div><div class="proj-title">'+p.title+'</div><div class="proj-desc">'+p.desc+'</div><div class="proj-kpi">✦ '+p.kpi+'</div><div class="proj-techs">'+p.tech.map(function(t){return '<span class="proj-tech">'+t+'</span>'}).join('')+'</div></div>';
   }).join('');
   // TESTIMONIALS
   var _tse=g('p-ts-eye');if(_tse)_tse.textContent=g('ts-eye').value;
   var tst=g('ts-title').value;
   g('p-ts-title').innerHTML='<i>'+tst+'</i>';
-  var _tsg=g('p-testi-grid');if(_tsg)_tsg.innerHTML=D.testis.map(function(t){
+  var _tsg=g('p-testi-grid');if(_tsg)_tsg.innerHTML=D.testis.filter(function(t){return !t.hidden}).map(function(t){
     return '<div class="testi-card"><div class="testi-stars">'+Array(t.stars+1).join('★')+'</div><div class="testi-quote">'+t.q+'</div><div class="testi-author"><div class="testi-av">'+t.init+'</div><div><div class="testi-name">'+t.name+'</div><div class="testi-role">'+t.role+'</div></div></div></div>';
   }).join('');
   // EDUCATION & CERTS
   var _ede=g('p-ed-eye');if(_ede)_ede.textContent=g('ed-eye').value;
   var edt=g('ed-title').value.trim().split(' '),edl=edt.pop();
   g('p-ed-title').innerHTML=edt.join(' ')+' <i>'+edl+'</i>';
-  var _edl=g('p-edu-list');if(_edl)_edl.innerHTML=D.edus.map(function(e){return '<div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">'+e.d+'</div><div class="edu-inst">'+e.i+'</div><span class="edu-yr">'+e.y+' · '+e.g+'</span></div></div>'}).join('');
-  var _ctl=g('p-cert-list');if(_ctl)_ctl.innerHTML=D.certs.map(function(c){return '<div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">'+c.t+'</div><div class="cert-org">'+c.o+'</div><span class="cert-yr">'+c.y+'</span></div></div>'}).join('');
+  var _edl=g('p-edu-list');if(_edl)_edl.innerHTML=D.edus.filter(function(e){return !e.hidden}).map(function(e){return '<div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-degree">'+e.d+'</div><div class="edu-inst">'+e.i+'</div><span class="edu-yr">'+e.y+' · '+e.g+'</span></div></div>'}).join('');
+  var _ctl=g('p-cert-list');if(_ctl)_ctl.innerHTML=D.certs.filter(function(c){return !c.hidden}).map(function(c){return '<div class="cert-card"><div class="cert-ico">🏆</div><div><div class="cert-title">'+c.t+'</div><div class="cert-org">'+c.o+'</div><span class="cert-yr">'+c.y+'</span></div></div>'}).join('');
   // CONTACT
   var cth=g('ct-h').value.trim().split(' '),ctl=cth.pop();
   g('p-ct-h').innerHTML=cth.join(' ')+' <i>'+ctl+'</i>';
@@ -1390,29 +1415,29 @@ g('add-metric').onclick=function(){D.metrics.push({n:'0',l:'Metric',s:'Subtitle'
 
 function renderSkAdmin(){
   g('skills-admin').innerHTML=D.skillCats.map(function(c,ci){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.name+'</span><button class="d-del" onclick="D.skillCats.splice('+ci+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Category name</label><input value="'+esc(c.name)+'" onchange="D.skillCats['+ci+'].name=this.value;renderSkAdmin()"></div>'+
+    return '<div class="di'+(c.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+c.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.skillCats,ci,null)+'<button class="d-del" onclick="D.skillCats.splice('+ci+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Category name</label><input value="'+esc(c.name)+'" onchange="D.skillCats['+ci+'].name=this.value;renderSkAdmin()"></div>'+
     c.skills.map(function(s,si){
       return '<div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">'+s.n+'</span><button class="d-del" onclick="D.skillCats['+ci+'].skills.splice('+si+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Skill name</label><input value="'+esc(s.n)+'" onchange="D.skillCats['+ci+'].skills['+si+'].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % ('+s.p+')</label><input type="range" min="10" max="100" value="'+s.p+'" oninput="D.skillCats['+ci+'].skills['+si+'].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="'+esc(s.d)+'" onchange="D.skillCats['+ci+'].skills['+si+'].d=this.value"></div></div>';
     }).join('')+
     '<button class="d-add" style="margin-top:.4rem" onclick="D.skillCats['+ci+'].skills.push({n:\'New Skill\',p:75,d:\'\'}); renderSkAdmin()"><i class="fa-solid fa-plus"></i> Add skill</button></div>';
   }).join('');
 }
-g('add-skcat').onclick=function(){D.skillCats.push({name:'New Category',skills:[]});renderSkAdmin()};
+g('add-skcat').onclick=function(){D.skillCats.push({hidden:false,{name:'New Category',skills:[]});renderSkAdmin()};
 
 function renderExpAdmin(){
   g('exp-admin').innerHTML=D.exps.map(function(e,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+e.role+' @ '+e.co+'</span><button class="d-del" onclick="D.exps.splice('+i+',1);renderExpAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    return '<div class="di'+(e.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+e.role+' @ '+e.co+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.exps,i,null)+'<button class="d-del" onclick="D.exps.splice('+i+',1);renderExpAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Period</label><input value="'+esc(e.period)+'" onchange="D.exps['+i+'].period=this.value"></div>'+
     '<div class="r2a"><div class="af"><label>Role</label><input value="'+esc(e.role)+'" onchange="D.exps['+i+'].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="'+esc(e.co)+'" onchange="D.exps['+i+'].co=this.value"></div></div>'+
     '<div class="r2a"><div class="af"><label>Industry type</label><input value="'+esc(e.type)+'" onchange="D.exps['+i+'].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="'+esc(e.tags.join(','))+'" onchange="D.exps['+i+'].tags=this.value.split(\',\').map(function(t){return t.trim()})"></div></div>'+
     '<div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps['+i+'].bullets=this.value.split(\'\\n\').filter(Boolean)">'+esc(e.bullets.join('\n'))+'</textarea></div></div>';
   }).join('');
 }
-g('add-exp').onclick=function(){D.exps.push({period:'Month Year – Present',role:'Role',co:'Company',type:'Industry',tags:[],bullets:['Key responsibility']});renderExpAdmin()};
+g('add-exp').onclick=function(){D.exps.push({hidden:false,{period:'Month Year – Present',role:'Role',co:'Company',type:'Industry',tags:[],bullets:['Key responsibility']});renderExpAdmin()};
 
 function renderProjAdmin(){
   g('proj-admin').innerHTML=D.projects.map(function(p,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+p.title+'</span><button class="d-del" onclick="D.projects.splice('+i+',1);renderProjAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    return '<div class="di'+(p.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+p.title+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.projects,i,null)+'<button class="d-del" onclick="D.projects.splice('+i+',1);renderProjAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="r2a"><div class="af"><label>Icon</label><input value="'+esc(p.icon)+'" onchange="D.projects['+i+'].icon=this.value"></div><div class="af"><label>Category</label><input value="'+esc(p.cat)+'" onchange="D.projects['+i+'].cat=this.value"></div></div>'+
     '<div class="af"><label>Title</label><input value="'+esc(p.title)+'" onchange="D.projects['+i+'].title=this.value;renderProjAdmin()"></div>'+
     '<div class="af"><label>Description</label><textarea rows="3" onchange="D.projects['+i+'].desc=this.value">'+esc(p.desc)+'</textarea></div>'+
@@ -1420,37 +1445,37 @@ function renderProjAdmin(){
     '<div class="af"><label>Tech stack (comma-sep)</label><input value="'+esc(p.tech.join(','))+'" onchange="D.projects['+i+'].tech=this.value.split(\',\').map(function(t){return t.trim()})"></div></div>';
   }).join('');
 }
-g('add-proj').onclick=function(){D.projects.push({icon:'🔧',cat:'Category',title:'Project Title',desc:'',kpi:'',tech:[]});renderProjAdmin()};
+g('add-proj').onclick=function(){D.projects.push({hidden:false,icon:'🔧',cat:'Category',title:'Project Title',desc:'',kpi:'',tech:[]});renderProjAdmin()};
 
 function renderTestiAdmin(){
   g('testi-admin').innerHTML=D.testis.map(function(t,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+t.name+'</span><button class="d-del" onclick="D.testis.splice('+i+',1);renderTestiAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    return '<div class="di'+(t.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+t.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.testis,i,null)+'<button class="d-del" onclick="D.testis.splice('+i+',1);renderTestiAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis['+i+'].q=this.value">'+esc(t.q)+'</textarea></div>'+
     '<div class="r2a"><div class="af"><label>Name</label><input value="'+esc(t.name)+'" onchange="D.testis['+i+'].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="'+esc(t.init)+'" onchange="D.testis['+i+'].init=this.value"></div></div>'+
     '<div class="r2a"><div class="af"><label>Role & company</label><input value="'+esc(t.role)+'" onchange="D.testis['+i+'].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="'+t.stars+'" onchange="D.testis['+i+'].stars=+this.value"></div></div></div>';
   }).join('');
 }
-g('add-testi').onclick=function(){D.testis.push({stars:5,q:'',name:'Person Name',role:'Role · Company',init:'PN'});renderTestiAdmin()};
+g('add-testi').onclick=function(){D.testis.push({hidden:false,stars:5,q:'',name:'Person Name',role:'Role · Company',init:'PN'});renderTestiAdmin()};
 
 function renderEduAdmin(){
   g('edu-admin').innerHTML=D.edus.map(function(e,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+e.d+'</span><button class="d-del" onclick="D.edus.splice('+i+',1);renderEduAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    return '<div class="di'+(e.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+e.d+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.edus,i,null)+'<button class="d-del" onclick="D.edus.splice('+i+',1);renderEduAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Year</label><input value="'+esc(e.y)+'" onchange="D.edus['+i+'].y=this.value"></div>'+
     '<div class="af"><label>Degree</label><input value="'+esc(e.d)+'" onchange="D.edus['+i+'].d=this.value;renderEduAdmin()"></div>'+
     '<div class="af"><label>Institution</label><input value="'+esc(e.i)+'" onchange="D.edus['+i+'].i=this.value"></div>'+
     '<div class="af"><label>Grade</label><input value="'+esc(e.g)+'" onchange="D.edus['+i+'].g=this.value"></div></div>';
   }).join('');
 }
-g('add-edu').onclick=function(){D.edus.push({y:'2024',d:'Degree',i:'Institution',g:'Grade'});renderEduAdmin()};
+g('add-edu').onclick=function(){D.edus.push({hidden:false,y:'2024',d:'Degree',i:'Institution',g:'Grade'});renderEduAdmin()};
 
 function renderCertAdmin(){
   g('cert-admin').innerHTML=D.certs.map(function(c,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.t+'</span><button class="d-del" onclick="D.certs.splice('+i+',1);renderCertAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    return '<div class="di'+(c.hidden?' is-hidden':'')+'">'+'<div class="di-head"><span class="di-lbl">'+c.t+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.certs,i,null)+'<button class="d-del" onclick="D.certs.splice('+i+',1);renderCertAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Title</label><input value="'+esc(c.t)+'" onchange="D.certs['+i+'].t=this.value;renderCertAdmin()"></div>'+
     '<div class="r2a"><div class="af"><label>Issuer</label><input value="'+esc(c.o)+'" onchange="D.certs['+i+'].o=this.value"></div><div class="af"><label>Year</label><input value="'+esc(c.y)+'" onchange="D.certs['+i+'].y=this.value"></div></div></div>';
   }).join('');
 }
-g('add-cert').onclick=function(){D.certs.push({t:'Certification',o:'Issuer',y:'2024'});renderCertAdmin()};
+g('add-cert').onclick=function(){D.certs.push({hidden:false,t:'Certification',o:'Issuer',y:'2024'});renderCertAdmin()};
 
 function renderContactAdmin(){
   g('contact-admin').innerHTML=D.contacts.map(function(c,i){
@@ -1568,6 +1593,31 @@ function applyPhotoStyles(){
   if(sb){document.querySelectorAll('#shape-grid .shopt').forEach(function(b){b.classList.remove('on')});sb.classList.add('on');}
   var bb=document.querySelector('#border-grid .shopt[data-b="'+PHOTO_BORDER+'"]');
   if(bb){document.querySelectorAll('#border-grid .shopt').forEach(function(b){b.classList.remove('on')});bb.classList.add('on');}
+}
+
+
+// ── VISIBILITY TOGGLE HELPER ──
+function mkToggle(arr, idx, diEl){
+  var checked = !arr[idx].hidden;
+  var html = '<label class="vis-toggle" title="'+(checked?'Visible — click to hide':'Hidden — click to show')+'">' +
+    '<input type="checkbox" '+(checked?'checked':'')+' onchange="arr['+idx+'].hidden=!this.checked;var di=this.closest('.di');if(di)di.classList.toggle('is-hidden',!this.checked);this.parentElement.title=this.checked?'Visible — click to hide':'Hidden — click to show'">' +
+    '<span class="vis-track"><span class="vis-thumb"></span></span>' +
+    '<span class="vis-label">'+(checked?'Visible':'Hidden')+'</span>' +
+    '</label>';
+  return html;
+}
+function mkToggleDirect(arr, idx){
+  return mkToggle(arr, idx, null);
+}
+
+// Section-level toggle
+function mkSecToggle(key){
+  var checked = D.sections[key] !== false;
+  return '<label class="vis-toggle" title="Toggle section visibility">' +
+    '<input type="checkbox" '+(checked?'checked':'')+' onchange="D.sections[''+key+'']=this.checked;renderSecMgr();render()">' +
+    '<span class="vis-track"><span class="vis-thumb"></span></span>' +
+    '<span class="vis-label">'+(checked?'Visible':'Hidden')+'</span>' +
+    '</label>';
 }
 
 // ══ AUTH ══
