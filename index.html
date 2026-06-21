@@ -1640,28 +1640,11 @@ function applyPhotoStyles(){
 
 
 // ── VISIBILITY TOGGLE HELPER ──
-function mkToggle(arr, idx, diEl){
-  var checked = !arr[idx].hidden;
-  var html = '<label class="vis-toggle" title="'+(checked?'Visible — click to hide':'Hidden — click to show')+'">' +
-    '<input type="checkbox" '+(checked?'checked':'')+' onchange="arr['+idx+'].hidden=!this.checked;var di=this.closest('.di');if(di)di.classList.toggle('is-hidden',!this.checked);this.parentElement.title=this.checked?'Visible — click to hide':'Hidden — click to show'">' +
-    '<span class="vis-track"><span class="vis-thumb"></span></span>' +
-    '<span class="vis-label">'+(checked?'Visible':'Hidden')+'</span>' +
-    '</label>';
-  return html;
-}
-function mkToggleDirect(arr, idx){
-  return mkToggle(arr, idx, null);
-}
+
+
 
 // Section-level toggle
-function mkSecToggle(key){
-  var checked = D.sections[key] !== false;
-  return '<label class="vis-toggle" title="Toggle section visibility">' +
-    '<input type="checkbox" '+(checked?'checked':'')+' onchange="D.sections[''+key+'']=this.checked;renderSecMgr();render()">' +
-    '<span class="vis-track"><span class="vis-thumb"></span></span>' +
-    '<span class="vis-label">'+(checked?'Visible':'Hidden')+'</span>' +
-    '</label>';
-}
+
 
 // ══ AUTH ══
 var PASS='rabbi2026admin';var authed=false;
