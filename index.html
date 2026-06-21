@@ -363,6 +363,31 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .di.is-hidden{opacity:.45}
 .di.is-hidden .di-lbl::after{content:' (hidden)';color:var(--text3);font-weight:400}
 
+
+/* ── ADMIN TOGGLE SWITCH ── */
+.tog-wrap{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.tog-lbl{font-size:.63rem;color:var(--text3);font-weight:500}
+.tog-sw{
+  position:relative;width:34px;height:18px;flex-shrink:0;cursor:pointer;
+}
+.tog-sw input{opacity:0;width:0;height:0;position:absolute}
+.tog-track{
+  position:absolute;inset:0;border-radius:9px;
+  background:var(--border2);transition:background .2s;
+  border:1px solid var(--border2);
+}
+.tog-sw input:checked + .tog-track{background:var(--a);border-color:var(--a)}
+.tog-thumb{
+  position:absolute;top:2px;left:2px;
+  width:12px;height:12px;border-radius:50%;
+  background:#fff;transition:left .2s;
+  box-shadow:0 1px 3px rgba(0,0,0,.3);
+}
+.tog-sw input:checked ~ .tog-thumb{left:18px}
+/* Hidden item styling in admin */
+.di.item-hidden{opacity:.45;border-style:dashed}
+.di.item-hidden .di-lbl::after{content:' (hidden)';font-size:.6rem;color:var(--text3)}
+
 /* ── SECTION BASE ── */
 .section{max-width:1100px;margin:0 auto;padding:5rem 2.5rem}
 .sec-divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
@@ -1131,12 +1156,12 @@ var D={
   mstats:[{n:'3+',l:'Yrs Experience'},{n:'500+',l:'Reports Built'},{n:'10+',l:'Dashboards'},{n:'BSc',l:'CS Engineering'}],
   abinfo:[{l:'Full Name',v:'Md. Rabbi Ahemed'},{l:'Email',v:'rabbiahemed1@gmail.com'},{l:'Phone',v:'+8801791177273'},{l:'Location',v:'Dhaka, Bangladesh'},{l:'Languages',v:'English, Bengali'}],
   metrics:[
-    {n:'3+',l:'Years Experience',s:'FMCG & E-commerce'},
-    {n:'500+',l:'Reports Generated',s:'IMS & ERP-based'},
-    {n:'10+',l:'Dashboards Built',s:'For C-suite decisions'},
-    {n:'3',l:'Companies Served',s:'Across sectors'},
-    {n:'100%',l:'Data Accuracy',s:'Post ERP validation'},
-    {n:'5+',l:'Regions Managed',s:'Territory coverage'}
+    {hidden:false,n:'3+',l:'Years Experience',s:'FMCG & E-commerce'},
+    {hidden:false,n:'500+',l:'Reports Generated',s:'IMS & ERP-based'},
+    {hidden:false,n:'10+',l:'Dashboards Built',s:'For C-suite decisions'},
+    {hidden:false,n:'3',l:'Companies Served',s:'Across sectors'},
+    {hidden:false,n:'100%',l:'Data Accuracy',s:'Post ERP validation'},
+    {hidden:false,n:'5+',l:'Regions Managed',s:'Territory coverage'}
   ],
   skillCats:[
     {hidden:false,name:'Sales Operations',skills:[
@@ -1207,10 +1232,10 @@ var D={
     {hidden:false,t:'Sales Operations Management',o:'Industry Certificate',y:'2024'}
   ],
   contacts:[
-    {ico:'✉️',l:'Email',v:'rabbiahemed1@gmail.com',h:'mailto:rabbiahemed1@gmail.com'},
-    {ico:'📞',l:'Phone (Primary)',v:'+880 1791-177273',h:'tel:+8801791177273'},
-    {ico:'📞',l:'Phone (Secondary)',v:'+880 1884-418569',h:'tel:+8801884418569'},
-    {ico:'📍',l:'Address',v:'Natun Bazar, Dhaka, Bangladesh',h:'#'}
+    {hidden:false,ico:'✉️',l:'Email',v:'rabbiahemed1@gmail.com',h:'mailto:rabbiahemed1@gmail.com'},
+    {hidden:false,ico:'📞',l:'Phone (Primary)',v:'+880 1791-177273',h:'tel:+8801791177273'},
+    {hidden:false,ico:'📞',l:'Phone (Secondary)',v:'+880 1884-418569',h:'tel:+8801884418569'},
+    {hidden:false,ico:'📍',l:'Address',v:'Natun Bazar, Dhaka, Bangladesh',h:'#'}
   ],
   sections:{hero:true,about:true,metrics:true,skills:true,exp:true,projects:true,testi:true,edu:true,contact:true},
   customSections:[],
@@ -1479,7 +1504,10 @@ g('add-cert').onclick=function(){D.certs.push({hidden:false,t:'Certification',o:
 
 function renderContactAdmin(){
   g('contact-admin').innerHTML=D.contacts.map(function(c,i){
-    return '<div class="di"><div class="di-head"><span class="di-lbl">'+c.l+'</span><button class="d-del" onclick="D.contacts.splice('+i+',1);renderContactAdmin()"><i class="fa-solid fa-xmark"></i></button></div>'+
+    var hidden=c.hidden===true;
+    return '<div class="di'+(hidden?' item-hidden':'')+'"><div class="di-head"><span class="di-lbl">'+c.l+'</span><div style="display:flex;gap:5px;align-items:center">'+
+      '<div class="tog-wrap"><span class="tog-lbl">'+(hidden?'Hidden':'Visible')+'</span>'+makeTog('cont-tog-'+i,!hidden,'D.contacts['+i+'].hidden=!this.checked;renderContactAdmin()')+'</div>'+
+      '<button class="d-del" onclick="D.contacts.splice('+i+',1);renderContactAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="r2a"><div class="af"><label>Icon</label><input value="'+esc(c.ico)+'" onchange="D.contacts['+i+'].ico=this.value"></div><div class="af"><label>Label</label><input value="'+esc(c.l)+'" onchange="D.contacts['+i+'].l=this.value;renderContactAdmin()"></div></div>'+
     '<div class="af"><label>Display value</label><input value="'+esc(c.v)+'" onchange="D.contacts['+i+'].v=this.value"></div>'+
     '<div class="af"><label>URL</label><input value="'+esc(c.h)+'" onchange="D.contacts['+i+'].h=this.value"></div></div>';
@@ -1499,10 +1527,11 @@ function renderSecMgr(){
     return '<div class="sec-mgr-item"><span class="sec-mgr-drag">⠿</span><span class="sec-mgr-name">'+s.title+'</span><button class="sec-mgr-toggle '+(on?'on':'off')+'" onclick="D.customSections['+i+'].visible='+(on?'false':'true')+';renderSecMgr();render()">'+(on?'On':'Off')+'</button><button class="d-del" onclick="D.customSections.splice('+i+',1);renderSecMgr();render()" style="margin-left:.3rem"><i class="fa-solid fa-xmark"></i></button></div>';
   }).join(''):'');
 }
-function toggleSec(k,btn){
-  D.sections[k]=D.sections[k]===false?true:false;
-  btn.classList.toggle('on');btn.classList.toggle('off');
-  btn.textContent=D.sections[k]===false?'Off':'On';
+function toggleSec(k,el){
+  // el may be checkbox input or the label
+  var chk = el.type==='checkbox' ? el : el.querySelector('input');
+  D.sections[k] = chk ? chk.checked : (D.sections[k]===false?true:false);
+  renderSecMgr();
   render();
 }
 g('add-custom-sec').onclick=function(){
@@ -1568,6 +1597,20 @@ function updateAvatarDisplay(){
 }
 
 
+
+
+// ══ TOGGLE HELPER ══
+function makeTog(id, checked, onchange){
+  var c = checked ? 'checked' : '';
+  return '<label class="tog-sw" title="'+(checked?'Visible — click to hide':'Hidden — click to show')+'">' +
+    '<input type="checkbox" '+c+' onchange="'+onchange+'">' +
+    '<div class="tog-track"></div><div class="tog-thumb"></div>' +
+  '</label>';
+}
+function togClass(el, hidden){
+  if(hidden){ el.classList.add('item-hidden'); }
+  else { el.classList.remove('item-hidden'); }
+}
 
 // ══ PHOTO SHAPE & BORDER ══
 var PHOTO_SHAPE='shape-rounded-tall', PHOTO_BORDER='b-default';
