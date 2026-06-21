@@ -1160,7 +1160,7 @@ var D={
   ],
   navlinks:[{t:'About',h:'#about'},{t:'Experience',h:'#experience'},{t:'Projects',h:'#projects'},{t:'Skills',h:'#skills'},{t:'Contact',h:'#contact'}],
   exps:[
-    {hidden:false,{period:'Mar 2025 – Present',role:'Sales Coordinator',co:'City Group',type:'FMCG',tags:['ERP','MIS','Sales Planning','Dashboards','Forecasting'],bullets:[
+    {hidden:false,period:'Mar 2025 – Present',role:'Sales Coordinator',co:'City Group',type:'FMCG',tags:['ERP','MIS','Sales Planning','Dashboards','Forecasting'],bullets:[
       'Architect and manage product-wise, zone-wise, and distributor-wise sales targets aligned with corporate strategy',
       'Deliver daily, weekly, and monthly executive performance dashboards for senior management review',
       'Design structured incentive & commission frameworks ensuring transparency and goal alignment across teams',
@@ -1169,14 +1169,14 @@ var D={
       'Lead onboarding and field training sessions for new sales personnel on IMS systems and processes',
       'Conduct historical trend analysis to forecast demand and optimize territory target planning'
     ]},
-    {hidden:false,{period:'Jan 2024 – Aug 2024',role:'MIS Executive',co:'Dekko Foods Ltd.',type:'FMCG',tags:['IMS','ERP','Analytics','Reporting'],bullets:[
+    {hidden:false,period:'Jan 2024 – Aug 2024',role:'MIS Executive',co:'Dekko Foods Ltd.',type:'FMCG',tags:['IMS','ERP','Analytics','Reporting'],bullets:[
       'Managed national territory-wise ERP target uploads with high accuracy across all product lines',
       'Generated daily IMS-based sales performance reports consumed by regional and national management',
       'Produced monthly sales closing reports and coverage analyses for executive management review',
       'Compiled area-wise damage reports from field audits providing actionable supply chain intelligence',
       'Developed region-wise weekly performance analytics dashboards improving visibility across 5+ territories'
     ]},
-    {hidden:false,{period:'Jan 2020 – Dec 2020',role:'Operations Executive',co:'BoiBazar.com',type:'E-commerce',tags:['Operations','Inventory','Logistics'],bullets:[
+    {hidden:false,period:'Jan 2020 – Dec 2020',role:'Operations Executive',co:'BoiBazar.com',type:'E-commerce',tags:['Operations','Inventory','Logistics'],bullets:[
       'Managed end-to-end order processing, invoicing, and shipment coordination workflows',
       'Maintained inventory accuracy and ensured on-time dispatch performance targets were met',
       'Administered website product catalogue and managed digital content workflow'
@@ -1433,7 +1433,7 @@ function renderExpAdmin(){
     '<div class="af"><label>Bullet points (one per line)</label><textarea rows="5" onchange="D.exps['+i+'].bullets=this.value.split(\'\\n\').filter(Boolean)">'+esc(e.bullets.join('\n'))+'</textarea></div></div>';
   }).join('');
 }
-g('add-exp').onclick=function(){D.exps.push({hidden:false,{period:'Month Year – Present',role:'Role',co:'Company',type:'Industry',tags:[],bullets:['Key responsibility']});renderExpAdmin()};
+g('add-exp').onclick=function(){D.exps.push({hidden:false,period:'Month Year – Present',role:'Role',co:'Company',type:'Industry',tags:[],bullets:['Key responsibility']});renderExpAdmin()};
 
 function renderProjAdmin(){
   g('proj-admin').innerHTML=D.projects.map(function(p,i){
