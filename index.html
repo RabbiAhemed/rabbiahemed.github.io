@@ -1139,19 +1139,19 @@ var D={
     {n:'5+',l:'Regions Managed',s:'Territory coverage'}
   ],
   skillCats:[
-    {hidden:false,{name:'Sales Operations',skills:[
+    {hidden:false,name:'Sales Operations',skills:[
       {hidden:false,n:'Sales Planning & Target Allocation',p:95,d:'Product, zone & distributor-level target management'},
       {hidden:false,n:'Incentive & Commission Design',p:90,d:'Transparent framework design aligned with business goals'},
       {hidden:false,n:'Order & Distribution Management',p:88,d:'End-to-end order coordination across channels'},
       {hidden:false,n:'Cross-functional Coordination',p:92,d:'Sales, finance & distribution team alignment'}
     ]},
-    {hidden:false,{name:'MIS & Reporting',skills:[
+    {hidden:false,name:'MIS & Reporting',skills:[
       {hidden:false,n:'Dashboard & MIS Reporting',p:95,d:'Daily, weekly & monthly performance dashboards'},
       {hidden:false,n:'ERP & IMS Data Management',p:90,d:'Target uploads, ERP validation & error reduction'},
       {hidden:false,n:'Sales Forecasting & Analysis',p:88,d:'Historical trend analysis and demand forecasting'},
       {hidden:false,n:'Territory Analytics',p:85,d:'Region-wise performance analytics and field audits'}
     ]},
-    {hidden:false,{name:'Technical Tools',skills:[
+    {hidden:false,name:'Technical Tools',skills:[
       {hidden:false,n:'MS Excel (Advanced)',p:96,d:'Pivot tables, advanced formulas, reporting automation'},
       {hidden:false,n:'ERP Systems',p:88,d:'National territory management and uploads'},
       {hidden:false,n:'IMS & PS Management Software',p:85,d:'Field performance and inventory management systems'},
@@ -1422,7 +1422,7 @@ function renderSkAdmin(){
     '<button class="d-add" style="margin-top:.4rem" onclick="D.skillCats['+ci+'].skills.push({n:\'New Skill\',p:75,d:\'\'}); renderSkAdmin()"><i class="fa-solid fa-plus"></i> Add skill</button></div>';
   }).join('');
 }
-g('add-skcat').onclick=function(){D.skillCats.push({hidden:false,{name:'New Category',skills:[]});renderSkAdmin()};
+g('add-skcat').onclick=function(){D.skillCats.push({hidden:false,name:'New Category',skills:[]});renderSkAdmin()};
 
 function renderExpAdmin(){
   g('exp-admin').innerHTML=D.exps.map(function(e,i){
