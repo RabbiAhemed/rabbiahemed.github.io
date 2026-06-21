@@ -1602,7 +1602,7 @@ function updateAvatarDisplay(){
 // ══ TOGGLE HELPER ══
 function makeTog(id, checked, onchange){
   var c = checked ? 'checked' : '';
-  return '<label class="tog-sw" title="'+(checked?'Visible — click to hide':'Hidden — click to show')+'">' +
+  return '<label class="tog-sw">' +
     '<input type="checkbox" '+c+' onchange="'+onchange+'">' +
     '<div class="tog-track"></div><div class="tog-thumb"></div>' +
   '</label>';
