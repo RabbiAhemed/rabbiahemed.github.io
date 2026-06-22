@@ -1441,7 +1441,7 @@ g('add-metric').onclick=function(){D.metrics.push({n:'0',l:'Metric',s:'Subtitle'
 
 function renderSkAdmin(){
   g('skills-admin').innerHTML=D.skillCats.map(function(c,ci){
-    return '<div class="di'+(c.hidden?' is-hidden':'')+' " data-arrname="certs">'+'<div class="di-head"><span class="di-lbl">'+c.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.skillCats,ci,null)+'<button class="d-del" onclick="D.skillCats.splice('+ci+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Category name</label><input value="'+esc(c.name)+'" onchange="D.skillCats['+ci+'].name=this.value;renderSkAdmin()"></div>'+
+    return '<div class="di'+(c.hidden?' is-hidden':'')+' " data-arrname="certs">'+'<div class="di-head"><span class="di-lbl">'+c.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('sc-'+ci,!D.skillCats[ci].hidden,'D.skillCats['+ci+'].hidden=!this.checked;renderSkAdmin()')+'<button class="d-del" onclick="D.skillCats.splice('+ci+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Category name</label><input value="'+esc(c.name)+'" onchange="D.skillCats['+ci+'].name=this.value;renderSkAdmin()"></div>'+
     c.skills.map(function(s,si){
       return '<div class="di" style="margin-top:.4rem;background:var(--bg2)"><div class="di-head"><span class="di-lbl" style="font-size:.7rem">'+s.n+'</span><button class="d-del" onclick="D.skillCats['+ci+'].skills.splice('+si+',1);renderSkAdmin()"><i class="fa-solid fa-xmark"></i></button></div><div class="af"><label>Skill name</label><input value="'+esc(s.n)+'" onchange="D.skillCats['+ci+'].skills['+si+'].n=this.value;renderSkAdmin()"></div><div class="af"><label>Level % ('+s.p+')</label><input type="range" min="10" max="100" value="'+s.p+'" oninput="D.skillCats['+ci+'].skills['+si+'].p=+this.value;renderSkAdmin()"></div><div class="af"><label>Description</label><input value="'+esc(s.d)+'" onchange="D.skillCats['+ci+'].skills['+si+'].d=this.value"></div></div>';
     }).join('')+
@@ -1452,7 +1452,7 @@ g('add-skcat').onclick=function(){D.skillCats.push({hidden:false,name:'New Categ
 
 function renderExpAdmin(){
   g('exp-admin').innerHTML=D.exps.map(function(e,i){
-    return '<div class="di'+(e.hidden?' is-hidden':'')+' " data-arrname="exps">'+'<div class="di-head"><span class="di-lbl">'+e.role+' @ '+e.co+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.exps,i,null)+'<button class="d-del" onclick="D.exps.splice('+i+',1);renderExpAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
+    return '<div class="di'+(e.hidden?' is-hidden':'')+' " data-arrname="exps">'+'<div class="di-head"><span class="di-lbl">'+e.role+' @ '+e.co+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('exp-'+i,!D.exps[i].hidden,'D.exps['+i+'].hidden=!this.checked;renderExpAdmin()')+'<button class="d-del" onclick="D.exps.splice('+i+',1);renderExpAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Period</label><input value="'+esc(e.period)+'" onchange="D.exps['+i+'].period=this.value"></div>'+
     '<div class="r2a"><div class="af"><label>Role</label><input value="'+esc(e.role)+'" onchange="D.exps['+i+'].role=this.value;renderExpAdmin()"></div><div class="af"><label>Company</label><input value="'+esc(e.co)+'" onchange="D.exps['+i+'].co=this.value"></div></div>'+
     '<div class="r2a"><div class="af"><label>Industry type</label><input value="'+esc(e.type)+'" onchange="D.exps['+i+'].type=this.value"></div><div class="af"><label>Tags (comma-sep)</label><input value="'+esc(e.tags.join(','))+'" onchange="D.exps['+i+'].tags=this.value.split(\',\').map(function(t){return t.trim()})"></div></div>'+
@@ -1463,7 +1463,7 @@ g('add-exp').onclick=function(){D.exps.push({hidden:false,period:'Month Year –
 
 function renderProjAdmin(){
   g('proj-admin').innerHTML=D.projects.map(function(p,i){
-    return '<div class="di'+(p.hidden?' is-hidden':'')+' " data-arrname="projects">'+'<div class="di-head"><span class="di-lbl">'+p.title+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.projects,i,null)+'<button class="d-del" onclick="D.projects.splice('+i+',1);renderProjAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
+    return '<div class="di'+(p.hidden?' is-hidden':'')+' " data-arrname="projects">'+'<div class="di-head"><span class="di-lbl">'+p.title+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('proj-'+i,!D.projects[i].hidden,'D.projects['+i+'].hidden=!this.checked;renderProjAdmin()')+'<button class="d-del" onclick="D.projects.splice('+i+',1);renderProjAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="r2a"><div class="af"><label>Icon</label><input value="'+esc(p.icon)+'" onchange="D.projects['+i+'].icon=this.value"></div><div class="af"><label>Category</label><input value="'+esc(p.cat)+'" onchange="D.projects['+i+'].cat=this.value"></div></div>'+
     '<div class="af"><label>Title</label><input value="'+esc(p.title)+'" onchange="D.projects['+i+'].title=this.value;renderProjAdmin()"></div>'+
     '<div class="af"><label>Description</label><textarea rows="3" onchange="D.projects['+i+'].desc=this.value">'+esc(p.desc)+'</textarea></div>'+
@@ -1475,7 +1475,7 @@ g('add-proj').onclick=function(){D.projects.push({hidden:false,icon:'🔧',cat:'
 
 function renderTestiAdmin(){
   g('testi-admin').innerHTML=D.testis.map(function(t,i){
-    return '<div class="di'+(t.hidden?' is-hidden':'')+' " data-arrname="testis">'+'<div class="di-head"><span class="di-lbl">'+t.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.testis,i,null)+'<button class="d-del" onclick="D.testis.splice('+i+',1);renderTestiAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
+    return '<div class="di'+(t.hidden?' is-hidden':'')+' " data-arrname="testis">'+'<div class="di-head"><span class="di-lbl">'+t.name+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('ts-'+i,!D.testis[i].hidden,'D.testis['+i+'].hidden=!this.checked;renderTestiAdmin()')+'<button class="d-del" onclick="D.testis.splice('+i+',1);renderTestiAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Quote</label><textarea rows="3" onchange="D.testis['+i+'].q=this.value">'+esc(t.q)+'</textarea></div>'+
     '<div class="r2a"><div class="af"><label>Name</label><input value="'+esc(t.name)+'" onchange="D.testis['+i+'].name=this.value;renderTestiAdmin()"></div><div class="af"><label>Initials</label><input value="'+esc(t.init)+'" onchange="D.testis['+i+'].init=this.value"></div></div>'+
     '<div class="r2a"><div class="af"><label>Role & company</label><input value="'+esc(t.role)+'" onchange="D.testis['+i+'].role=this.value"></div><div class="af"><label>Stars (1-5)</label><input type="number" min="1" max="5" value="'+t.stars+'" onchange="D.testis['+i+'].stars=+this.value"></div></div></div>';
@@ -1485,7 +1485,7 @@ g('add-testi').onclick=function(){D.testis.push({hidden:false,stars:5,q:'',name:
 
 function renderEduAdmin(){
   g('edu-admin').innerHTML=D.edus.map(function(e,i){
-    return '<div class="di'+(e.hidden?' is-hidden':'')+' " data-arrname="edus">'+'<div class="di-head"><span class="di-lbl">'+e.d+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.edus,i,null)+'<button class="d-del" onclick="D.edus.splice('+i+',1);renderEduAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
+    return '<div class="di'+(e.hidden?' is-hidden':'')+' " data-arrname="edus">'+'<div class="di-head"><span class="di-lbl">'+e.d+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('edu-'+i,!D.edus[i].hidden,'D.edus['+i+'].hidden=!this.checked;renderEduAdmin()')+'<button class="d-del" onclick="D.edus.splice('+i+',1);renderEduAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Year</label><input value="'+esc(e.y)+'" onchange="D.edus['+i+'].y=this.value"></div>'+
     '<div class="af"><label>Degree</label><input value="'+esc(e.d)+'" onchange="D.edus['+i+'].d=this.value;renderEduAdmin()"></div>'+
     '<div class="af"><label>Institution</label><input value="'+esc(e.i)+'" onchange="D.edus['+i+'].i=this.value"></div>'+
@@ -1496,7 +1496,7 @@ g('add-edu').onclick=function(){D.edus.push({hidden:false,y:'2024',d:'Degree',i:
 
 function renderCertAdmin(){
   g('cert-admin').innerHTML=D.certs.map(function(c,i){
-    return '<div class="di'+(c.hidden?' is-hidden':'')+' " data-arrname="skillCats">'+'<div class="di-head"><span class="di-lbl">'+c.t+'</span><div style="display:flex;gap:.4rem;align-items:center">'+mkToggle(D.certs,i,null)+'<button class="d-del" onclick="D.certs.splice('+i+',1);renderCertAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
+    return '<div class="di'+(c.hidden?' is-hidden':'')+' " data-arrname="skillCats">'+'<div class="di-head"><span class="di-lbl">'+c.t+'</span><div style="display:flex;gap:.4rem;align-items:center">'+makeTog('cert-'+i,!D.certs[i].hidden,'D.certs['+i+'].hidden=!this.checked;renderCertAdmin()')+'<button class="d-del" onclick="D.certs.splice('+i+',1);renderCertAdmin()"><i class="fa-solid fa-xmark"></i></button></div></div>'+
     '<div class="af"><label>Title</label><input value="'+esc(c.t)+'" onchange="D.certs['+i+'].t=this.value;renderCertAdmin()"></div>'+
     '<div class="r2a"><div class="af"><label>Issuer</label><input value="'+esc(c.o)+'" onchange="D.certs['+i+'].o=this.value"></div><div class="af"><label>Year</label><input value="'+esc(c.y)+'" onchange="D.certs['+i+'].y=this.value"></div></div></div>';
   }).join('');
