@@ -1648,7 +1648,7 @@ function applyPhotoStyles(){
 
 
 // ══ AUTH ══
-var PASS='rabbi2026admin';var authed=false;
+var API='https://portfolio-cms.rabbiahemed1.workers.dev';var authed=false;var ADMINPW='';
 var combo=[],seq=[65,68,77,73,78]; // Shift+ADMIN
 document.addEventListener('keydown',function(e){
   if(e.shiftKey&&!authed){
@@ -1657,21 +1657,25 @@ document.addEventListener('keydown',function(e){
   }
 });
 function showLogin(){g('login-modal').classList.add('show');setTimeout(function(){g('pw-input').focus()},100)}
-function doLogin(){
-  if(g('pw-input').value===PASS){
-    authed=true;g('login-modal').classList.remove('show');
+async function doLogin(){
+  var pw=g('pw-input').value;var b=g('do-login');b.disabled=true;
+  var ok=false,msg='Incorrect password. Please try again.';
+  try{var r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'login',password:pw})});ok=r.ok;if(!r.ok&&r.status!==401)msg='Server error. Try again.'}catch(e){msg='Cannot reach server. Check your connection.'}
+  b.disabled=false;
+  if(ok){
+    authed=true;ADMINPW=pw;g('login-modal').classList.remove('show');
     g('admin').classList.add('show');document.body.classList.add('aopen');
     g('pw-input').value='';g('login-err').style.display='none';
     showToast('Welcome back, Rabbi 👋','success');
   }else{
-    g('login-err').style.display='block';g('pw-input').value='';g('pw-input').focus();
+    g('login-err').textContent=msg;g('login-err').style.display='block';g('pw-input').value='';g('pw-input').focus();
     setTimeout(function(){g('login-err').style.display='none'},3000);
   }
 }
 g('do-login').onclick=doLogin;
 g('pw-input').onkeydown=function(e){if(e.key==='Enter')doLogin()};
 g('cancel-login').onclick=function(){g('login-modal').classList.remove('show')};
-g('ap-logout').onclick=function(){authed=false;g('admin').classList.remove('show');document.body.classList.remove('aopen');showToast('Signed out')};
+g('ap-logout').onclick=function(){authed=false;ADMINPW='';g('admin').classList.remove('show');document.body.classList.remove('aopen');showToast('Signed out')};
 g('ap-preview').onclick=function(){g('admin').classList.remove('show');document.body.classList.remove('aopen')};
 
 // ══ TABS ══
@@ -1760,63 +1764,18 @@ function showToast(msg,type){
 }
 
 
-// ══ GITHUB CONFIG (set in admin Setup tab) ══
-var GH = {
-  token: ['ghp_V2AZmw','JKoeoRGcyDgEWX','vGVWrn5wNb0NAksN'].join(''),
-  username: 'RabbiAhemed',
-  repo: 'rabbiahemed.github.io',
-  branch: 'main',
-  path: 'index.html'
-};
-
-// ══ GET CURRENT FILE SHA FROM GITHUB ══
-async function getFileSHA() {
-  try {
-    var resp = await fetch('https://api.github.com/repos/'+GH.username+'/'+GH.repo+'/contents/'+GH.path, {
-      headers: {'Authorization': 'token '+GH.token, 'Accept': 'application/vnd.github.v3+json'}
-    });
-    var data = await resp.json();
-    return data.sha;
-  } catch(e) { return null; }
-}
-
-// ══ COMMIT CURRENT HTML TO GITHUB ══
+// ══ SAVE (via secure server; no secrets in this file) ══
 async function saveToGitHub() {
   var btn = g('ap-save');
   btn.textContent = '⏳ Saving...';
   btn.disabled = true;
   try {
-    // Step 1: Get current file SHA and raw content from GitHub
-    var metaResp = await fetch('https://api.github.com/repos/'+GH.username+'/'+GH.repo+'/contents/'+GH.path, {
-      headers:{'Authorization':'token '+GH.token,'Accept':'application/vnd.github.v3+json'}
-    });
-    var metaData = await metaResp.json();
-    if(!metaResp.ok) throw new Error(metaData.message||'Could not reach GitHub');
-    var sha = metaData.sha;
-    // Step 2: Decode the raw file content
-    var rawFile = decodeURIComponent(escape(atob(metaData.content.replace(/\n/g,''))));
-    // Step 3: Find and replace ONLY the pd tag content with fresh serialized state
-    var pdStart = rawFile.indexOf('<script id="pd" type="application/json">');
-    var pdEnd = rawFile.indexOf('<\/script>', pdStart);
-    if(pdStart === -1) throw new Error('Data store tag not found in source file');
-    var pdTagOpen = rawFile.substring(pdStart, rawFile.indexOf('>',pdStart)+1);
-    var newState = serializeState();
-    var patchedFile = rawFile.substring(0, pdStart) + pdTagOpen + newState + rawFile.substring(pdEnd);
-    // Step 4: Encode and push
-    var encoded = btoa(unescape(encodeURIComponent(patchedFile)));
-    var pushResp = await fetch('https://api.github.com/repos/'+GH.username+'/'+GH.repo+'/contents/'+GH.path, {
-      method:'PUT',
-      headers:{'Authorization':'token '+GH.token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
-      body:JSON.stringify({message:'Portfolio CMS update — '+new Date().toLocaleString(),content:encoded,sha:sha,branch:GH.branch})
-    });
-    var pushResult = await pushResp.json();
-    if(pushResp.ok){
-      showToast('✓ Published! Live in ~60 seconds','success');
-      btn.textContent='✓ Published!';
-      setTimeout(function(){btn.textContent='☁ Save & Publish';btn.disabled=false;},3000);
-    } else {
-      throw new Error(pushResult.message||'Push failed');
-    }
+    var r = await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',password:ADMINPW,state:serializeState()})});
+    var d = await r.json();
+    if(!r.ok) throw new Error(d.error||'Save failed');
+    showToast('✓ Published! Live in ~60 seconds','success');
+    btn.textContent='✓ Published!';
+    setTimeout(function(){btn.textContent='☁ Save & Publish';btn.disabled=false;},3000);
   } catch(e) {
     showToast('Error: '+e.message,'error');
     btn.textContent='☁ Save & Publish';
